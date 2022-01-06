@@ -1,0 +1,37 @@
+@import "./_variables.scss";
+/* 다크모드 */
+@include drakMode {
+  html {
+    background:$dark;
+    color:$light;
+  }
+}
+
+/* 라이트모드 */
+@include lightMode {
+  html {
+    background:$white;
+    color:$gray;
+  } 
+}
+
+/* 모바일 버전 */
+@include mobile {
+  h1 {
+    color:white;
+  }
+}
+
+/* 타블렛 버전 */
+@include tablet {
+  h1 {
+    color:white;
+  }
+}
+
+/* 데스크탑 버전 */
+@include desktop {
+  h1 {
+    color:black;
+  }
+}

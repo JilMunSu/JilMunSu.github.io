@@ -1,48 +1,10 @@
-// @charset "UTF-8";
-
-* {margin:0;padding:0;}
-
-// html {--bg-color: #fff;--text-color: #343434;--link-color: #0000ee;}
-// html.dark {--bg-color: #121212;--text-color: #bbb;--link-color: #3ea6ff;}
-
-// body {background: var(--bg-color);color: var(--text-color);}
-// a {color: var(--link-color);}
+/* ---Color--- */
+$dark:#121212;
+$gray:#343434;
+$light:#bbb;
+$white:#fff;
 
 
-// /* .mainContent {width: 100vw;height:100vh; background:#fff;} */
-
-// /* 다크모드(둘 중 하나는 default속성으로 설정해줘도 됨) */
-// @media (prefers-color-scheme: dark) {
-//   html {
-//     --bg-color: #121212;
-//     --color: #bbb;
-//   }
-// }
-
-// /* 라이트모드(둘 중 하나는 default속성으로 설정해줘도 됨) */
-// @media (prefers-color-scheme: light) {
-//   html {
-//     --bg-color: #bbb;
-//     --color: #121212;
-//   }
-// }
-
-
-@import "../css/variables";
-@include mobile {
-  .img-card {
-    width: 100px;
-  }
-}
-
-@include tablet {
-  .img-card {
-    width: 200px;
-  }
-}
-
-@include desktop {
-  .img-card {
-    width: 300px;
-  }
-}
+/* ---공통--- */
+html {background:$white;color:$gray;}
+html.dark {background:$dark;color:$light;}
