@@ -1,3 +1,25 @@
 
 
-/* 공통 */
+/* 사쿠나히메 */
+.sakuna {padding:40px;
+  h1 {font-size:2.4rem;padding-bottom:10px;}
+  .content {
+    h2 {font-size:1.4rem;padding-top:10px;
+      + p {font-size:1.1rem;}
+    }
+    
+    table {margin-top:10px;
+      th, td {padding:6px;border:1px solid #bbb;
+        .minus {color:#ff0000;}
+      }
+    }
+  }
+  .tip {margin-top:10px;
+    > ul {
+      > li {padding:3px 0;
+        &:before {content:'-';padding-right:2px;}
+      }
+    }
+    
+  }
+}
