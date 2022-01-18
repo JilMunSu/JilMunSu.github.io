@@ -35,3 +35,74 @@
     color:black;
   }
 }
+
+// Pointer : 마우스와 같은 포인팅 장치의 존재를 판단
+/* 포인팅 장치가 없음 */
+@include pointerN {
+  html {
+    background:$dark;
+    color:$light;
+  }
+}
+
+/* 기본 장치가 터치스크린이나 키넥트처럼 정확도는 높지 않지만 포인팅 가능 */
+@include pointerC {
+  html {
+    background:$dark;
+    color:$light;
+  }
+}
+
+/* 기본 장치가 마우스나 터치 패드처럼 정확한 포인팅 가능 */
+@media (pointer: fine) {
+  html {
+    background:$white;
+    color:$gray;
+  }
+}
+
+// 사용자가 요소 위로 포인팅 디바이스를 위치시킬 수 있는지 판단
+/* 기본 장치가 호버가 불가능하거나, 포인팅 장치가 없음 */
+@media (hover: none) {
+  .m-hover.none {
+      background: #d28aff;
+  }
+}
+
+/* 기본 장치로 요소(페이지의 특정 영역)에 정확히 호버가 가능합니다. */
+@media (hover: hover) {
+  .m-hover.hover {
+      background: #d28aff;
+  }
+}
+
+/* 보조장치 */
+@media (any-pointer: none) {
+  .any-pointer.none {
+      background: #d28aff;
+  }
+}
+
+@media (any-pointer: coarse) {
+  .any-pointer.coarse {
+      background: #d28aff;
+  }
+}
+
+@media (any-pointer: fine) {
+  .any-pointer.fine {
+      background: #d28aff;
+  }
+}
+
+@media (any-hover: none) {
+  .any-hover.none {
+      background: #d28aff;
+  }
+}
+
+@media (any-hover: hover) {
+  .any-hover.hover {
+      background: #d28aff;
+  }
+}
