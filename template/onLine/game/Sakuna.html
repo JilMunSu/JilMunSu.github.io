@@ -1,0 +1,1453 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="../../../js/jquery-3.6.0.min.js"></script>
+  <script src="../../../js/common.js"></script>
+  <link rel="stylesheet" href="../../../css/font.css">
+  <link rel="stylesheet" href="../../../css/main.min.css">
+  <link rel=" shortcut icon" href=".ico">
+  <link rel="icon" href=".ico">
+  <title>Sakuna</title>
+</head>
+<body>
+  <div class="wrap">
+    <div class="contain">
+      <div class="sakunaPage">
+        <h1>사쿠나히메 농사법</h1>
+        <div class="content statistics">
+          <table>
+            <tr>
+              <th colspan="2">기본 스탯</th>
+            </tr>
+            <tr>
+              <th>양</th>
+              <td>생명(체력)</td>
+            </tr>
+            <tr>
+              <th>맛</th>
+              <td>힘(공격력)</td>
+            </tr>
+            <tr>
+              <th>경도</th>
+              <td>체력(방어력)</td>
+            </tr>
+            <tr>
+              <th>향</th>
+              <td>신기(기술 위력)</td>
+            </tr>
+            <tr>
+              <th>윤기</th>
+              <td>운기(운)</td>
+            </tr>
+            <tr>
+              <th>찰기</th>
+              <td>식력(식사 버프효과)</td>
+            </tr>
+          </table>
+        </div>
+        <div class="content water">
+          <table>
+            <tr>
+              <th colspan="2">물 대기</th>
+            </tr>
+            <tr>
+              <th>천수</th>
+              <td>발목 높이, 24%이하</td>
+            </tr>
+            <tr>
+              <th>심수</th>
+              <td>무릎 높이, 25%이상</td>
+            </tr>
+            <tr>
+              <th>흐르는 물</th>
+              <td>입수/출수용 수문 개방</td>
+            </tr>
+          </table>
+          <div class="tip">
+            <ul>
+              <li>수온은 <strong>16도</strong>를 기준으로 이상일 때 물을 넣으면 온도가 낮아지며, 이하일 때 물을 넣으면 온도가 높아진다.</li>
+              <li>1~2차 분얼기에 <strong>천수</strong>로 유지하면 맛, 찰기, 경도, 향이 올라간다.</li>
+              <li>1~2차 분얼기에 <strong>심수</strong>로 유지하면 양과 윤기가 올라간다.</li>
+              <li><strong>흐르는 물</strong>은 수온을 낮추고 잡초 항목 중 녹조를 방지하며, 출수기에 벼의 품질이 올라간다.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="content fertilizer">
+          <table>
+            <tr>
+              <th colspan="2">비료</th>
+            </tr>
+            <tr>
+              <th>근비(칼륨)</th>
+              <td>낙엽</td>
+            </tr>
+            <tr>
+              <th>엽비(질소)</th>
+              <td>발톱</td>
+            </tr>
+            <tr>
+              <th>수비(인)</th>
+              <td>똥</td>
+            </tr>
+          </table>
+          <div class="tip">
+            <ul>
+              <li>추가재료는 한 가지를 여러개 넣는 것보다 <strong>다양한 재료</strong>를 조금씩 꾸준히 넣는 것이 효율적이다.</li>
+              <li>상한 식재의 경우 마늘과 같은 <strong>방충소재</strong>를 같이 넣는 것이 좋다.</li>
+              <li>소금은 방역능력이 좋으나 <strong>독성</strong>이 높아 주의해야 한다.</li>
+              <li>변화의 가루는 <strong>즉시</strong> 비료를 숙성시킨다.</li>
+              <li>야간에만 드랍되는 <strong>오기의 소재</strong>는 방충, 방제, 방초, 독성 제거에 큰 도움이 된다.</li>
+              <li>천반궁에서 얻는 <strong>레어+급</strong> 소재는 스탯업 효과가 매우 크다.</li>
+              <li>비약 계통은 방역 외에 자신이 담당하는 부분의 <strong>상태이상(질병)</strong>을 크게 완화시켜준다.</li>
+              <li>비약의 원료는 모든 스탯을 <strong>25</strong>씩 올려준다. 꾸준히 모아 뿌리는 것이 가성비로 좋다.</li>
+              <li>양분은 벼의 <strong>생육단계와 수</strong>에 따라 적절히 조절하여 넣어줘야 한다.</li>
+              <li><strong>밤</strong>에 비료를 뿌리는 것을 자제한다.</li>
+              <li>1.아침에 해가 뜨면 전날 저녁에 만든 <strong>근엽수+스탯</strong> 비료를 뿌린다.</li>
+              <li>2.벼농사 회의로 농약 스탯이 필요한 요소가 있는지 확인한다.</li>
+              <li>3.필요에 따라 농약 비료를 만들어 둔다. 여기까지 가능한 아침에 완료한다.</li>
+              <li>4.저녁이 되어 아침에 뿌린 비료의 지속시간이 종료되면 농약 비료를 뿌려 밤 사이 병충해가 치료되게 한다.</li>
+              <li>5.다음날 아침에 뿌릴 <strong>근엽수+스탯</strong> 비료를 만든다.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="content pest">
+          <h2>해충</h2>
+          <p>해충이 늘어나면 질병이 발생한다.</p>
+          <div class="tip">
+            <ul>
+              <li>익충은 일일단위로 스폰되며, 가을이 되면 익충이 사라진다.</li>
+              <li><strong>우렁이</strong>는 논두렁과 시냇물에 서식하며, 노린재의 천적이다. 논에 물이 마르면 점차 사라진다.</li>
+              <li><strong>개구리</strong>는 집 주변 지면에 서식하며, 멸구와 메뚜기의 천적이다. 논에 물이 마르면 점차 사라진다.</li>
+              <li><strong>거미</strong>는 집 실내와 헛간 내 구석진 곳에 서식하며, 팔랑나비 유충의 천적이다. 오리가 있으면 점차 사라진다.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="content weeds">
+          <h2>잡초</h2>
+          <p>잡초가 늘어나면 질병이 발생한다.</p>
+          <div class="tip">
+            <ul>
+              <li>녹조는 물이 녹색으로 변하며, 도복을 일으킨다. 비료의 소비를 늘린다. <strong>근비가 많을수록, 기온이 높을수록, 맑은 날씨</strong>에 증가한다. 물을 빼어 제거해야 한다.</li>
+              <li>강피는 벼와 비슷하게 생겼으며, 병해를 일으킨다.</li>
+              <li>물달개비는 흙의 양분을 크게 빼앗으며, 자주 생긴다.</li>
+              <li>을방개는 도복을 일으킨다.</li>
+              <li>너도방동사니는 양분을 빼앗으며, <strong>심수</strong>일 때 자주 발생한다.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="content disease">
+          <h2>병</h2>
+          <p>병 종류에 따라 대처법이 달라진다.</p>
+          <div class="tip">
+            <ul>
+              <li>도장은 <strong>독성이 부족하거나(-) 일조부족</strong>으로 인해 줄기가 길고 가늘어진다. 장성의 묘약으로 치료할 수 있다.</li>
+              <li>도복은 <strong>잡초나 강풍</strong>으로 인해 줄기가 약해져 쓰러진다. 장성의 묘약으로 치료할 수 있다.</li>
+              <li>염해는 작물이 <strong>소금</strong>을 너무 많이 먹어 잘 자라지 못하는 상태이다. 전지의 묘약이나 물을 빼 염해를 줄일 수 있다.</li>
+              <li>과잉생육은 <strong>벼가 너무 자라</strong> 쌀 양분이 부족해진 상태이다. 전지의 묘약이나 물을 빼 치료할 수 있다.</li>
+              <li>키다리병은 모내기 직후 <strong>곰팡이</strong>로 인해 생기는 병이다. <strong>유전</strong>됨으로, 수일의 묘약으로 반드시 치료해야한다.</li>
+              <li>벼열병은 <strong>곰팡이</strong>가 생겨 질을 크게 낮춘다. 수일의 묘약으로 치료할 수 있다.</li>
+              <li>줄무늬잎마름병은 <strong>벌레나 잡초</strong>가 많으면 발생한다. 수일의 묘약으로 치료할 수 있다.</li>
+              <li>그을음병은 <strong>해충</strong>으로 인해 발생하며 생육을 늦춘다. 수일의 묘약을 치료할 수 있다.</li>
+              <li>출수 불량은 여름에 <strong>양분부족</strong>으로 인해 이삭이 잘 열리지 않는다. 잡초를 구제하고, 충분한 비료를 줘야한다.</li>
+              <li>고온장해는 여름에 흙이나 물의 <strong>온도</strong>가 지나치게 높아 잘 자라지 못하는 상태이다. 물을 흘려보내 온도를 낮춰야한다.</li>
+              <li>집단고사는 가을에 <strong>메뚜기</strong>로 인해 질과 양이 떨어진다. 치료를 할 수 없어 미리 개구리를 풀어놔야한다.</li>
+              <li>반점미 여름(3)~가을에 <strong>노린재</strong>로 인해 질과 양이 떨어진다. 치료를 할 수 없어 미리 우렁이를 풀어놔야한다.</li>
+              <li>벡태는 가을에 발생하며 모내기를 <strong>너무 늦게하거나 성장이 늦어</strong>진 경우 발생한다. 치료방법이 없다.</li>
+              <li>동할미는 정미중 깨져버린 쌀로 양을 감소시킨다. <strong>수확기를 놓치거나 고온 환경</strong>에서 키울 경우 발생한다. 치료방법이 없다.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="content etcTip">
+          <h2>그 외 미세팁</h2>
+          <div class="tip">
+            <ul>
+              <li>봄과 가을은 맑음을, 겨울은 비로 기도한다.</li>
+              <li>밤에는 양쪽 수문을 연다.(밤에 비가오면 나가는 쪽만 연다.</li>
+              <li>해가 뜬 직후 약 30분간 벼가 자라지않는다. '벼 성장일기가' 보였을 때 비료를 준다.</li>
+              <li>비료는 삼각형에서 절반을 넘기지 않도록 한다.(4칸)</li>
+              <li>방제와 방충은 주지않고 묘약으로, 독성은 0에 맞춰야한다.</li>
+              <li>채집은 카이마루 묘약, 미르테 불의동굴, 킨타 불의 산록, 나머지 자유</li>
+            </ul>
+          </div>
+        </div>
+        <div class="content amountFocusing">
+          <h2>양 특화</h2>
+          <p>수확량을 늘리는데 집중하는 방법이다.</p>
+          <div class="tip">
+            <ul>
+              <li>봄
+                <ul>
+                  <li>1) 볍씨 선별은 <strong>가볍게</strong> 한다.</li>
+                  <li>2) 육모는 <strong>촘촘하게</strong> 한다.</li>
+                  <li>3) 모내기는 너무 <strong>밀집되지 않게</strong> 한다.</li>
+                </ul>
+              </li>
+              <li>여름
+                <ul>
+                  <li>1) 출수까지 <strong>수비 비료</strong>를 적당량 준다.</li>
+                  <li>2) 한여름에 <strong>중간 낙수</strong>를 한다.</li>
+                  <li>3) 출수 뒤에 <strong>엽비 비료</strong>를 많이, 물은 <strong>심수</strong>로 유지한다.</li>
+                </ul>
+              </li>
+              <li>가을
+                <ul>
+                  <li>1) 출수단계에서 물을 빼고 충분히 말린다.</li>
+                  <li>2) 벼 말리기를 중간 정도로한다.</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="content statusFocusing">
+          <h2>맛찰경 특화</h2>
+          <p>맛, 찰기, 경도 상승에 집중하는 방법이다.</p>
+          <div class="tip">
+            <ul>
+              <li>봄
+                <ul>
+                  <li>1) 볍씨 선별은 <strong>엄격하게</strong> 한다.</li>
+                  <li>2) 육모는 성기게 한다.</li>
+                  <li>3) 모내기는 <strong>적당히 성기게</strong> 한다.</li>
+                </ul>
+              </li>
+              <li>여름
+                <ul>
+                  <li>1) 출수까지 <strong>수비 비료</strong>를 적당량 준다.</li>
+                  <li>2) 츨수 뒤에 <strong>엽비 비료</strong>를 적게, 물은 <strong>천수</strong>로 유지한다.</li>
+                </ul>
+              </li>
+              <li>가을
+                <ul>
+                  <li>1) 건조하고 맑은 날에 수확한다.</li>
+                  <li>2) 정미는 시원한 날에 한다.</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div> 
+        <div class="content beautyFocusing">
+          <h2>미 특화</h2>
+          <p>윤기 상승에 집중하는 방법이다.</p>
+          <div class="tip">
+            <ul>
+              <li>봄
+                <ul>
+                  <li>1) <strong>기비</strong>를 하지 않는다.</li>
+                  <li>2) 볍시 선별은 <strong>이수선</strong>으로 한다.</li>
+                  <li>3) 육모는 <strong>성기게</strong> 한다.</li>
+                  <li>4) 모내기는 <strong>적당히 성기게</strong> 한다.</li>
+                </ul>
+              </li>
+              <li>여름
+                <ul>
+                  <li>1) 물은 <strong>심수</strong>를 유지, <strong>오리</strong>를 푼다.</li>
+                  <li>2) 중간 낙수는 <strong>짧게</strong> 한다.</li>
+                  <li>3) 출수에서 등숙기까지는 <strong>물을 넘치게</strong> 댄다.</li>
+                </ul>
+              </li>
+              <li>가을
+                <ul>
+                  <li>1) 수확은 빠른 시기에 한다.</li>
+                  <li>2) 정미는 시원할 때, 현미 또는 백미로 한다.</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="content scentFocusing">
+          <h2>향 특화</h2>
+          <p>향 상승에 집중하는 방법이다.</p>
+          <div class="tip">
+            <ul>
+              <li>봄
+                <ul>
+                  <li>1) 볍씨 선별은 <strong>엄격하게</strong> 한다.</li>
+                  <li>2) 육모는 <strong>성기게</strong> 한다.</li>
+                  <li>3) 모내기도 <strong>성기게</strong> 한다.</li>
+                </ul>
+              </li>
+              <li>여름
+                <ul>
+                  <li>1) 중간 낙수를 제외하고 항상 <strong>천수</strong>를 유지한다.</li>
+                  <li>2) 고온을 피한다.</li>
+                </ul>
+              </li>
+              <li>가을
+                <ul>
+                  <li>1) 수확은 빠른 시기에 한다.</li>
+                  <li>2) 현미에 가까울 수록 향이 강하다.</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="content foundation">
+          <h2>一 ·기비</h2>
+          <p>밭을 갈기 전 비료를 뿌린다.</p>
+          <table>
+            <tr>
+              <th>비고</th>
+              <th>양</th>
+              <th>맛</th>
+              <th>경도</th>
+              <th>찰기</th>
+              <th>윤기</th>
+              <th>향</th>
+            </tr>
+            <tr>
+              <td>기비 있음</td>
+              <td>3</td>
+              <td>3</td>
+              <td>3</td>
+              <td>1</td>
+              <td><em class="minus">-10</em></td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>기비 없음</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>10</td>
+              <td></td>
+            </tr>
+          </table>
+          <div class="tip">
+            <ul>
+              <li>기비는 독성을 최대한 마이너스로 맞춰준다. (달의 협토가 유용)</li>
+              <li>전날 식사가 비료에 영향을 미친다.
+                <table>
+                  <tr>
+                    <th>식사</th>
+                    <th>보너스</th>
+                  </tr>
+                  <tr>
+                    <th>국</th>
+                    <td>근비</td>
+                  </tr>
+                  <tr>
+                    <th>고기</th>
+                    <td>수비</td>
+                  </tr>
+                  <tr>
+                    <th>야채절임</th>
+                    <td>옆비</td>
+                  </tr>
+                  <tr>
+                    <th>곡물</th>
+                    <td>세가지 모두에 살짝 플러스</td>
+                  </tr>
+                  <tr>
+                    <th>음료</th>
+                    <td>비료 추가재료 상승값에 살짝 플러스</td>
+                  </tr>
+                  <tr>
+                    <th>백미</th>
+                    <td>추가재료로서 능력치 플러스에 더해 비료 전부에 플러스</td>
+                  </tr>
+                </table>
+              </li>
+              <li>비료를 뿌리고 <strong>10시간</strong> 이내에 논갈기를 진행해야 기비로 인정된다.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="content cultivation">
+          <h2>二 ·논갈기</h2>
+          <p>논밭을 갈아 땅을 고른다.</p>
+          <table>
+            <tr>
+              <th>비고</th>
+              <th>양</th>
+              <th>맛</th>
+              <th>경도</th>
+              <th>찰기</th>
+              <th>윤기</th>
+              <th>향</th>
+            </tr>
+            <tr>
+              <td>논갈기: 100%</td>
+              <td>3</td>
+              <td>3</td>
+              <td>3</td>
+              <td>1</td>
+              <td>3</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>논갈기: 90% 미만</td>
+              <td><em class="minus">-2</em></td>
+              <td><em class="minus">-2</em></td>
+              <td><em class="minus">-2</em></td>
+              <td><em class="minus">-2</em></td>
+              <td><em class="minus">-2</em></td>
+              <td><em class="minus">-2</em></td>
+            </tr>
+            <tr>
+              <td>돌을 모두 제거</td>
+              <td>3</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+            </tr>
+          </table>
+          <div class="tip">
+            <ul>
+              <li>경작은 <strong>겨울(3) 0시</strong>부터 밭갈기를 시작한다.</li>
+              <li>경작을 많이 할수록 <strong>잡초와 익충</strong>이 줄어든다.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="content riceSeed">
+          <h2>三 ·볍씨 선별</h2>
+          <p>품질이 좋은 볍씨를 골라낸다.</p>
+          <table>
+            <tr>
+              <th>비고</th>
+              <th>양</th>
+              <th>맛</th>
+              <th>경도</th>
+              <th>찰기</th>
+              <th>윤기</th>
+              <th>향</th>
+            </tr>
+            <tr>
+              <td>선별(가볍게)</td>
+              <td>30</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>선별(최소)</td>
+              <td><em class="minus">-10</em></td>
+              <td>3</td>
+              <td>3</td>
+              <td>1</td>
+              <td>1</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>선별(최대)</td>
+              <td><em class="minus">-30</em></td>
+              <td>6</td>
+              <td>3</td>
+              <td>2</td>
+              <td>2</td>
+              <td>6</td>
+            </tr>
+            <tr>
+              <td>이수선</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>4</td>
+              <td><em class="minus">-2</em></td>
+            </tr>
+            <tr>
+              <td>염수선</td>
+              <td></td>
+              <td>2</td>
+              <td>2</td>
+              <td>2</td>
+              <td><em class="minus">-4</em></td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>염수선(가볍게)</td>
+              <td>4</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td><em class="minus">-2</em></td>
+              <td>1.5</td>
+            </tr>
+          </table>
+          <div class="tip">
+            <ul>
+              <li><strong>선별(가벼움)</strong>: 목백이 뜨지 않은 상태</li>
+              <li><strong>선별(최소)</strong>: 목백이 수평으로 뜬 상태</li>
+              <li><strong>선별(최대)</strong>: 목백이 수직으로 뜬 상태</li>
+              <li>진흙선별 기준 수평은 약50%, 수직은 100%를 투여해야한다.</li>
+              <li>소금선별 기준 수평은 약30%, 수직은 약70%를 투여해야한다.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="content growSeed">
+          <h2>四 ·육모</h2>
+          <p>볍씨를 어떻게 뿌릴지 정한다.</p>
+          <table>
+            <tr>
+              <th>비고</th>
+              <th>양</th>
+              <th>맛</th>
+              <th>경도</th>
+              <th>찰기</th>
+              <th>윤기</th>
+              <th>향</th>
+            </tr>
+            <tr>
+              <td>촘촘하게 뿌림</td>
+              <td>30</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>성기게 뿌림</td>
+              <td><em class="minus">-30</em></td>
+              <td>3</td>
+              <td>3</td>
+              <td>1</td>
+              <td>3</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>봄에 뿌림</td>
+              <td><em class="minus">-3</em></td>
+              <td>3</td>
+              <td>3</td>
+              <td>1</td>
+              <td>3</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>여름에 뿌림</td>
+              <td><em class="minus">-6</em></td>
+              <td><em class="minus">-1</em></td>
+              <td><em class="minus">-1</em></td>
+              <td><em class="minus">-1</em></td>
+              <td><em class="minus">-1</em></td>
+              <td><em class="minus">-1</em></td>
+            </tr>
+          </table>
+          <div class="tip">
+            <ul>
+              <li>해당 과정까지 겨울(3)에 마무리해야 <strong>'빨리 심기'</strong> 보너스를 얻을 수 있다.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="content planting">
+          <h2>五 ·모내기</h2>
+          <p>밭에 모를 심는다.</p>
+          <table>
+            <tr>
+              <th>비고</th>
+              <th>양</th>
+              <th>맛</th>
+              <th>경도</th>
+              <th>찰기</th>
+              <th>윤기</th>
+              <th>향</th>
+            </tr>
+            <tr>
+              <td>적당함</td>
+              <td>16</td>
+              <td>3</td>
+              <td>3</td>
+              <td>1</td>
+              <td>1</td>
+              <td><em class="minus">-2</em></td>
+            </tr>
+            <tr>
+              <td>조금 소식</td>
+              <td><em class="minus">-10</em></td>
+              <td>10</td>
+              <td>4</td>
+              <td>2</td>
+              <td>3</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>소식</td>
+              <td><em class="minus">-15</em></td>
+              <td><em class="minus">-1</em></td>
+              <td><em class="minus">-1</em></td>
+              <td><em class="minus">-1</em></td>
+              <td><em class="minus">-1</em></td>
+              <td>10</td>
+            </tr>
+            <tr>
+              <td>빨리 심기(조식)</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>15</td>
+              <td><em class="minus">-2</em></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>물(1% 이상)</td>
+              <td>3</td>
+              <td>3</td>
+              <td>3</td>
+              <td>1</td>
+              <td>3</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>강풍</td>
+              <td><em class="minus">-3</em></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td><em class="minus">-2</em></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>추움</td>
+              <td><em class="minus">-2</em></td>
+              <td><em class="minus">-2</em></td>
+              <td><em class="minus">-2</em></td>
+              <td><em class="minus">-2</em></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>더움</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+            </tr>
+          </table>
+          <div class="tip">
+            <ul>
+              <li>촘촘하게 심을 수록 양이, 성기게 심을 수록 맛 또는 향의 스탯이 올라간다.</li>
+              <li>모내기가 가능한 즉시 심는 것이 좋다.</li>
+              <li>모내기 직후 <strong>비료는 금지</strong></li>
+            </ul>
+          </div>
+        </div>
+        <div class="content catWait">
+          <h2>六 ·묘대기</h2>
+          <p>모내기 이후 벼가 '모' 상태일때 진행된다.</p>
+          <table>
+            <tr>
+              <th>비고</th>
+              <th>양</th>
+              <th>맛</th>
+              <th>경도</th>
+              <th>찰기</th>
+              <th>윤기</th>
+              <th>향</th>
+            </tr>
+            <tr>
+              <td>기본</td>
+              <td>3</td>
+              <td>3</td>
+              <td>3</td>
+              <td></td>
+              <td>1.5</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>물</td>
+              <td>3</td>
+              <td>3</td>
+              <td>3</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+            </tr>
+          </table>
+          <div class="tip">
+            <ul>
+              <li>모내기 시기가 늦을 경우 해당 단계가 건너뛰어질 수 있다.</li>
+              <li>묘대기는 24시간 동안 지속되며, 이후 1차 분얼기로 접어든다.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="content growingSeason">
+          <h2>七 ·분얼기</h2>
+          <p>벼의 줄기가 새로 분화하는 단계이다.</p>
+          <table>
+            <tr>
+              <th>1차 분얼기</th>
+              <th>양</th>
+              <th>맛</th>
+              <th>경도</th>
+              <th>찰기</th>
+              <th>윤기</th>
+              <th>향</th>
+            </tr>
+            <tr>
+              <td>기본</td>
+              <td>3</td>  
+              <td>3.5</td>  
+              <td>3</td>  
+              <td>3</td>  
+              <td>1.5</td>  
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>물이있음</td>
+              <td>3</td>
+              <td>3</td>
+              <td>3</td>
+              <td>3</td>
+              <td></td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>천수+비료 있음</td>
+              <td>1.5</td>
+              <td>3</td>
+              <td>2</td>
+              <td>1</td>
+              <td></td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>심수+비료 없음</td>
+              <td>3</td>
+              <td>3</td>
+              <td>3</td>
+              <td>3</td>
+              <td><em class="minus">-3</em></td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>비료 적당</td>
+              <td>3</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td><em class="minus">-2</em></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>비료 부족</td>
+              <td><em class="minus">-4</em></td>
+              <td><em class="minus">-3</em></td>
+              <td><em class="minus">-3</em></td>
+              <td><em class="minus">-1</em></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>일조량</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td></td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>추움</td>
+              <td></td>
+              <td><em class="minus">-2</em></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td><em class="minus">-3</em></td>
+            </tr>
+            <tr>
+              <td>오리</td>
+              <td><em class="minus">-2</em></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>6</td>
+              <td></td>
+            </tr>
+          </table>
+          <table>
+            <tr>
+              <th>2차 분얼기</th>
+              <th>양</th>
+              <th>맛</th>
+              <th>경도</th>
+              <th>찰기</th>
+              <th>윤기</th>
+              <th>향</th>
+            </tr>
+            <tr>
+              <td>기본</td>
+              <td>3</td>  
+              <td>3.5</td>  
+              <td>3</td>  
+              <td></td>  
+              <td>1.5</td>  
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>천수</td>
+              <td>2</td>
+              <td>5</td>
+              <td>4</td>
+              <td>4</td>
+              <td></td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>심수</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>8</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>비료 적당</td>
+              <td>4</td>
+              <td>4</td>
+              <td>3.5</td>
+              <td>3</td>
+              <td><em class="minus">-3</em></td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>비료 과잉</td>
+              <td><em class="minus">-2</em></td>
+              <td><em class="minus">-2</em></td>
+              <td><em class="minus">-2</em></td>
+              <td><em class="minus">-2</em></td>
+              <td><em class="minus">-10</em></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>따뜻함</td>
+              <td>3</td>
+              <td>2</td>
+              <td>2</td>
+              <td>1</td>
+              <td></td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>더움</td>
+              <td>1</td>
+              <td>3</td>
+              <td>3</td>
+              <td>1</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>추움</td>
+              <td><em class="minus">-2</em></td>
+              <td><em class="minus">-2</em></td>
+              <td><em class="minus">-2</em></td>
+              <td><em class="minus">-2</em></td>
+              <td></td>
+              <td><em class="minus">-3</em></td>
+            </tr>
+            <tr>
+              <td>오리</td>
+              <td><em class="minus">-2</em></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>6</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td colspan="7">비료 적당: 양분 1~100% 사이, 비료 과잉: 양분 100% 초과</td>
+            </tr>
+          </table>
+          <table>
+            <tr>
+              <th>3차 분얼기</th>
+              <th>양</th>
+              <th>맛</th>
+              <th>경도</th>
+              <th>찰기</th>
+              <th>윤기</th>
+              <th>향</th>
+            </tr>
+            <tr>
+              <td>기본</td>
+              <td>3</td>  
+              <td>3.5</td>  
+              <td>3</td>  
+              <td></td>  
+              <td>1.5</td>  
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>중간 낙수</td>
+              <td>6</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>심수</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>20</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>따뜻함</td>
+              <td>2</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>낮: 더움</td>
+              <td><em class="minus">-3</em></td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td></td>
+              <td>6</td>
+            </tr>
+            <tr>
+              <td>밤: 추움</td>
+              <td><em class="minus">-3</em></td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td></td>
+              <td>6</td>
+            </tr>
+          </table>
+          <div class="tip">
+            <ul>
+              <li><strong>천수</strong>로 물을 채우는 것이 좋다.</li>
+              <li>봄(3)부터 여름(2)까지 분얼기이다.</li>
+              <li><strong>1차 분얼기</strong>: 묘대기에서 24시간 후 시작하며, 19~29시간 동안 지속된다.</li>
+              <li><strong>2차 분얼기</strong>: 5~23시간 동안 지속된다.</li>
+              <li><strong>3차 분얼기</strong>: 18~26시간 동안 지속된다.</li>
+              <li>3차 분얼기 때 중간 <strong>낙수과정이</strong> 있어야 한다.(6시간 지속)
+                <table>
+                  <tr>
+                    <th>기온 ▲</th>
+                    <td>양 ▲</td>
+                  </tr>
+                  <tr>
+                    <th>기온 ▼</th>
+                    <td>맛, 찰기, 경도 ▲</td>
+                  </tr>
+                  <tr>
+                    <th>낙수 ▼</th>
+                    <td>윤기 ▲</td>
+                  </tr>
+                  <tr>
+                    <th>출수기까지</th>
+                    <td>향 ▲</td>
+                  </tr>
+                </table>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="content outWater">
+          <h2>八 ·출수기</h2>
+          <p>벼의 이삭이 나서 무르익는 단계이다.</p>
+          <table>
+            <tr>
+              <th>비고</th>
+              <th>양</th>
+              <th>맛</th>
+              <th>경도</th>
+              <th>찰기</th>
+              <th>윤기</th>
+              <th>향</th>
+            </tr>
+            <tr>
+              <td>기본</td>
+              <td>3</td>
+              <td>3.5</td>
+              <td>3</td>
+              <td></td>
+              <td>2</td>
+              <td>2.5</td>
+            </tr>
+            <tr>
+              <td>비료 적당</td>
+              <td>1</td>
+              <td>6</td>
+              <td>3</td>
+              <td>3</td>
+              <td><em class="minus">-3</em></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>비료 과잉</td>
+              <td></td>
+              <td><em class="minus">-5</em></td>
+              <td><em class="minus">-5</em></td>
+              <td><em class="minus">-5</em></td>
+              <td><em class="minus">-10</em></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>천수이상</td>
+              <td>3</td>
+              <td>3</td>
+              <td>2</td>
+              <td>1</td>
+              <td></td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>심수</td>
+              <td>1</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>20</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>물 과잉</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>1</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>물 없음</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>따뜻함</td>
+              <td></td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td></td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>더움</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td><em class="minus">-3</em></td>
+            </tr>
+            <tr>
+              <td>낮: 더움</td>
+              <td><em class="minus">-3</em></td>
+              <td>3</td>
+              <td>2</td>
+              <td>2</td>
+              <td><em class="minus">-3</em></td>
+              <td><em class="minus">-6</em></td>
+            </tr>
+            <tr>
+              <td>밤: 추움</td>
+              <td><em class="minus">-3</em></td>
+              <td>3</td>
+              <td>2</td>
+              <td>2</td>
+              <td><em class="minus">-3</em></td>
+              <td><em class="minus">-6</em></td>
+            </tr>
+            <tr>
+              <td>오리</td>
+              <td></td>
+              <td><em class="minus">-1.5</em></td>
+              <td><em class="minus">-1</em></td>
+              <td></td>
+              <td>6</td>
+              <td><em class="minus">-0.5</em></td>
+            </tr>
+          </table>
+          <div class="tip">
+            <ul>
+              <li>심수는 물의 양 약<strong>25~50%</strong>를 유지, 그 이상은 과잉이다.</li>
+              <li>보통 여름(2)부터 여름(3)까지 출수기이며, 17~23시간 지속된다.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="content ripeningStage">
+          <h2>九 ·등숙기</h2>
+          <p>벼가 무르익는 단계이다.</p>
+          <table>
+            <tr>
+              <th>비고</th>
+              <th>양</th>
+              <th>맛</th>
+              <th>경도</th>
+              <th>찰기</th>
+              <th>윤기</th>
+              <th>향</th>
+            </tr>
+            <tr>
+              <td>기본</td>
+              <td>3</td>
+              <td>3.5</td>
+              <td>3</td>
+              <td></td>
+              <td>1.5</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>비료 없음</td>
+              <td><em class="minus">-4</em></td>
+              <td></td>
+              <td>10</td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>비료 적당</td>
+              <td>3</td>
+              <td>3</td>
+              <td>1</td>
+              <td>1</td>
+              <td><em class="minus">-3</em></td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>비료 과잉</td>
+              <td>10</td>
+              <td><em class="minus">-6</em></td>
+              <td><em class="minus">-6</em></td>
+              <td><em class="minus">-6</em></td>
+              <td><em class="minus">-10</em></td>
+              <td><em class="minus">-6</em></td>
+            </tr>
+            <tr>
+              <td>물 없음</td>
+              <td><em class="minus">-6</em></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>10</td>
+            </tr>
+            <tr>
+              <td>천수</td>
+              <td><em class="minus">-3</em></td>
+              <td>3</td>
+              <td>2</td>
+              <td>1</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>심수</td>
+              <td>6</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>5</td>
+              <td><em class="minus">-6</em></td>
+            </tr>
+            <tr>
+              <td>흐르는 물</td>
+              <td></td>
+              <td><em class="minus">-1.5</em></td>
+              <td><em class="minus">-1</em></td>
+              <td></td>
+              <td>20</td>
+              <td><em class="minus">-1</em></td>
+            </tr>
+            <tr>
+              <td>흐르는 물+높은 수온</td>
+              <td></td>
+              <td>3</td>
+              <td>2</td>
+              <td>1</td>
+              <td>20</td>
+              <td><em class="minus">-4</em></td>
+            </tr>
+            <tr>
+              <td>보통수온</td>
+              <td>2</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td></td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>높은수온</td>
+              <td><em class="minus">-2</em></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td><em class="minus">-8</em></td>
+            </tr>
+            <tr>
+              <td>낮은수온</td>
+              <td>2</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td><em class="minus">-6</em></td>
+            </tr>
+            <tr>
+              <td>낮: 더움</td>
+              <td><em class="minus">-3</em></td>
+              <td>3</td>
+              <td>2</td>
+              <td>2</td>
+              <td><em class="minus">-3</em></td>
+              <td>6</td>
+            </tr>
+            <tr>
+              <td>밤: 추움</td>
+              <td><em class="minus">-3</em></td>
+              <td>3</td>
+              <td>2</td>
+              <td>2</td>
+              <td><em class="minus">-3</em></td>
+              <td>6</td>
+            </tr>
+            <tr>
+              <td>노린재</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td><em class="minus">-10</em></td>
+              <td></td>
+            </tr>
+          </table>
+          <div class="tip">
+            <ul>
+              <li>흐르는 물은 입수용 수문과 출수용 수문을 모두 <strong>개방</strong>하면 된다.</li>
+              <li>비료없음은 0%, 비료적당은 <strong>1~100%</strong>, 과잉은 초과</li>
+              <li>추수가능 시기부터 최대 <strong>6시간</strong>까지 성장을 한다.</li>
+              <li>등숙기에는 잡초가 자라지 않는다.</li>
+              <li>해당기간에는 <strong>병충관리</strong>에 신경써야한다.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="content harvest">
+          <h2>十 ·수확</h2>
+          <p>벼를 수확하는 단계이다.</p>
+          <table>
+            <tr>
+              <th>비고</th>
+              <th>양</th>
+              <th>맛</th>
+              <th>경도</th>
+              <th>찰기</th>
+              <th>윤기</th>
+              <th>향</th>
+            </tr>
+            <tr>
+              <td>건조도 높음</td>
+              <td>6</td>
+              <td>3</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>건조도 낮음</td>
+              <td><em class="minus">-2</em></td>
+              <td><em class="minus">-1</em></td>
+              <td><em class="minus">-1</em></td>
+              <td><em class="minus">-1</em></td>
+              <td><em class="minus">-1</em></td>
+              <td><em class="minus">-1</em></td>
+            </tr>
+            <tr>
+              <td>날씨: 맑음</td>
+              <td>1</td>
+              <td>3</td>
+              <td>2</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>날씨: 비</td>
+              <td><em class="minus">-1</em></td>
+              <td><em class="minus">-6</em></td>
+              <td><em class="minus">-1</em></td>
+              <td><em class="minus">-1</em></td>
+              <td><em class="minus">-1</em></td>
+              <td><em class="minus">-1</em></td>
+            </tr>
+            <tr>
+              <td>수확중</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>6</td>
+              <td>6</td>
+            </tr>
+            <tr>
+              <td>물</td>
+              <td><em class="minus">-3</em></td>
+              <td><em class="minus">-3</em></td>
+              <td><em class="minus">-3</em></td>
+              <td><em class="minus">-3</em></td>
+              <td><em class="minus">-3</em></td>
+              <td><em class="minus">-3</em></td>
+            </tr>
+          </table>
+          <div class="tip">
+            <ul>
+              <li>물은 수확종료 시 논에 물이 <strong>1%이상</strong> 있는 경우</li>
+              <li>전날에 날씨 맑음 <strong>기도</strong>는 필수이다.</li>
+              <li>수확하기 전 미리 물을 빼두면 25% <strong>건조보너스</strong>를 얻는다.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="content hanging">
+          <h2>十一 ·볏단 걸기</h2>
+          <p>볏단을 널어 말리는 단계이다.</p>
+          <table>
+            <tr>
+              <th>비고</th>
+              <th>양</th>
+              <th>맛</th>
+              <th>경도</th>
+              <th>찰기</th>
+              <th>윤기</th>
+              <th>향</th>
+            </tr>
+            <tr>
+              <td>건조도: 충분 90% 이상</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>건조도: 적당 50% 이상</td>
+              <td>3</td>
+              <td>3</td>
+              <td>1</td>
+              <td>1</td>
+              <td>3</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>건조도: 부족 25% 이상</td>
+              <td><em class="minus">-1</em></td>
+              <td><em class="minus">-1</em></td>
+              <td><em class="minus">-1</em></td>
+              <td><em class="minus">-1</em></td>
+              <td><em class="minus">-1</em></td>
+              <td><em class="minus">-1</em></td>
+            </tr>
+            <tr>
+              <td>건조도: 습기참 0%</td>
+              <td><em class="minus">-3</em></td>
+              <td><em class="minus">-3</em></td>
+              <td><em class="minus">-3</em></td>
+              <td><em class="minus">-3</em></td>
+              <td><em class="minus">-3</em></td>
+              <td><em class="minus">-3</em></td>
+            </tr>
+          </table>
+          <div class="tip">
+            <ul>
+              <li>90%이상 건조보다 50~89%의 건조도가 더 좋으며 맑은날 기준으로 약 6시간, 사쿠나히메의 대사가 <strong>'슬슬 괜찮겠다'</strong>가 최적</li>
+              <li>비가 올 경우 <strong>0%</strong>로 초기화된다.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="content threshing">
+          <h2>十二 ·탈곡</h2>
+          <p>말린 볏단을 탈곡하는 단계이다.</p>
+        </div>
+        <div class="content milling">
+          <h2>十三 ·도정</h2>
+          <p>벼를 찧어 쌀로 만드는 단계이다.</p>
+          <table>
+            <tr>
+              <th>비고</th>
+              <th>양</th>
+              <th>맛</th>
+              <th>경도</th>
+              <th>찰기</th>
+              <th>윤기</th>
+              <th>향</th>
+            </tr>
+            <tr>
+              <td>백미</td>
+              <td>3</td>
+              <td>3</td>
+              <td>3</td>
+              <td>3</td>
+              <td>3</td>
+              <td><em class="minus">-10</em></td>
+            </tr>
+            <tr>
+              <td>현미</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>6</td>
+              <td>15</td>
+            </tr>
+            <tr>
+              <td>시원함</td>
+              <td></td>
+              <td>3</td>
+              <td>3</td>
+              <td>3</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>낮</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>밤</td>
+              <td></td>
+              <td>3</td>
+              <td>3</td>
+              <td>3</td>
+              <td></td>
+              <td></td>
+            </tr>
+          </table>
+          <div class="tip">
+            <ul>
+              <li>현미에서 1~9 도정미, 백미로 이어진다.</li>
+              <li>쌀은 각각 999섬씩 보관할 수 있다.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -4,45 +4,76 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JilMunSu</title>
   <script src="./js/jquery-3.6.0.min.js"></script>
   <script src="./js/common.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="stylesheet" href="./css/font.css">
   <link rel="stylesheet" href="./css/main.min.css">
-  <link rel=" shortcut icon" href=".ico">
+  <link rel="shortcut icon" href=".ico">
   <link rel="icon" href=".ico">
-  <title>JilMunSu</title>
+  <script> 
+    $(document).ready(function(){
+      AOS.init();
+      $(".navMenu").load("/template/include/nav.html");
+      $( window ).scroll(function() {
+	      if ( $( this ).scrollTop() > 100 ) {
+          $('header').css("background", "#333");
+	      	$( '.goTop' ).fadeIn();
+	      } else {
+	      	$( '.goTop' ).fadeOut();
+          $('header').css("background", "none");
+	      }
+      });
+    });
+    // 스크롤
+    function goTop() {
+      $( 'html, body' ).animate( { scrollTop : 0 }, 400 );
+	    return false;
+    }
+  </script> 
 </head>
 <body>
-  <div class="mainContent">
-    <div class="contaion">
-      <div class="onlineProfile">
-        <!-- <button id="toggleTheme" class="">다크모드</button> -->
-        <a href="">
-          <figcaption>
-            <div class="line">
-              <span>
-                <p>logo</p>
-              </span>
-            </div>
-          </figcaption>
-        </a>
-      </div>
-
+  <!-- wrap -->
+  <div class="wrap">
+    <!-- 컨테이너 -->
+    <div class="contain">
+      <!-- 메인 페이지 -->
+      <div class="mainPage">
+        <header>
+          <a href="">
+            <h1>logo</h1>
+          </a>
           
 
-
-      <div class="offlineProfile">
-        <a href="">
-          <figcaption>
-            <div class="line">
-              <span>
-                <p>logo</p>
-              </span>
+          <nav class="navMenu"></nav>
+        </header>
+        <!-- 온라인 영역 -->
+        <div class="onlineProfile profile">
+          <div class="mainBanner">
+            <div class="profileTxt">
+              <h1>HELLO</h1>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque corporis autem commodi molestias! In nulla tempora accusamus maiores a placeat quia! Voluptate animi alias nam vitae. Blanditiis rerum eos perferendis.</p>
             </div>
-          </figcaption>
-        </a>
+          </div>
+          <div class="content">
+
+          </div>
+        </div>
+        <!-- //온라인 영역 -->
+        <!-- 오프라인 영역 -->
+        <div class="offlineProfile profile">
+          
+        </div>
+        <!-- //오프라인 영역 -->
       </div>
+
+      <button onclick="goTop()" class="goTop"><span>맨 위로</span></button>
+      <!-- //메인 페이지 -->      
     </div>
+    <!-- //컨테이너 -->
   </div>
+  <!-- //wrap -->
 </body>
 </html>
