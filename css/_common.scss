@@ -16,16 +16,18 @@ $light:#bbb;
 $white:#fff;
 
 /* ---공통--- */
-html {background:$white;color:$gray;-ms-user-select:none;-moz-user-select:-moz-none;-webkit-user-select:none;-khtml-user-select:none;user-select:none;}
+html {background:$white;color:$gray;-ms-user-select:none;-moz-user-select:-moz-none;-webkit-user-select:none;-khtml-user-select:none;-webkit-tap-highlight-color: transparent;user-select:none;}
 html.dark {background:$dark;color:$light;}
 
 .contain {height:100vh;}
 .contain header {position:fixed;top:0;left:0;width:calc(100vw - 100px);height:70px;padding:0 50px;}
 .contain header h1 {display:inline-block;width:70px;height:70px;font-size:30px;line-height:70px;}
-.contain header nav {position:absolute;top:0;right:0;}
-.contain .goTop {position:fixed;right:0;bottom:50px;display:none;width:50px;height:50px;background:#343434;border:none;border-radius:100%;cursor:pointer;}
+.contain header .mainMenu {position:absolute;top:0;right:0;}
+.contain .goTop {position:fixed;right:0;bottom:50px;display:none;width:50px;height:50px;background:#a7a7a7;border:none;border-radius:100%;cursor:pointer;}
 .contain .goTop span {clip-path:polygon(0 0, 0 0, 0 0);}
 
+.contain footer {width:100vw;height:7rem;background:#333;color:#bbb;}
+.contain footer .copyright {padding:10px;}
 /* 토글버튼 */
 .toggleBox {position:relative;display:inline-block;width:55px;height:30px;} 
 .toggleBox input {width:0;height:0;opacity:0;} 

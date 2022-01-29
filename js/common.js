@@ -1,4 +1,5 @@
 window.onload=function(){
+  // 다크모드
   const togglebutton = document.getElementById("toggleTheme"); 
   togglebutton.addEventListener("click", () => {
     const html = document.documentElement;
@@ -13,6 +14,7 @@ window.onload=function(){
     }
   });
 
+  // 다크모드 저장
   const storedTheme = localStorage.getItem("darkTheme");
   if (storedTheme !== null) {
     if (storedTheme === "true") {
@@ -24,5 +26,14 @@ window.onload=function(){
       document.documentElement.classList.add("dark");
       togglebutton.checked = false;
       console.log('lightMode');
+  }
+
+  // 현재 스크롤 위치
+  var nowScrollTop = window.scrollY || document.documentElement.scrollTop;
+  console.log(nowScrollTop);
+  if(nowScrollTop > 0) {
+    $('header').css("background", "#333");
+  } else {
+    $('header').css("background", "none");
   }
 }

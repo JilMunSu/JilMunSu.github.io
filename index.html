@@ -11,25 +11,22 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="stylesheet" href="./css/font.css">
   <link rel="stylesheet" href="./css/main.min.css">
-  <link rel="shortcut icon" href=".ico">
-  <link rel="icon" href=".ico">
   <script> 
     $(document).ready(function(){
       AOS.init();
-      $(".navMenu").load("/template/include/nav.html");
-      $( window ).scroll(function() {
-	      if ( $( this ).scrollTop() > 100 ) {
+      $(window).scroll(function() {
+	      if ($(this).scrollTop() > 100) {
           $('header').css("background", "#333");
-	      	$( '.goTop' ).fadeIn();
+	      	$('.goTop').fadeIn();
 	      } else {
-	      	$( '.goTop' ).fadeOut();
+	      	$('.goTop').fadeOut();
           $('header').css("background", "none");
 	      }
       });
     });
     // 스크롤
     function goTop() {
-      $( 'html, body' ).animate( { scrollTop : 0 }, 400 );
+      $('html, body').animate({scrollTop : 0}, 400);
 	    return false;
     }
   </script> 
@@ -45,28 +42,59 @@
           <a href="">
             <h1>logo</h1>
           </a>
-          
-
-          <nav class="navMenu"></nav>
+          <div class="mainMenu">
+            <ul>
+              <li><a href=""></a></li>
+              <li><a href=""></a></li>
+              <li><a href=""></a></li>
+              <li><a href=""></a></li>
+              <li></li>
+              <li>
+                <label class="toggleBox"> 
+                  <input type="checkbox" id="toggleTheme"/> 
+                  <span class="toggle"></span> 
+                </label>
+              </li>
+            </ul>
+          </div>
         </header>
-        <!-- 온라인 영역 -->
-        <div class="onlineProfile profile">
-          <div class="mainBanner">
-            <div class="profileTxt">
-              <h1>HELLO</h1>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque corporis autem commodi molestias! In nulla tempora accusamus maiores a placeat quia! Voluptate animi alias nam vitae. Blanditiis rerum eos perferendis.</p>
+        <!-- 프로필 영역 -->
+        <div class="profile">
+          <div class="quickMenu">
+            <ul>
+              <li><a href=""></a></li>
+              <li><a href=""></a></li>
+              <li><a href=""></a></li>
+              <li><a href=""></a></li>
+            </ul>
+          </div>
+
+          <div class="back">
+            <div class="mainBanner">
+              <div class="profileTxt">
+                <h2>HELLO</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque corporis autem commodi molestias! In nulla tempora accusamus maiores a placeat quia! Voluptate animi alias nam vitae. Blanditiis rerum eos perferendis.</p>
+              </div>
             </div>
           </div>
-          <div class="content">
 
+          <div class="content aboutMe" data-aos="fade-up">
+            <h3>About Me</h3>
+          </div>
+          <div class="content think" data-aos="fade-up">
+            <h3>I Think</h3>
+          </div>
+          <div class="content make" data-aos="fade-up">
+            <h3>I Make</h3>
           </div>
         </div>
-        <!-- //온라인 영역 -->
-        <!-- 오프라인 영역 -->
-        <div class="offlineProfile profile">
-          
-        </div>
-        <!-- //오프라인 영역 -->
+        <!-- //프로필 영역 -->
+        <footer>
+          <div class="copyright">
+            <p>본 사이트는 상업적 목적이 아닌 개인 포트폴리오 사이트로 제작되었습니다.</p>
+            <span>Copyright 2022. SangHyeuk Lee. All rights reserved.</span>
+          </div>
+        </footer>
       </div>
 
       <button onclick="goTop()" class="goTop"><span>맨 위로</span></button>
