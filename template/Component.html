@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JilMunSu - 공통 컴포넌트</title>
+  <script src="../js/jquery-3.6.0.min.js"></script>
+  <script src="../js/common.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="../css/font.css">
+  <link rel="stylesheet" href="../css/main.min.css">
+</head>
+<body>
+  <div class="component">
+    <header id="menu">
+      <h1>▶ 공통 컴포넌트 정의 ◀</h1>
+    </header>
+    <table>
+      <tr>
+        <th id="menuA">TEXT STYLE</th>
+        <td class="textStyle">
+          <h2>기본적인 폰트 - Maplestory Light, 14px = 1rem</h2>
+          <ul>
+            <li><span>abcdefghijklmnopqrstuvwxyz</span></li>
+            <li><span class="uppercase">abcdefghijklmnopqrstuvwxyz</span></li>
+            <li><span>123456790</span></li>
+            <li><span>가나다라마바사아자차카타파하</span></li>
+          </ul>
+          <h2>기본적인 폰트 - Maplestory Bold, 14px = 1rem</h2>
+          <ul>
+            <li><span class="ffMapleB">abcdefghijklmnopqrstuvwxyz</span></li>
+            <li><span class="ffMapleB uppercase">abcdefghijklmnopqrstuvwxyz</span></li>
+            <li><span class="ffMapleB">123456790</span></li>
+            <li><span class="ffMapleB">가나다라마바사아자차카타파하</span></li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <th id="menuB">BUTTON STYLE</th>
+        <td class="buttonStyle">
+          <h2>일반적인 버튼 디자인</h2>
+          <ul>
+            <li>
+              <button class="btnG">BUTTON</button>
+              <button class="btnG" id="toggleTheme">다크모드</button>
+              <a class="goTop" href="#menu">맨 위로</a>
+            </li>
+          </ul>
+          <h2>네비게이션 버튼 디자인</h2>
+          <div class="quickMenu">
+            <ul>
+              <li class="quick typeA"><a href="#menuA">first Menu</a></li>
+              <li class="quick typeB"><a href="#menuB">second Menu</a></li>
+              <li class="quick typeC"><a href="#menuC">third Menu</a></li>
+              <li class="quick typeD"><a href="#menuD">fourth Menu</a></li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th id="menuC">INPUT STYLE</th>
+        <td class="inputStyle">
+
+        </td>
+      </tr>
+      <tr>
+        <th id="menuD">POPUP STYLE</th>
+        <td class="popupStyle"></td>
+      </tr>
+    </table>
+    <footer>
+      <div class="copyright">
+        <p>본 사이트는 상업적 목적이 아닌 개인 포트폴리오 사이트로 제작되었습니다.</p>
+        <span>Copyright 2022. SangHyeuk Lee. All rights reserved.</span>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

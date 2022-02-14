@@ -13,27 +13,13 @@
   <link rel="stylesheet" href="./css/main.min.css">
   <script> 
     $(document).ready(function(){
-      AOS.init();
-      $(window).scroll(function() {
-	      if ($(this).scrollTop() > 100) {
-          $('header').css("background", "#333");
-	      	$('.goTop').fadeIn();
-	      } else {
-	      	$('.goTop').fadeOut();
-          $('header').css("background", "none");
-	      }
-      });
+
     });
-    // 스크롤
-    function goTop() {
-      $('html, body').animate({scrollTop : 0}, 400);
-	    return false;
-    }
   </script> 
 </head>
 <body>
   <!-- wrap -->
-  <div class="wrap">
+  <div class="wrap" id="menu">
     <!-- 컨테이너 -->
     <div class="contain">
       <!-- 메인 페이지 -->
@@ -43,31 +29,22 @@
             <h1>logo</h1>
           </a>
           <div class="mainMenu">
-            <ul>
-              <li><a href=""></a></li>
-              <li><a href=""></a></li>
-              <li><a href=""></a></li>
-              <li><a href=""></a></li>
-              <li></li>
-              <li>
-                <label class="toggleBox"> 
-                  <input type="checkbox" id="toggleTheme"/> 
-                  <span class="toggle"></span> 
-                </label>
-              </li>
-            </ul>
+            <button class="btnG" id="toggleTheme">다크모드</button>
           </div>
         </header>
+        <!-- 퀵메뉴 영역 -->
+        <div class="quickMenu">
+          <ul>
+            <li class="quick typeA"><a href="#menuA">first Menu</a></li>
+            <li class="quick typeB"><a href="#menuB">second Menu</a></li>
+            <li class="quick typeC"><a href="#menuC">third Menu</a></li>
+            <li class="quick typeD"><a href="#menuD">fourth Menu</a></li>
+          </ul>
+        </div>
+        <!-- //퀵메뉴 영역 -->
         <!-- 프로필 영역 -->
         <div class="profile">
-          <div class="quickMenu">
-            <ul>
-              <li><a href=""></a></li>
-              <li><a href=""></a></li>
-              <li><a href=""></a></li>
-              <li><a href=""></a></li>
-            </ul>
-          </div>
+
 
           <div class="back">
             <div class="mainBanner">
@@ -78,13 +55,13 @@
             </div>
           </div>
 
-          <div class="content aboutMe" data-aos="fade-up">
+          <div id="menuA" class="content aboutMe">
             <h3>About Me</h3>
           </div>
-          <div class="content think" data-aos="fade-up">
+          <div id="menuB" class="content think">
             <h3>I Think</h3>
           </div>
-          <div class="content make" data-aos="fade-up">
+          <div id="menuC" class="content make">
             <h3>I Make</h3>
           </div>
         </div>
@@ -97,7 +74,7 @@
         </footer>
       </div>
 
-      <button onclick="goTop()" class="goTop"><span>맨 위로</span></button>
+      <a href="#menu" class="goTop">맨 위로</a>
       <!-- //메인 페이지 -->      
     </div>
     <!-- //컨테이너 -->

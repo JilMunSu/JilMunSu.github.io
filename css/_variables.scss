@@ -19,6 +19,13 @@ $coarse: coarse;
   }
 }
 
+@mixin lowdevice {
+  @media screen and (prefers-reduced-motion:reduce){
+    @content;
+  }
+}
+
+
 /* 모바일 버전(width:335px) */
 @mixin mobile {
   @media (min-width: #{$breakpoint-mobile}) and (max-width: #{$breakpoint-tablet - 1px}) {

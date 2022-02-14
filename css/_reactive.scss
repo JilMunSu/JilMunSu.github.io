@@ -1,4 +1,5 @@
 @import "./_variables.scss";
+
 /* 다크모드 */
 @include drakMode {
   html {
@@ -10,9 +11,13 @@
 /* 라이트모드 */
 @include lightMode {
   html {
-    background:$white;
-    color:$gray;
+    background:$light;
+    color:$dark;
   } 
+}
+/* 저사양 디바이스 */
+@include lowdevice {
+  
 }
 
 /* 모바일 버전 */
@@ -57,7 +62,7 @@
 @media (pointer: fine) {
   html {
     background:$white;
-    color:$gray;
+    color:$dark;
   }
 }
 

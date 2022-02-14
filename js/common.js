@@ -28,12 +28,23 @@ window.onload=function(){
       console.log('lightMode');
   }
 
-  // 현재 스크롤 위치
+  // 스크롤
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > 100) {
+      $('.contain header').css("background", "#333");
+      $('.goTop').fadeIn();
+    } else {
+      $('.goTop').fadeOut();
+      $('.contain header').css("background", "none");
+    }
+  });
+
+  // 새로고침 시 현재 스크롤 위치 기억
   var nowScrollTop = window.scrollY || document.documentElement.scrollTop;
   console.log(nowScrollTop);
   if(nowScrollTop > 0) {
-    $('header').css("background", "#333");
+    $('.contain header').css("background", "#333");
   } else {
-    $('header').css("background", "none");
+    $('.contain header').css("background", "none");
   }
 }

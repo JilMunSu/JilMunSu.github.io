@@ -10,28 +10,96 @@
 // transparentize(색,%), fade-out(색,%) : 색상을 더 투명하게 만든다.
 
 /* ---Color--- */
+$black:#000;
 $dark:#121212;
-$gray:#343434;
-$light:#bbb;
-$white:#fff;
+$gray:#8a8a8a;
+$white:#FFF;
+$light:#BBB;
+$red:#f55844;
+$pink:#FDB7DA;
+$yellow:#F7E7B1;
+$green:#14c056;
+$blue:#7acef0;
+$purple:#A9A0FC;
+$brown:#CFC3B5;
+
+/* --- Mixin --- */
+@mixin centerJAText {display:flex;justify-content:center;align-items:center;}
+@mixin centerAText {display:flex;align-items:center;}
+@mixin buttonBase {font-family:'mapleLight';position:relative;min-width:6rem;height:2.5rem;padding:0.5rem;background:none;border:1px solid $dark;border-radius:4px;color:$black;font-weight:bold;-webkit-box-shadow:7px 9px 40px -1px $gray;box-shadow:7px 9px 40px -1px $gray;overflow:hidden;}
+@mixin focusBase {outline:none;border:$brown !important;background:$brown !important;}
+
+/* Component */
+.component {
+  header {height:100px;
+    h1 {@include centerJAText;height:100%;font-size:1.5rem;}
+  }
+  table {width:100vw;
+    tr {border-top:1px solid #333;border-bottom:1px solid #333;
+      th {@include centerJAText;height:20px;border-bottom:1px solid #333;}
+      td {display:block;min-height:200px;padding:5px;
+        h2 {font-size:1.2rem;}
+        &.textStyle {
+          & > ul {
+            &:not(:last-child) {padding-bottom:7px;}
+            li {padding:3px;}
+          }
+        }
+        &.buttonStyle {
+          & > ul {
+            li {display:inline-block;padding:10px;}
+          }
+        }
+        &.inputStyle {
+          & > ul {
+            li {}
+          }
+        }
+
+      }
+    }
+  }
+}
+.ffMapleB {font-family:'mapleBold';}
+.uppercase {text-transform:uppercase;}
+
+/* button */
+button {
+  &.btnG {@include buttonBase;transition:0.5s ease-in-out;}
+  &:hover {
+
+  }
+  &:active {}
+  &:focus-visible {
+    @include focusBase;
+  }
+  .title {position:absolute;top:5%;left:0;width:100%;z-index:1;transform:translate(0, 7px);}
+}
+
+.quickMenu {position:fixed;right:2rem;top:100px;min-width:5rem;z-index:2;
+  ul {
+    .quick {position:relative;padding:0.7rem 0;
+      a {@include centerAText;position:relative;height:5rem;padding:0 10px 0 10px;background:$brown;}
+    }
+  }
+}
+.goTop {position:fixed;right:20px;bottom:50px;display:none;width:3rem;height:3rem;background:#a7a7a7;border:none;border-radius:100%;cursor:pointer;text-indent:100%;white-space:nowrap;overflow:hidden;}
+
+
+
+
+
+
 
 /* ---공통--- */
-html {background:$white;color:$gray;-ms-user-select:none;-moz-user-select:-moz-none;-webkit-user-select:none;-khtml-user-select:none;-webkit-tap-highlight-color: transparent;user-select:none;}
+html {background:$white;color:$gray;-ms-user-select:none;-moz-user-select:-moz-none;-webkit-user-select:none;-khtml-user-select:none;-webkit-tap-highlight-color:transparent;user-select:none;scroll-behavior:smooth;}
 html.dark {background:$dark;color:$light;}
 
 .contain {height:100vh;}
 .contain header {position:fixed;top:0;left:0;width:calc(100vw - 100px);height:70px;padding:0 50px;}
 .contain header h1 {display:inline-block;width:70px;height:70px;font-size:30px;line-height:70px;}
 .contain header .mainMenu {position:absolute;top:0;right:0;}
-.contain .goTop {position:fixed;right:0;bottom:50px;display:none;width:50px;height:50px;background:#a7a7a7;border:none;border-radius:100%;cursor:pointer;}
-.contain .goTop span {clip-path:polygon(0 0, 0 0, 0 0);}
 
-.contain footer {width:100vw;height:7rem;background:#333;color:#bbb;}
-.contain footer .copyright {padding:10px;}
-/* 토글버튼 */
-.toggleBox {position:relative;display:inline-block;width:55px;height:30px;} 
-.toggleBox input {width:0;height:0;opacity:0;} 
-.toggle {position:absolute;top:0;left:0;right:0;bottom:0;background-color:#ccc;box-shadow:inset 1px 5px 1px #999;border-radius:20px;-webkit-transition:.4s;transition:.4s;cursor:pointer;} 
-.toggle:before {content:"";position:absolute;left:4px;bottom:4px;width:22px;height:22px;background-color:#fff;border-radius:20px;-webkit-transition:.5s;transition:.4s;} 
-.toggleBox input:checked + .toggle {background-color:#F2D522;box-shadow:inset 1px 5px 1px #E3AE56;} 
-.toggleBox input:checked + .toggle:before {-webkit-transform:translateX(26px);-ms-transform:translateX(26px);transform:translateX(26px);}
+footer {width:100vw;height:7rem;background:#333;color:#bbb;}
+footer .copyright {padding:10px;}
+
