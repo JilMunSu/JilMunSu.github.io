@@ -14,12 +14,12 @@
 </head>
 <body>
   <div class="component">
-    <header id="menu">
+    <header>
       <h1>▶ 공통 컴포넌트 정의 ◀</h1>
     </header>
     <table>
       <tr>
-        <th id="menuA">TEXT STYLE</th>
+        <th id="menu1">TEXT STYLE</th>
         <td class="textStyle">
           <h2>기본적인 폰트 - Maplestory Light, 14px = 1rem</h2>
           <ul>
@@ -38,35 +38,35 @@
         </td>
       </tr>
       <tr>
-        <th id="menuB">BUTTON STYLE</th>
+        <th id="menu2">BUTTON STYLE</th>
         <td class="buttonStyle">
           <h2>일반적인 버튼 디자인</h2>
           <ul>
             <li>
               <button class="btnG">BUTTON</button>
               <button class="btnG" id="toggleTheme">다크모드</button>
-              <a class="goTop" href="#menu">맨 위로</a>
+              <button onclick="goTop()" class="goTop">맨 위로</button>
             </li>
           </ul>
           <h2>네비게이션 버튼 디자인</h2>
           <div class="quickMenu">
             <ul>
-              <li class="quick typeA"><a href="#menuA">first Menu</a></li>
-              <li class="quick typeB"><a href="#menuB">second Menu</a></li>
-              <li class="quick typeC"><a href="#menuC">third Menu</a></li>
-              <li class="quick typeD"><a href="#menuD">fourth Menu</a></li>
+              <li class="quick typeA"><button onclick="moveSC('1')">first Menu</button></li>
+              <li class="quick typeB"><button onclick="moveSC('2')">second Menu</button></li>
+              <li class="quick typeC"><button onclick="moveSC('3')">third Menu</button></li>
+              <li class="quick typeD"><button onclick="moveSC('4')">fourth Menu</button></li>
             </ul>
           </div>
         </td>
       </tr>
       <tr>
-        <th id="menuC">INPUT STYLE</th>
+        <th id="menu3">INPUT STYLE</th>
         <td class="inputStyle">
 
         </td>
       </tr>
       <tr>
-        <th id="menuD">POPUP STYLE</th>
+        <th id="menu4">POPUP STYLE</th>
         <td class="popupStyle"></td>
       </tr>
     </table>

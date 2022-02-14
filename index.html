@@ -19,7 +19,7 @@
 </head>
 <body>
   <!-- wrap -->
-  <div class="wrap" id="menu">
+  <div class="wrap">
     <!-- 컨테이너 -->
     <div class="contain">
       <!-- 메인 페이지 -->
@@ -35,10 +35,10 @@
         <!-- 퀵메뉴 영역 -->
         <div class="quickMenu">
           <ul>
-            <li class="quick typeA"><a href="#menuA">first Menu</a></li>
-            <li class="quick typeB"><a href="#menuB">second Menu</a></li>
-            <li class="quick typeC"><a href="#menuC">third Menu</a></li>
-            <li class="quick typeD"><a href="#menuD">fourth Menu</a></li>
+            <li class="quick typeA"><button onclick="moveSCF('1')">first Menu</button></li>
+            <li class="quick typeB"><button onclick="moveSCF('2')">second Menu</button></li>
+            <li class="quick typeC"><button onclick="moveSCF('3')">third Menu</button></li>
+            <li class="quick typeD"><button onclick="moveSCF('4')">fourth Menu</button></li>
           </ul>
         </div>
         <!-- //퀵메뉴 영역 -->
@@ -55,13 +55,13 @@
             </div>
           </div>
 
-          <div id="menuA" class="content aboutMe">
+          <div id="menu1" class="content aboutMe">
             <h3>About Me</h3>
           </div>
-          <div id="menuB" class="content think">
+          <div id="menu2" class="content think">
             <h3>I Think</h3>
           </div>
-          <div id="menuC" class="content make">
+          <div id="menu3" class="content make">
             <h3>I Make</h3>
           </div>
         </div>
@@ -74,7 +74,7 @@
         </footer>
       </div>
 
-      <a href="#menu" class="goTop">맨 위로</a>
+      <button onclick="goTop()" class="goTop">맨 위로</button>
       <!-- //메인 페이지 -->      
     </div>
     <!-- //컨테이너 -->

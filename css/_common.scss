@@ -79,7 +79,7 @@ button {
 .quickMenu {position:fixed;right:2rem;top:100px;min-width:5rem;z-index:2;
   ul {
     .quick {position:relative;padding:0.7rem 0;
-      a {@include centerAText;position:relative;height:5rem;padding:0 10px 0 10px;background:$brown;}
+      button {@include centerAText;position:relative;width:8rem;height:5rem;padding:0 10px 0 10px;background:$brown;}
     }
   }
 }
@@ -92,8 +92,8 @@ button {
 
 
 /* ---공통--- */
-html {background:$white;color:$gray;-ms-user-select:none;-moz-user-select:-moz-none;-webkit-user-select:none;-khtml-user-select:none;-webkit-tap-highlight-color:transparent;user-select:none;scroll-behavior:smooth;}
-html.dark {background:$dark;color:$light;}
+html {background:$white;color:$gray;-ms-user-select:none;-moz-user-select:-moz-none;-webkit-user-select:none;-khtml-user-select:none;-webkit-tap-highlight-color:transparent;user-select:none;}
+html.dark {-webkit-filter:invert(100%);filter:invert(100%);}
 
 .contain {height:100vh;}
 .contain header {position:fixed;top:0;left:0;width:calc(100vw - 100px);height:70px;padding:0 50px;}

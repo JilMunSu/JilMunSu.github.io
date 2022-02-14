@@ -48,3 +48,21 @@ window.onload=function(){
     $('.contain header').css("background", "none");
   }
 }
+
+// 스크롤
+function goTop() {
+  $('html, body').animate({scrollTop:0}, 400);
+}
+
+function moveSCF(seq){
+  var offset = $("#menu" + seq).offset().top;
+  var fixedVal = offset - 70;
+  $('html, body').animate({scrollTop : fixedVal}, 400);
+  return true
+}
+
+function moveSC(seq){
+  var offset = $("#menu" + seq).offset().top;
+  $('html, body').animate({scrollTop : offset}, 400);
+  return true
+}
