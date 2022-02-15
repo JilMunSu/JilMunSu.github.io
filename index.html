@@ -29,7 +29,7 @@
             <h1>logo</h1>
           </a>
           <div class="mainMenu">
-            <button class="btnG" id="toggleTheme">다크모드</button>
+            <button class="btnTg" id="toggleTheme">다크모드</button>
           </div>
         </header>
         <!-- 퀵메뉴 영역 -->
@@ -57,6 +57,36 @@
 
           <div id="menu1" class="content aboutMe">
             <h3>About Me</h3>
+            <div class="toggleTypeA">
+              <input type="checkbox" id="chk1">
+              <label for="chk1">선택</label>
+            </div>
+            <table class="about aboutOnline">
+              <tr>
+                <td>
+                  <div class="myOnlineImg">
+                    <!-- <img src="./images/profile.png" alt="온라인 프로필 사진"> -->
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="myOnlineInfo1"></div>
+                </td>
+                <td>
+                  <div class="myOnlineInfo2"></div>
+                  <div class="myOnlineInfo2"></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="myOnlineInfo3"></div>
+                </td>
+                <td>
+                  <div class="myOnlineInfo4"></div>
+                </td>
+              </tr>
+            </table>
           </div>
           <div id="menu2" class="content think">
             <h3>I Think</h3>
@@ -74,7 +104,7 @@
         </footer>
       </div>
 
-      <button onclick="goTop()" class="goTop">맨 위로</button>
+      <button class="btnGT" onclick="goTop()">맨 위로</button>
       <!-- //메인 페이지 -->      
     </div>
     <!-- //컨테이너 -->

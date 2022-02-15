@@ -17,6 +17,7 @@ $white:#FFF;
 $light:#BBB;
 $red:#f55844;
 $pink:#FDB7DA;
+$ivory:#ece6cc;
 $yellow:#F7E7B1;
 $green:#14c056;
 $blue:#7acef0;
@@ -24,10 +25,27 @@ $purple:#A9A0FC;
 $brown:#CFC3B5;
 
 /* --- Mixin --- */
+@mixin position($pos, $top, $bottom, $left, $right) {position:$pos;top:$top;bottom:$bottom;left:$left;right:$right;}
+@mixin positionTL($pos, $top, $left) {position:$pos;top:$top;left:$left;}
+@mixin positionTR($pos, $top, $right) {position:$pos;top:$top;right:$right;}
+@mixin positionBL($pos, $bottom, $left) {position:$pos;bottom:$bottom;left:$left;}
+@mixin positionBR($pos, $bottom, $right) {position:$pos;bottom:$bottom;right:$right;}
 @mixin centerJAText {display:flex;justify-content:center;align-items:center;}
 @mixin centerAText {display:flex;align-items:center;}
-@mixin buttonBase {font-family:'mapleLight';position:relative;min-width:6rem;height:2.5rem;padding:0.5rem;background:none;border:1px solid $dark;border-radius:4px;color:$black;font-weight:bold;-webkit-box-shadow:7px 9px 40px -1px $gray;box-shadow:7px 9px 40px -1px $gray;overflow:hidden;}
+@mixin textHidden {text-indent:100%;white-space:nowrap;overflow:hidden;}
+@mixin borderRadius($radius) {-webkit-border-radius:$radius;-moz-border-radius:$radius;-ms-border-radius:$radius;border-radius:$radius;}
+@mixin boxShadow($xPos, $yPos, $blur, $spread, $color) {-webkit-box-shadow:$xPos $yPos $blur $spread $color;-moz-border-radius:$xPos $yPos $blur $spread $color;-ms-border-radius:$xPos $yPos $blur $spread $color;box-shadow:$xPos $yPos $blur $spread $color;}
+@mixin boxShadowIn ($xPos, $yPos, $blur, $spread, $color) {-webkit-box-shadow:$xPos $yPos $blur $spread $color inset;-moz-border-radius:$xPos $yPos $blur $spread $color inset;-ms-border-radius:$xPos $yPos $blur $spread $color inset;box-shadow:$xPos $yPos $blur $spread $color inset;}
+@mixin transform($type) {-webkit-transform:$type;-moz-transform:$type;-ms-transform:$type;transform:$type;}
+@mixin rotate ($deg) {@include transform(rotate(#{$deg}deg));}
+@mixin scale($scale) {@include transform(scale($scale));}
+@mixin translate ($x, $y) {@include transform(translate($x, $y));}
+@mixin skew ($x, $y) {@include transform(skew(#{$x}deg, #{$y}deg));}
+@mixin transformOrigin ($origin) {-webkit-transform-origin: $origin;-moz-transform-origin: $origin;-ms-transform-origin: $origin;transform-origin: $origin;}
+@mixin transition($time) {-webkit-transition:$time;-moz-transition:$time;-ms-transition:$time;transition:$time;}
+@mixin buttonBase {font-family:'mapleLight';position:relative;padding:0.5rem;background:none;border:1px solid $dark;color:$black;font-weight:bold;overflow:hidden;}
 @mixin focusBase {outline:none;border:$brown !important;background:$brown !important;}
+
 
 /* Component */
 .component {
@@ -65,41 +83,52 @@ $brown:#CFC3B5;
 
 /* button */
 button {
-  &.btnG {@include buttonBase;transition:0.5s ease-in-out;}
+  &.btnG {@include buttonBase;min-width:6rem;height:2.5rem;@include borderRadius(4px);transition:0.5s ease-in-out;}
+  &.btnTg {@include textHidden;width:2.4rem;height:2.4rem;background:$ivory;@include borderRadius(100%);@include boxShadow(7px, 9px, 19px, -1px, $gray);}
+  &.btnGT {@include textHidden;@include positionBR(fixed, 50px, 20px);display:none;width:3rem;height:3rem;background:#a7a7a7;border:none;@include borderRadius(100%);cursor:pointer;}
   &:hover {
-
+    
   }
   &:active {}
   &:focus-visible {
     @include focusBase;
   }
-  .title {position:absolute;top:5%;left:0;width:100%;z-index:1;transform:translate(0, 7px);}
 }
 
-.quickMenu {position:fixed;right:2rem;top:100px;min-width:5rem;z-index:2;
+.quickMenu {@include positionTR(fixed, 100px, 2rem);min-width:5rem;z-index:2;
   ul {
     .quick {position:relative;padding:0.7rem 0;
       button {@include centerAText;position:relative;width:8rem;height:5rem;padding:0 10px 0 10px;background:$brown;}
     }
   }
 }
-.goTop {position:fixed;right:20px;bottom:50px;display:none;width:3rem;height:3rem;background:#a7a7a7;border:none;border-radius:100%;cursor:pointer;text-indent:100%;white-space:nowrap;overflow:hidden;}
 
-
-
-
-
+/* input */
+.toggleTypeA {position:relative;display:inline-block;width:4.5rem;height:2.1rem;
+  input {width:0;height:0;opacity:0;
+    &:checked + label {background:#F2D522;@include boxShadowIn(1px, 5px, 1px, 1px, #d3ba16);
+      &:before {@include transform(translateX(2.3rem));}
+    }
+  }
+  label {@include position(absolute, 0, 0, 0, 0);background:#ccc;@include borderRadius(20px);@include boxShadowIn(1px, 5px, 1px, 1px, #999);@include transition(.4s);cursor:pointer;@include textHidden;
+    &:before {content:"";@include positionBL(absolute, 4px, 4px);width:1.55rem;height:1.55rem;background:#fff;@include borderRadius(20px);@include transition(.4s);}
+  } 
+} 
 
 
 /* ---공통--- */
-html {background:$white;color:$gray;-ms-user-select:none;-moz-user-select:-moz-none;-webkit-user-select:none;-khtml-user-select:none;-webkit-tap-highlight-color:transparent;user-select:none;}
-html.dark {-webkit-filter:invert(100%);filter:invert(100%);}
-
-.contain {height:100vh;}
-.contain header {position:fixed;top:0;left:0;width:calc(100vw - 100px);height:70px;padding:0 50px;}
-.contain header h1 {display:inline-block;width:70px;height:70px;font-size:30px;line-height:70px;}
-.contain header .mainMenu {position:absolute;top:0;right:0;}
-
-footer {width:100vw;height:7rem;background:#333;color:#bbb;}
-footer .copyright {padding:10px;}
+html {background:$white;color:$gray;-ms-user-select:none;-moz-user-select:-moz-none;-webkit-user-select:none;-khtml-user-select:none;-webkit-tap-highlight-color:transparent;user-select:none;
+  &.dark {-webkit-filter:invert(100%);filter:invert(100%);
+    img {-webkit-filter:invert(1);filter:invert(1);}
+  }
+}
+.contain {height:100vh;
+  header {position:fixed;top:0;left:0;width:calc(100vw - 100px);height:70px;padding:0 50px;z-index:1000;
+    h1 {display:inline-block;width:70px;height:70px;font-size:30px;line-height:70px;}
+    .mainMenu {position:absolute;top:0;right:0;}
+  }
+}
+footer {width:100vw;height:7rem;background:#333;color:#bbb;
+  .copyright {padding:10px;}
+}
 

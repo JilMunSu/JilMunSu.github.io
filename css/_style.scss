@@ -1,13 +1,33 @@
 /* 메인페이지 */
-.mainPage .profile .back {background:#ece6cc;}
-.mainPage .profile .back .mainBanner {display:flex;width:100%;max-width:1920px;height:100vh;margin:0 auto;}
-.mainPage .profile .back .mainBanner .profileTxt {display:flex;flex-direction:column;justify-content:center;width:50%;padding-left:30px;}
-.mainPage .profile .back .mainBanner .profileTxt h2 {font-size:2.5rem;}
+.mainPage .profile {
+  .back {background:$ivory;
+    .mainBanner {display:flex;width:100%;max-width:1920px;height:100vh;margin:0 auto;
+      .profileTxt {display:flex;flex-direction:column;justify-content:center;width:50%;padding-left:2.2rem;
+        h2 {font-size:2.5rem;}
+      }
+    }
+  }
+  .content {width:calc(100% - 40px);max-width:1920px;min-height:50vh;margin:0 auto;padding:1rem 1.7rem;
+    h3 {font-size:1.7rem;}
+    &.aboutMe {position:relative;
+      .toggleTypeA {position:absolute;top:0.7rem;left:10.5rem;}
+      .about {margin:1rem 0;
+        tr {display:inline-block;height:32rem;}
+        td {display: table-row;}
+        .myOnlineImg {display:inline-block;width:18rem;height:32rem;background:#555;color:#eee;overflow:hidden;
+          img {}
+        }
+        .myOnlineInfo1 {display:inline-block;width:100px;height:30px;background:#333;}
+        .myOnlineInfo2 {display:inline-block;width:100px;height:30px;background:#333;}
+        .myOnlineInfo3 {display:inline-block;width:100px;height:30px;background:#333;}
+        .myOnlineInfo4 {display:inline-block;width:100px;height:30px;background:#333;}
+      }
+      
+    }
+  }
+}
 
-.mainPage .profile .content {width:calc(100% - 40px);max-width:1920px;height:50vh;margin:0 auto;padding:0 20px;}
-.mainPage .profile .content h3 {font-size:1.7rem;}
 
-// .mainPage .navMenu {position:fixed;top:260px;right:20px; width:50px;height:150px; background:#000;}
 
 /* 사쿠나히메 */
 .sakunaPage {padding:40px;

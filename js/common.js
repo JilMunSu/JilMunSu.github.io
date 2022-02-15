@@ -32,9 +32,9 @@ window.onload=function(){
   $(window).scroll(function() {
     if ($(this).scrollTop() > 100) {
       $('.contain header').css("background", "#333");
-      $('.goTop').fadeIn();
+      $('.btnGT').fadeIn();
     } else {
-      $('.goTop').fadeOut();
+      $('.btnGT').fadeOut();
       $('.contain header').css("background", "none");
     }
   });
@@ -47,6 +47,16 @@ window.onload=function(){
   } else {
     $('.contain header').css("background", "none");
   }
+
+  // 토글 버튼
+  // var toggleBtn = false;
+  // $('.toggleTypeA').click(function() {
+  //   toggleBtn = !toggleBtn;
+  //   if(toggleBtn == true) {
+
+  //   }
+  // })
+
 }
 
 // 스크롤
