@@ -44,8 +44,6 @@
         <!-- //퀵메뉴 영역 -->
         <!-- 프로필 영역 -->
         <div class="profile">
-
-
           <div class="back">
             <div class="mainBanner">
               <div class="profileTxt">
@@ -54,7 +52,7 @@
               </div>
             </div>
           </div>
-
+          <!-- 내 정보 영역 -->
           <div id="menu1" class="content aboutMe">
             <h3>About Me</h3>
             <div class="toggleTypeA">
@@ -62,38 +60,48 @@
               <label for="chk1">선택</label>
             </div>
             <table class="about aboutOnline">
-              <tr>
-                <td>
-                  <div class="myOnlineImg">
-                    <!-- <img src="./images/profile.png" alt="온라인 프로필 사진"> -->
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="myOnlineInfo1"></div>
-                </td>
-                <td>
-                  <div class="myOnlineInfo2"></div>
-                  <div class="myOnlineInfo2"></div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="myOnlineInfo3"></div>
-                </td>
-                <td>
-                  <div class="myOnlineInfo4"></div>
-                </td>
-              </tr>
+              <caption></caption>
+              <colgroup><col><col><col><col></colgroup>
+              <tbody>
+                <tr>
+                  <td rowspan="3" class="myOnlineImg">이미지</td>
+                  <td class="myOnlineInfo1">내용</td>
+                  <td colspan="2" class="myOnlineInfo2">내용</td>
+                </tr>
+                <tr>
+                  <td class="myOnlineInfo3">내용</td>
+                  <td class="myOnlineInfo4">내용</td>
+                  <td class="myOnlineInfo5">내용</td>
+                </tr>
+                <tr>
+                  <td colspan="3" class="myOnlineInfo6">내용</td>
+                </tr>
+              </tbody>
             </table>
           </div>
-          <div id="menu2" class="content think">
+          <!-- //내 정보 영역 -->
+          <!-- 가치관 영역 -->
+          <div id="menu2" class="content iThink">
             <h3>I Think</h3>
           </div>
-          <div id="menu3" class="content make">
+          <!-- //가치관 영역 -->
+          <!-- 메이킹 영역 -->
+          <div id="menu3" class="content iMake">
             <h3>I Make</h3>
+            <ul class="tabs">
+              <li class="tab-link current" data-tab="tab-1">Comp</li>
+              <li class="tab-link" data-tab="tab-2">Game</li>
+              <li class="tab-link" data-tab="tab-3">tab3</li>
+            </ul>
+          
+            <div id="tab-1" class="tab-content current"><a href="./template/Component.html">공통 컴포넌트</a></div>
+            <div id="tab-2" class="tab-content">
+              <a href="./template/game/Sakuna.html">사쿠나히메</a>
+              <a href="./template/game/THEiDOLMASTER.html">아이돌마스터 스탈릿 시즌</a>
+            </div>
+            <div id="tab-3" class="tab-content"></div>
           </div>
+          <!-- //메이킹 영역 -->
         </div>
         <!-- //프로필 영역 -->
         <footer>

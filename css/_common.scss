@@ -132,3 +132,14 @@ footer {width:100vw;height:7rem;background:#333;color:#bbb;
   .copyright {padding:10px;}
 }
 
+/* 탭 스타일 */
+.tabs {margin:0;padding:0;list-style:none;
+  li {display:inline-block;padding:0.7rem 1rem;background:none;color:#222;cursor:pointer;
+    &.current {background:#ededed;color:#222;
+    }
+  }
+}
+.tab-content {display:none;background:#ededed;padding:1rem;
+  &.current {display:inherit;}
+  a:not(:last-child):after {content:'|';padding-left:4px;}
+}

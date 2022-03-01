@@ -1,7 +1,7 @@
 window.onload=function(){
   // 다크모드
-  const togglebutton = document.getElementById("toggleTheme"); 
-  togglebutton.addEventListener("click", () => {
+  const togglebutton = $("#toggleTheme"); 
+  togglebutton.click(function(){
     const html = document.documentElement;
     if (html.classList.contains("dark")) {
       html.classList.remove("dark");
@@ -13,6 +13,7 @@ window.onload=function(){
       console.log('darkMode');
     }
   });
+  
 
   // 다크모드 저장
   const storedTheme = localStorage.getItem("darkTheme");
@@ -56,6 +57,16 @@ window.onload=function(){
 
   //   }
   // })
+
+  $('ul.tabs li').click(function(){
+    var tab_id = $(this).attr('data-tab');
+
+    $('ul.tabs li').removeClass('current');
+    $('.tab-content').removeClass('current');
+
+    $(this).addClass('current');
+    $("#"+tab_id).addClass('current');
+  });
 
 }
 

@@ -11,22 +11,23 @@
     h3 {font-size:1.7rem;}
     &.aboutMe {position:relative;
       .toggleTypeA {position:absolute;top:0.7rem;left:10.5rem;}
-      .about {margin:1rem 0;
-        tr {display:inline-block;height:32rem;}
-        td {display: table-row;}
-        .myOnlineImg {display:inline-block;width:18rem;height:32rem;background:#555;color:#eee;overflow:hidden;
+      .about {width:80vw;height:30rem;margin:1rem 0;
+        .myOnlineImg {width:21rem;height:30rem; background:#555;color:#eee;overflow:hidden;
           img {}
         }
-        .myOnlineInfo1 {display:inline-block;width:100px;height:30px;background:#333;}
-        .myOnlineInfo2 {display:inline-block;width:100px;height:30px;background:#333;}
-        .myOnlineInfo3 {display:inline-block;width:100px;height:30px;background:#333;}
-        .myOnlineInfo4 {display:inline-block;width:100px;height:30px;background:#333;}
+        .myOnlineInfo1 {background:#333;}
+        .myOnlineInfo2 {background:#333;}
+        .myOnlineInfo3 {background:#333;}
+        .myOnlineInfo4 {background:#333;}
+        .myOnlineInfo5 {background:#333;}
+        .myOnlineInfo6 {background:#333;}
       }
-      
+    }
+    &.iMake {
+
     }
   }
 }
-
 
 
 /* 사쿠나히메 */
@@ -47,6 +48,23 @@
     > ul {
       > li {padding:3px 0;
         &:before {content:'-';padding-right:2px;}
+      }
+    }
+  }
+}
+
+.iMASPage {padding:40px;
+  h1 {font-size:2.4rem;padding-bottom:10px;}
+  .content {
+    h2 {font-size:1.4rem;padding-top:10px;
+      + p {font-size:1.1rem;}
+    }
+    
+    table {margin-top:10px;
+      th, td {padding:6px;border:1px solid #bbb;
+        span {
+          &:not(:last-child):after {content:'|';padding-left:4px;}
+        }
       }
     }
   }
