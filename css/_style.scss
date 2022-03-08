@@ -7,7 +7,7 @@
       }
     }
   }
-  .content {width:calc(100% - 40px);max-width:1920px;min-height:50vh;margin:0 auto;padding:1rem 1.7rem;background:$whiteColor;
+  .content {max-width:1920px;min-height:50vh;margin:0 auto;padding:1rem 1.7rem;background:$whiteColor;
     h3 {font-size:1.7rem;}
     &.aboutMe {position:relative;
       .toggleTypeA {position:absolute;top:0.7rem;left:10.5rem;}

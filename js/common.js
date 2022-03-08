@@ -14,7 +14,6 @@ window.onload=function(){
     }
   });
   
-
   // 다크모드 저장
   const storedTheme = localStorage.getItem("darkTheme");
   if (storedTheme !== null) {
@@ -73,3 +72,15 @@ function moveSC(seq) {
   $('html, body').animate({scrollTop : offset}, 400);
   return true
 }
+
+// 슬라이더
+// $('.btn_state').on()
+//   const a =$('.btn_state').css("left");
+//   console.log(a)
+
+$(function() {
+  $(".btn_state").change(function() {
+    console.log('1')
+  });
+  
+});

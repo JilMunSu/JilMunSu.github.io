@@ -153,50 +153,54 @@
         <th>INPUT STYLE</th>
         <td class="inputStyle">
           <h2>체크박스</h2>
-          <strong id="checkBox01">checkBox</strong>
           <ul role="group" aria-labelledby="checkBox01" class="checkForm">
-          	<li role="none"><span role="checkbox" aria-checked="true">chk01</span></li>
+          	<li role="none"><span role="checkbox" aria-checked="false">chk01</span></li>
           	<li role="none"><span role="checkbox" aria-checked="false">chk02</span></li>
           	<li role="none"><span role="checkbox" aria-checked="false">chk03</span></li>
           	<li role="none"><span role="checkbox" aria-checked="false">chk04</span></li>
           </ul>
-
-          <strong id="group_chk_lb02">checkBox - allChk</strong>
-          <div role="group" aria-labelledby="group_chk_lb02">
-          	<span role="checkbox" aria-checked="false" aria-controls="chk2_1 chk2_2 chk2_3 chk2_4" tabindex="0">전체 선택</span>
+          <h2>체크박스 - 전체선택</h2>
+          <div role="group" aria-labelledby="checkBox02" class="checkForm extan">
+          	<span role="checkbox" aria-checked="false" aria-controls="chk01 chk02 chk03 chk04" tabindex="0" class="allChk">전체 선택</span>
           	<ul role="none">
-          		<li role="none"><span id="chk2_1" role="checkbox" aria-checked="true" tabindex="0">chk01</span></li>
-          		<li role="none"><span id="chk2_2" role="checkbox" aria-checked="false" tabindex="0">chk02</span></li>
-          		<li role="none"><span id="chk2_3" role="checkbox" aria-checked="false" tabindex="0">chk03</span></li>
-          		<li role="none"><span id="chk2_4" role="checkbox" aria-checked="false" tabindex="0">chk04</span></li>
+          		<li role="none"><span id="chk01" role="checkbox" aria-checked="false" tabindex="0">chk01</span></li>
+          		<li role="none"><span id="chk02" role="checkbox" aria-checked="false" tabindex="0">chk02</span></li>
+          		<li role="none"><span id="chk03" role="checkbox" aria-checked="false" tabindex="0">chk03</span></li>
+          		<li role="none"><span id="chk04" role="checkbox" aria-checked="false" tabindex="0">chk04</span></li>
           	</ul>
           </div>
-
           <h2>라디오 버튼</h2>
-          <strong id="group_radio_lb01">radioBox</strong>
-          <ul role="radiogroup" aria-labelledby="group_radio_lb01">
+          <ul role="radiogroup" aria-labelledby="radioBox" class="radioForm">
           	<li role="none"><span role="radio" aria-checked="false" tabindex="0">rdo01</span></li>
           	<li role="none"><span role="radio" aria-checked="false" tabindex="0">rdo02</span></li>
           	<li role="none"><span role="radio" aria-checked="false" tabindex="0">rdo03</span></li>
           </ul>
-
           <h2>선택 버튼</h2>
-          <button aria-haspopup="listbox" aria-controls="li_sort" aria-expanded="false">selectBox</button>
-          <ul id="li_sort" role="listbox" aria-labelledby="select_lb" style="display:none">
-            <li id="li_sort01" role="option" aria-selected="false" tabindex="0">sel01</li>
-            <li id="li_sort02" role="option" aria-selected="false" tabindex="0">sel02</li>
-            <li id="li_sort03" role="option" aria-selected="false" tabindex="0">sel03</li>
-            <li id="li_sort04" role="option" aria-selected="true" tabindex="0">sel04</li>
-            <li id="li_sort05" role="option" aria-selected="false" tabindex="0">sel05</li>
-          </ul>
-          
+          <div class="selectWrap">
+            <button aria-haspopup="listbox" aria-controls="liSort" aria-expanded="false" class="selectForm">selectBox</button>
+            <ul id="liSort" role="listbox" aria-labelledby="selectBox" style="display:none">
+              <li id="liSort00" role="option" aria-selected="true" tabindex="0">selectBox</li>
+              <li id="liSort01" role="option" aria-selected="false" tabindex="0">sel01</li>
+              <li id="liSort02" role="option" aria-selected="false" tabindex="0">sel02</li>
+              <li id="liSort03" role="option" aria-selected="false" tabindex="0">sel03</li>
+              <li id="liSort04" role="option" aria-selected="false" tabindex="0">sel04</li>
+            </ul>
+          </div>
           <h2>에러 메시지</h2>
           <label for="input_email">이메일</label>
-          <input type="text" aria-describedby="error_msg" aria-invalid="true" />
+          <input type="text" aria-describedby="error_msg" aria-invalid="false" />
           <div role="alert" id="error_msg" style="display:none">이메일 형식이 아닙니다.</div> 
-          
           <h2>슬라이드</h2>
-          <div draggable="true" role="slider" aria-valuemin="0" aria-valuenow="0" aria-valuemax="100" aria-valuetext="0" aria-orientation="horizontal" aria-label="점수" tabindex="0"></div>
+          <div class="aria_ui">
+            <div id="slider-wrap" class="slider">
+              <!-- 프로그래스 바 -->
+              <div id="slider-percent" class="slider_percent" style="width:85px;"></div>
+              <!-- 슬라이드 조절 버튼 -->
+              <div id="slider-drag" class="btn_state" draggable="true" role="slider" aria-valuemin="0" aria-valuenow="20" aria-valuemax="100" aria-valuetext="0" aria-orientation="horizontal" aria-label="점수" tabindex="0" style="left:80px;">
+              </div>
+            </div>
+            <span id="slider-num" class="slider_num" aria-hidden="true">20</span>
+          </div>
         </td>
       </tr>
       <tr>

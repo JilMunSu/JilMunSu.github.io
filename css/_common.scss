@@ -30,6 +30,7 @@ $blueColor:#2363C0;
 @mixin centerAText {display:flex;align-items:center;}
 @mixin textHidden {text-indent:100%;white-space:nowrap;overflow:hidden;}
 @mixin borderRadius($radius) {-webkit-border-radius:$radius;-moz-border-radius:$radius;-ms-border-radius:$radius;border-radius:$radius;}
+@mixin borderRadiusT($radius) {-webkit-border-top-left-radius:$radius;-moz-border-top-left-radius:$radius;-ms-border-top-left-radius:$radius;border-top-left-radius:$radius;-webkit-border-top-right-radius:$radius;-moz-border-top-right-radius:$radius;-ms-border-top-right-radius:$radius;border-top-right-radius:$radius;}
 @mixin boxShadow($xPos, $yPos, $blur, $spread, $color) {-webkit-box-shadow:$xPos $yPos $blur $spread $color;-moz-border-radius:$xPos $yPos $blur $spread $color;-ms-border-radius:$xPos $yPos $blur $spread $color;box-shadow:$xPos $yPos $blur $spread $color;}
 @mixin boxShadowIn ($xPos, $yPos, $blur, $spread, $color) {-webkit-box-shadow:$xPos $yPos $blur $spread $color inset;-moz-border-radius:$xPos $yPos $blur $spread $color inset;-ms-border-radius:$xPos $yPos $blur $spread $color inset;box-shadow:$xPos $yPos $blur $spread $color inset;}
 @mixin transform($type) {-webkit-transform:$type;-moz-transform:$type;-ms-transform:$type;transform:$type;}
@@ -39,7 +40,8 @@ $blueColor:#2363C0;
 @mixin skew ($x, $y) {@include transform(skew(#{$x}deg, #{$y}deg));}
 @mixin transformOrigin ($origin) {-webkit-transform-origin: $origin;-moz-transform-origin: $origin;-ms-transform-origin: $origin;transform-origin: $origin;}
 @mixin transition($time) {-webkit-transition:$time;-moz-transition:$time;-ms-transition:$time;transition:$time;}
-
+@mixin textCut {white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+@mixin textCutTwo($number) {overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:$number;-webkit-box-orient:vertical;}
 @mixin buttonBase {font-family:'mapleLight';font-weight:bold;}
 @mixin focusBase {outline:none;background:$accentColor !important;}
 @mixin focusImg {outline-style:solid;outline-color:black;}
@@ -83,9 +85,7 @@ $blueColor:#2363C0;
           }
         }
         &.inputStyle {
-          & > ul {
-            li {}
-          }
+          h2:not(:first-child) {margin:20px 0 5px;}
         }
 
       }
@@ -143,19 +143,40 @@ button {@include buttonBase;
 
 
 /* input */
-.checkForm {
-  li {display:inline-block;margin-left:20px;cursor:pointer;
+.checkForm, .radioForm {position:relative;height:1.3rem;padding-top:0.5rem;
+  &.extan {height:2.8rem;}
+  .allChk {cursor:pointer;margin-left:2rem;
+    &:before {content:'';@include positionTL(absolute, 4px, 0.5rem);width:1.3rem;height:1.3rem;background:$grayColor;}
+    &[aria-checked="true"]:before {background:$blueColor;}
+    + ul {height:1.3rem;padding-top:0.5rem;}
+  }
+  li {display:inline-block;margin-left:2rem;cursor:pointer;
     span {position:relative;
-      &:before {content:'';@include positionTL(absolute, 0, -20px);width:1.3rem;height:1.3rem;background:#999;}
-      &[aria-checked="true"]:before {background:#000;}
+      &:before {content:'';@include positionTL(absolute, 0, -1.5rem);width:1.3rem;height:1.3rem;background:$grayColor;}
+      &[aria-checked="true"]:before {background:$blueColor;}
     } 
   }
 }
+.radioForm li span:before {@include borderRadius(100%);}
 
+.selectWrap {position:relative;
+  .selectForm {width:10.6rem; padding:10px;border:1px solid $blackColor;@include borderRadiusT(3px);@include textCut;
+    + ul {@include positionTL(absolute, 2.6rem, 0);
+      li {width:9rem;padding:10px; background:$whiteColor;border:1px solid $blackColor;cursor:pointer;@include textCut;
+        &:not(:last-child) {border-bottom:0;}
+        &:hover {}
+      }
+    }
+  }
+}
 
-
-
-
+.aria_ui {position:relative;margin-top:15px;
+  .slider {position: relative;margin: 30px 0 20px 0;width: 500px;height: 10px;background: #f5f5f5;border:1px solid #000;border-radius:10px;
+    .slider_percent {position: absolute;top:-1px;left:-1px;height:100%;background:#2c75c7;border-radius:10px;border:1px solid #2c75c7;}
+    .btn_state {position: absolute;top:-10px;width:30px;height:30px;background:#2c75c7;border-radius:30px;}
+  }
+  .slider_num {margin: 20px 0;padding: 2px 10px;width: 30px;}
+}
 
 
 input {
@@ -205,7 +226,6 @@ html {background:$whiteColor;color:$blackColor;-ms-user-select:none;-moz-user-se
       &:focus-visible {@include focusImg();}
       h1 {display:inline-block;width:70px;height:70px;font-size:30px;line-height:70px;}
     }
-    .mainMenu {position:absolute;top:0;right:0;}
   }
 }
 footer {width:100vw;height:7rem;background:$blackColor;color:$grayColor;
