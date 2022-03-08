@@ -30,13 +30,16 @@ window.onload=function(){
   }
 
   // 스크롤
+  const head = $('.contain header');
   $(window).scroll(function() {
     if ($(this).scrollTop() > 100) {
-      $('.contain header').css("background", "#333");
-      $('.btnGT').fadeIn();
+      head.css("background", "#C8BA7B");
+      head.css("border-bottom", "1px solid #C8BA7B");
+      $('#btnGoTop').fadeIn();
     } else {
-      $('.btnGT').fadeOut();
-      $('.contain header').css("background", "none");
+      $('#btnGoTop').fadeOut();
+      head.css("background", "none");
+      head.css("border-bottom", "none");
     }
   });
 
@@ -44,30 +47,12 @@ window.onload=function(){
   var nowScrollTop = window.scrollY || document.documentElement.scrollTop;
   console.log(nowScrollTop);
   if(nowScrollTop > 0) {
-    $('.contain header').css("background", "#333");
+    head.css("background", "#C8BA7B");
+    head.css("border-bottom", "1px solid #C8BA7B");
   } else {
-    $('.contain header').css("background", "none");
+    head.css("background", "none");
+    head.css("border-bottom", "none");
   }
-
-  // 토글 버튼
-  // var toggleBtn = false;
-  // $('.toggleTypeA').click(function() {
-  //   toggleBtn = !toggleBtn;
-  //   if(toggleBtn == true) {
-
-  //   }
-  // })
-
-  $('ul.tabs li').click(function(){
-    var tab_id = $(this).attr('data-tab');
-
-    $('ul.tabs li').removeClass('current');
-    $('.tab-content').removeClass('current');
-
-    $(this).addClass('current');
-    $("#"+tab_id).addClass('current');
-  });
-
 }
 
 // 스크롤
@@ -75,14 +60,15 @@ function goTop() {
   $('html, body').animate({scrollTop:0}, 400);
 }
 
-function moveSCF(seq){
+// 네비게이션
+function moveSCF(seq) {
   var offset = $("#menu" + seq).offset().top;
   var fixedVal = offset - 70;
   $('html, body').animate({scrollTop : fixedVal}, 400);
   return true
 }
 
-function moveSC(seq){
+function moveSC(seq) {
   var offset = $("#menu" + seq).offset().top;
   $('html, body').animate({scrollTop : offset}, 400);
   return true

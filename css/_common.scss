@@ -10,19 +10,15 @@
 // transparentize(색,%), fade-out(색,%) : 색상을 더 투명하게 만든다.
 
 /* ---Color--- */
-$black:#000;
-$dark:#121212;
-$gray:#8a8a8a;
-$white:#FFF;
-$light:#BBB;
-$red:#f55844;
-$pink:#FDB7DA;
-$ivory:#ece6cc;
-$yellow:#F7E7B1;
-$green:#14c056;
-$blue:#7acef0;
-$purple:#A9A0FC;
-$brown:#CFC3B5;
+$mainColor:#ECE6CC;
+$baseColor:#C8BA7B;
+$accentColor:#A5923C;
+$blackColor:#121212;
+$grayColor:#BBBBBB;
+$whiteColor:#FAF9F7;
+$redColor:#C02325;
+$greenColor:#23C05F;
+$blueColor:#2363C0;
 
 /* --- Mixin --- */
 @mixin position($pos, $top, $bottom, $left, $right) {position:$pos;top:$top;bottom:$bottom;left:$left;right:$right;}
@@ -43,8 +39,10 @@ $brown:#CFC3B5;
 @mixin skew ($x, $y) {@include transform(skew(#{$x}deg, #{$y}deg));}
 @mixin transformOrigin ($origin) {-webkit-transform-origin: $origin;-moz-transform-origin: $origin;-ms-transform-origin: $origin;transform-origin: $origin;}
 @mixin transition($time) {-webkit-transition:$time;-moz-transition:$time;-ms-transition:$time;transition:$time;}
-@mixin buttonBase {font-family:'mapleLight';position:relative;padding:0.5rem;background:none;border:1px solid $dark;color:$black;font-weight:bold;overflow:hidden;}
-@mixin focusBase {outline:none;border:$brown !important;background:$brown !important;}
+
+@mixin buttonBase {font-family:'mapleLight';font-weight:bold;}
+@mixin focusBase {outline:none;background:$accentColor !important;}
+@mixin focusImg {outline-style:solid;outline-color:black;}
 
 
 /* Component */
@@ -53,14 +51,30 @@ $brown:#CFC3B5;
     h1 {@include centerJAText;height:100%;font-size:1.5rem;}
   }
   table {width:100vw;
-    tr {border-top:1px solid #333;border-bottom:1px solid #333;
-      th {@include centerJAText;height:20px;border-bottom:1px solid #333;}
+    tr {border-top:1px solid $blackColor;border-bottom:1px solid $blackColor;
+      th {@include centerJAText;height:20px;border-bottom:1px solid $blackColor;}
       td {display:block;min-height:200px;padding:5px;
         h2 {font-size:1.2rem;}
         &.textStyle {
           & > ul {
             &:not(:last-child) {padding-bottom:7px;}
             li {padding:3px;}
+          }
+        }
+        &.colorStyle {
+          table {width:300px;
+            tr {display:table-row;
+              th, td {display:table-cell;padding:6px;border:1px solid $grayColor;height:auto;}
+              .mainColor {background:$mainColor;}
+              .baseColor {background:$baseColor;}
+              .accentColor {background:$accentColor;}
+              .blackColor {background:$blackColor;}
+              .grayColor {background:$grayColor;}
+              .whiteColor {background:$whiteColor;}
+              .redColor {background:$redColor;}
+              .greenColor {background:$greenColor;}
+              .blueColor {background:$blueColor;}
+            }
           }
         }
         &.buttonStyle {
@@ -80,12 +94,28 @@ $brown:#CFC3B5;
 }
 .ffMapleB {font-family:'mapleBold';}
 .uppercase {text-transform:uppercase;}
+.taC {text-align:center;}
 
 /* button */
-button {
-  &.btnG {@include buttonBase;min-width:6rem;height:2.5rem;@include borderRadius(4px);transition:0.5s ease-in-out;}
-  &.btnTg {@include textHidden;width:2.4rem;height:2.4rem;background:$ivory;@include borderRadius(100%);@include boxShadow(7px, 9px, 19px, -1px, $gray);}
-  &.btnGT {@include textHidden;@include positionBR(fixed, 50px, 20px);display:none;width:3rem;height:3rem;background:#a7a7a7;border:none;@include borderRadius(100%);cursor:pointer;}
+button {@include buttonBase;
+  &.btnGenA {position:relative;@include borderRadius(4px);background:none;border:1px solid $blackColor;color:$blackColor;transition:0.5s ease-in-out;
+    &.sizeL {min-width:6rem;height:2.5rem;padding:0.1rem 0.5rem 0;}
+    &.sizeM {width:5rem;height:2.5rem;padding:0.1rem 0.5rem 0;}
+    &.sizeS {width:4rem;height:2rem;padding:0.2rem 0.5rem 0;}
+    &.sizeXS {width:2.5rem;height:1.5rem;padding-top:0.2rem;}
+  }
+  &.btnGenB {@include textHidden;@include positionBR(fixed, 50px, 20px);display:none;width:3rem;height:3rem;background:$baseColor;border:none;@include borderRadius(100%);cursor:pointer;}
+
+  &.btnToggleA {@include textHidden;width:2.4rem;height:2.4rem;background:$mainColor;@include borderRadius(100%);@include boxShadow(7px, 9px, 19px, -1px, $grayColor);}
+  &.btnToggleB {position:relative;width:70px;height:2rem;@include borderRadius(50px);background:$grayColor;
+    &[aria-pressed="true"] {background:$greenColor;}
+    &:before {content:'';@include positionTL(absolute, 3px, 4px);width:1.5rem;height:1.5rem;background:$whiteColor;@include borderRadius(100%);@include transition(.4s);}
+    &[aria-pressed="true"]:before {@include transform(translateX(2.9rem));}
+  }
+  &.btnExpanA {min-width:40vw;padding:10px;background:$grayColor;border-top-left-radius:10px;border-top-right-radius:10px;text-align:left;
+    + div {min-width:37vw;padding:0 10px 10px;background:$grayColor;}
+  }
+  
   &:hover {
     
   }
@@ -98,48 +128,86 @@ button {
 .quickMenu {@include positionTR(fixed, 100px, 2rem);min-width:5rem;z-index:2;
   ul {
     .quick {position:relative;padding:0.7rem 0;
-      button {@include centerAText;position:relative;width:8rem;height:5rem;padding:0 10px 0 10px;background:$brown;}
+      button {@include centerAText;position:relative;width:8rem;height:5rem;padding:0 10px 0 10px;background:$baseColor;}
     }
   }
 }
 
+.hamburgerMenu {@include positionTR(fixed, 20px, 0);width:3.6rem;height:3.6rem;background:$blackColor;@include transition(.4s);z-index:500;
+  &[aria-pressed="true"] {@include transform(translateX(-250px));
+    +.hamMenu {@include transform(translateX(-250px));}
+  }
+  +.hamMenu {@include positionTR(fixed, 0, -250px);width:250px;height:100vh;background:$blackColor;z-index:500;@include transition(.4s);}
+}
+
+
+
 /* input */
-.toggleTypeA {position:relative;display:inline-block;width:4.5rem;height:2.1rem;
-  input {width:0;height:0;opacity:0;
-    &:checked + label {background:#F2D522;@include boxShadowIn(1px, 5px, 1px, 1px, #d3ba16);
-      &:before {@include transform(translateX(2.3rem));}
+.checkForm {
+  li {display:inline-block;margin-left:20px;cursor:pointer;
+    span {position:relative;
+      &:before {content:'';@include positionTL(absolute, 0, -20px);width:1.3rem;height:1.3rem;background:#999;}
+      &[aria-checked="true"]:before {background:#000;}
+    } 
+  }
+}
+
+
+
+
+
+
+
+input {
+  &.textArea {width:100px;height:19px;padding:0 5px;border:1px solid $blackColor;border-radius:3px;}
+}
+
+/* tab */
+.tabs {margin:0;padding:0;list-style:none;
+  li {display:inline-block;
+    a {@include centerJAText;width:60px;height:30px;
+      &[aria-selected="true"] {color:$blueColor;font-weight:bold;}
+      &:focus-visible {@include focusBase;color:$blackColor;}
     }
   }
-  label {@include position(absolute, 0, 0, 0, 0);background:#ccc;@include borderRadius(20px);@include boxShadowIn(1px, 5px, 1px, 1px, #999);@include transition(.4s);cursor:pointer;@include textHidden;
-    &:before {content:"";@include positionBL(absolute, 4px, 4px);width:1.55rem;height:1.55rem;background:#fff;@include borderRadius(20px);@include transition(.4s);}
-  } 
-} 
+}
+.tabContent {padding:1rem;
+  &:focus-visible,
+  a:focus-visible {@include focusBase;}
+  a {padding:10px;
+
+  }
+}
+
+/* popup */
+
+
+/* devTool */
+.remCal {position:relative;
+  input {padding:0 25px 0 5px;text-align:right;
+    &::placeholder {text-align:left;}
+    &:nth-child(1) + span {@include positionTL(absolute, 3px, 110px);}
+    &:nth-child(3) + span {@include positionTL(absolute, 3px, 245px);}
+  }
+  .result {display:inline-block;min-width:30px;padding-right:2px;}
+}
 
 
 /* ---공통--- */
-html {background:$white;color:$gray;-ms-user-select:none;-moz-user-select:-moz-none;-webkit-user-select:none;-khtml-user-select:none;-webkit-tap-highlight-color:transparent;user-select:none;
+html {background:$whiteColor;color:$blackColor;-ms-user-select:none;-moz-user-select:-moz-none;-webkit-user-select:none;-khtml-user-select:none;-webkit-tap-highlight-color:transparent;user-select:none;
   &.dark {-webkit-filter:invert(100%);filter:invert(100%);
     img {-webkit-filter:invert(1);filter:invert(1);}
   }
 }
 .contain {height:100vh;
-  header {position:fixed;top:0;left:0;width:calc(100vw - 100px);height:70px;padding:0 50px;z-index:1000;
-    h1 {display:inline-block;width:70px;height:70px;font-size:30px;line-height:70px;}
+  header {position:fixed;top:0;left:0;width:calc(100vw - 100px);height:70px;padding:0 50px;z-index:400;
+    a {
+      &:focus-visible {@include focusImg();}
+      h1 {display:inline-block;width:70px;height:70px;font-size:30px;line-height:70px;}
+    }
     .mainMenu {position:absolute;top:0;right:0;}
   }
 }
-footer {width:100vw;height:7rem;background:#333;color:#bbb;
+footer {width:100vw;height:7rem;background:$blackColor;color:$grayColor;
   .copyright {padding:10px;}
-}
-
-/* 탭 스타일 */
-.tabs {margin:0;padding:0;list-style:none;
-  li {display:inline-block;padding:0.7rem 1rem;background:none;color:#222;cursor:pointer;
-    &.current {background:#ededed;color:#222;
-    }
-  }
-}
-.tab-content {display:none;background:#ededed;padding:1rem;
-  &.current {display:inherit;}
-  a:not(:last-child):after {content:'|';padding-left:4px;}
 }

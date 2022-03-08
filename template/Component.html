@@ -7,10 +7,19 @@
   <title>JilMunSu - 공통 컴포넌트</title>
   <script src="../js/jquery-3.6.0.min.js"></script>
   <script src="../js/common.js"></script>
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <script src="../js/devTool.js"></script>
+  <script src="../js/wai-aria.ui.js/wai-aria.ui.es5.js"></script>
+  <script src="../js/wai-aria.ui.js/nuli.autocomplete.es5.js"></script>
+  <script src="../js/wai-aria.ui.js/jstree.min.js"></script>
   <link rel="stylesheet" href="../css/font.css">
   <link rel="stylesheet" href="../css/main.min.css">
+  <script>
+    $(document).ready(function(){
+      $('.component table th').not('.colorStyle th').each(function(index){
+        $(this).attr('id', 'menu' + index);
+      });
+    });
+  </script>
 </head>
 <body>
   <div class="component">
@@ -19,7 +28,7 @@
     </header>
     <table>
       <tr>
-        <th id="menu1">TEXT STYLE</th>
+        <th>TEXT STYLE</th>
         <td class="textStyle">
           <h2>기본적인 폰트 - Maplestory Light, 14px = 1rem</h2>
           <ul>
@@ -38,40 +47,187 @@
         </td>
       </tr>
       <tr>
-        <th id="menu2">BUTTON STYLE</th>
+        <th>COLOR STYLE</th>
+        <td class="colorStyle">
+          <h2>색상표</h2>
+          <table>
+            <tr>
+              <th>컬러명</th>
+              <th>컬러코드</th>
+              <th>미리보기</th>
+            </tr>
+            <tr>
+              <td>mainColor</td>
+              <td>#ECE6CC</td>
+              <td class="mainColor"></td>
+            </tr>
+            <tr>
+              <td>baseColor</td>
+              <td>#C8BA7B</td>
+              <td class="baseColor"></td>
+            </tr>
+            <tr>
+              <td>accentColor</td>
+              <td>#A5923C</td>
+              <td class="accentColor"></td>
+            </tr>
+            <tr>
+              <td>blackColor</td>
+              <td>#121212</td>
+              <td class="blackColor"></td>
+            </tr>
+            <tr>
+              <td>grayColor</td>
+              <td>#BBBBBB</td>
+              <td class="grayColor"></td>
+            </tr>
+            <tr>
+              <td>whiteColor</td>
+              <td>#FAF9F7</td>
+              <td class="whiteColor"></td>
+            </tr>
+            <tr>
+              <td>redColor</td>
+              <td>#C02325</td>
+              <td class="redColor"></td>
+            </tr>
+            <tr>
+              <td>greenColor</td>
+              <td>#23C05F</td>
+              <td class="greenColor"></td>
+            </tr>
+            <tr>
+              <td>blueColor</td>
+              <td>#2363C0</td>
+              <td class="blueColor"></td>
+            </tr>
+
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <th>BUTTON STYLE</th>
         <td class="buttonStyle">
           <h2>일반적인 버튼 디자인</h2>
           <ul>
             <li>
-              <button class="btnG">BUTTON</button>
-              <button class="btnTg" id="toggleTheme">다크모드</button>
-              <button class="btnGT" onclick="goTop()">맨 위로</button>
+              <button class="btnGenA sizeL">LARGE</button>
+              <button class="btnGenA sizeM">MED</button>
+              <button class="btnGenA sizeS">SML</button>
+              <button class="btnGenA sizeXS">XS</button>
+            </li>
+            <li>
+              <button class="btnGenB" id="btnGoTop" onclick="goTop()">맨 위로</button>
+            </li>
+          </ul>
+          <h2>토글 버튼 디자인</h2>
+          <ul>
+            <li>
+              <button class="btnToggleA" id="toggleTheme">다크모드</button>
+            </li>
+            <li>
+              <button class="btnToggleB" aria-pressed="false"></button>
+            </li>
+          </ul>
+          <h2>확장형 버튼 디자인</h2>
+          <ul>
+            <li>
+              <button class="btnExpanA" aria-expanded="false" aria-controls="expanded-example">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, voluptate.</button>
+              <div id="expanded-example" style="display:none">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia, a.</div>
             </li>
           </ul>
           <h2>네비게이션 버튼 디자인</h2>
           <div class="quickMenu">
             <ul>
-              <li class="quick typeA"><button onclick="moveSC('1')">first Menu</button></li>
-              <li class="quick typeB"><button onclick="moveSC('2')">second Menu</button></li>
-              <li class="quick typeC"><button onclick="moveSC('3')">third Menu</button></li>
-              <li class="quick typeD"><button onclick="moveSC('4')">fourth Menu</button></li>
+              <li class="quick typeA"><button onclick="moveSC('0')">first Menu</button></li>
+              <li class="quick typeB"><button onclick="moveSC('1')">second Menu</button></li>
+              <li class="quick typeC"><button onclick="moveSC('2')">third Menu</button></li>
+              <li class="quick typeD"><button onclick="moveSC('3')">fourth Menu</button></li>
             </ul>
           </div>
+          <button class="hamburgerMenu" aria-pressed="false"></button>
+          <div class="hamMenu"></div>
         </td>
       </tr>
       <tr>
-        <th id="menu3">INPUT STYLE</th>
+        <th>INPUT STYLE</th>
         <td class="inputStyle">
-          <h2>토글버튼 디자인</h2>
-          <div class="toggleTypeA">
-            <input type="checkbox" id="chk1">
-            <label for="chk1">선택</label>
+          <h2>체크박스</h2>
+          <strong id="checkBox01">checkBox</strong>
+          <ul role="group" aria-labelledby="checkBox01" class="checkForm">
+          	<li role="none"><span role="checkbox" aria-checked="true">chk01</span></li>
+          	<li role="none"><span role="checkbox" aria-checked="false">chk02</span></li>
+          	<li role="none"><span role="checkbox" aria-checked="false">chk03</span></li>
+          	<li role="none"><span role="checkbox" aria-checked="false">chk04</span></li>
+          </ul>
+
+          <strong id="group_chk_lb02">checkBox - allChk</strong>
+          <div role="group" aria-labelledby="group_chk_lb02">
+          	<span role="checkbox" aria-checked="false" aria-controls="chk2_1 chk2_2 chk2_3 chk2_4" tabindex="0">전체 선택</span>
+          	<ul role="none">
+          		<li role="none"><span id="chk2_1" role="checkbox" aria-checked="true" tabindex="0">chk01</span></li>
+          		<li role="none"><span id="chk2_2" role="checkbox" aria-checked="false" tabindex="0">chk02</span></li>
+          		<li role="none"><span id="chk2_3" role="checkbox" aria-checked="false" tabindex="0">chk03</span></li>
+          		<li role="none"><span id="chk2_4" role="checkbox" aria-checked="false" tabindex="0">chk04</span></li>
+          	</ul>
+          </div>
+
+          <h2>라디오 버튼</h2>
+          <strong id="group_radio_lb01">radioBox</strong>
+          <ul role="radiogroup" aria-labelledby="group_radio_lb01">
+          	<li role="none"><span role="radio" aria-checked="false" tabindex="0">rdo01</span></li>
+          	<li role="none"><span role="radio" aria-checked="false" tabindex="0">rdo02</span></li>
+          	<li role="none"><span role="radio" aria-checked="false" tabindex="0">rdo03</span></li>
+          </ul>
+
+          <h2>선택 버튼</h2>
+          <button aria-haspopup="listbox" aria-controls="li_sort" aria-expanded="false">selectBox</button>
+          <ul id="li_sort" role="listbox" aria-labelledby="select_lb" style="display:none">
+            <li id="li_sort01" role="option" aria-selected="false" tabindex="0">sel01</li>
+            <li id="li_sort02" role="option" aria-selected="false" tabindex="0">sel02</li>
+            <li id="li_sort03" role="option" aria-selected="false" tabindex="0">sel03</li>
+            <li id="li_sort04" role="option" aria-selected="true" tabindex="0">sel04</li>
+            <li id="li_sort05" role="option" aria-selected="false" tabindex="0">sel05</li>
+          </ul>
+          
+          <h2>에러 메시지</h2>
+          <label for="input_email">이메일</label>
+          <input type="text" aria-describedby="error_msg" aria-invalid="true" />
+          <div role="alert" id="error_msg" style="display:none">이메일 형식이 아닙니다.</div> 
+          
+          <h2>슬라이드</h2>
+          <div draggable="true" role="slider" aria-valuemin="0" aria-valuenow="0" aria-valuemax="100" aria-valuetext="0" aria-orientation="horizontal" aria-label="점수" tabindex="0"></div>
+        </td>
+      </tr>
+      <tr>
+        <th>UI STYLE</th>
+        <td class="inputStyle">
+          <h2>탭메뉴 디자인</h2>
+          <ul role="tablist" class="tabs">
+            <li role="none"><a href="#" role="tab" aria-selected="true" aria-controls="tab_01">Tab1</a></li>
+            <li role="none"><a href="#" role="tab" aria-selected="false" aria-controls="tab_02">Tab2</a></li>
+            <li role="none"><a href="#" role="tab" aria-selected="false" aria-controls="tab_03">Tab3</a></li>
+          </ul>
+          <div id="tab_01" class="tabContent" role="tabpanel" aria-labelledby="tabContA" tabindex="0">첫번째 탭</div>
+          <div id="tab_02" class="tabContent" role="tabpanel" aria-labelledby="tabContB" tabindex="0" style="display:none">두번째 탭</div>
+          <div id="tab_03" class="tabContent" role="tabpanel" aria-labelledby="tabContC" tabindex="0" style="display:none">세번째 탭</div>
+        </td>
+      </tr>
+      <tr>
+        <th>POPUP STYLE</th>
+        <td class="popupStyle"></td>
+      </tr>
+      <tr>
+        <th>개발자 도구</th>
+        <td class="devTool">
+          <h2>REM 계산기</h2>
+          <div class="remCal">
+            <input type="number" role="form" class="textArea usePx" placeholder="사용하려는 값"/><span>px</span>
+            <input type="number" role="form" class="textArea perPx" placeholder="최상위 부모값" value="14"/><span>px</span>
+            <button id="remResult" role="search" class="btnGenA sizeXS">계산</button>
+            <div>결과: <div class="result"></div>rem</div>
           </div>
         </td>
-      </tr>
-      <tr>
-        <th id="menu4">POPUP STYLE</th>
-        <td class="popupStyle"></td>
       </tr>
     </table>
     <footer>

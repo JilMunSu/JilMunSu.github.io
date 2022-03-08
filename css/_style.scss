@@ -1,26 +1,26 @@
 /* 메인페이지 */
 .mainPage .profile {
-  .back {background:$ivory;
+  .back {background:$mainColor;
     .mainBanner {display:flex;width:100%;max-width:1920px;height:100vh;margin:0 auto;
       .profileTxt {display:flex;flex-direction:column;justify-content:center;width:50%;padding-left:2.2rem;
         h2 {font-size:2.5rem;}
       }
     }
   }
-  .content {width:calc(100% - 40px);max-width:1920px;min-height:50vh;margin:0 auto;padding:1rem 1.7rem;
+  .content {width:calc(100% - 40px);max-width:1920px;min-height:50vh;margin:0 auto;padding:1rem 1.7rem;background:$whiteColor;
     h3 {font-size:1.7rem;}
     &.aboutMe {position:relative;
       .toggleTypeA {position:absolute;top:0.7rem;left:10.5rem;}
       .about {width:80vw;height:30rem;margin:1rem 0;
-        .myOnlineImg {width:21rem;height:30rem; background:#555;color:#eee;overflow:hidden;
+        .myOnlineImg {width:21rem;height:30rem; background:#BAB09B;overflow:hidden;
           img {}
         }
-        .myOnlineInfo1 {background:#333;}
-        .myOnlineInfo2 {background:#333;}
-        .myOnlineInfo3 {background:#333;}
-        .myOnlineInfo4 {background:#333;}
-        .myOnlineInfo5 {background:#333;}
-        .myOnlineInfo6 {background:#333;}
+        .myOnlineInfo1 {background:#BAB09B;}
+        .myOnlineInfo2 {background:#BAB09B;}
+        .myOnlineInfo3 {background:#BAB09B;}
+        .myOnlineInfo4 {background:#BAB09B;}
+        .myOnlineInfo5 {background:#BAB09B;}
+        .myOnlineInfo6 {background:#BAB09B;}
       }
     }
     &.iMake {
@@ -39,16 +39,17 @@
     }
     
     table {margin-top:10px;
-      th, td {padding:6px;border:1px solid #bbb;
+      th, td {padding:6px;border:1px solid $grayColor;
         .minus {color:#ff0000;}
+      }
+      &.firstBold {
+        tr td:first-child {font-weight:bold;text-align:center;}
       }
     }
   }
   .tip {margin-top:10px;
-    > ul {
-      > li {padding:3px 0;
-        &:before {content:'-';padding-right:2px;}
-      }
+    > ul > li {padding:3px 0;
+      &:before {content:'-';padding-right:2px;}
     }
   }
 }
@@ -65,6 +66,9 @@
         span {
           &:not(:last-child):after {content:'|';padding-left:4px;}
         }
+      }
+      &.contTable {
+        tr:first-child th {font-size:1.2rem;}
       }
     }
   }

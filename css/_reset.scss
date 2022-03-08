@@ -10,17 +10,13 @@ nav,output,ruby,section,summary,time,mark,audio,video {
   vertical-align:baseline;
 }
 
-@mixin resetStyle {-webkit-appearance:none;-moz-appearance:none;appearance:none;}
-
 /* ----------------------- input, select ----------------------- */
 /* input, select 기본 스타일 초기화 */
 /* input type number 에서 화살표 제거 */
 input,
 input[type='number']::-webkit-inner-spin-button,
 input[type='number']::-webkit-outer-spin-button,
-select {
-  @include resetStyle;
-}
+select {-webkit-appearance:none;-moz-appearance:none;appearance:none;border:none;}
 input:focus {outline:none;}
 /* firefox */
 input[type='number'] {
