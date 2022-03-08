@@ -135,7 +135,7 @@ button {@include buttonBase;
   }
 }
 
-.hamburgerMenu {@include positionTR(fixed, 20px, 0);width:3.6rem;height:3.6rem;background:$blackColor;opacity:0.9;@include transition(.4s);z-index:500;
+.hamburgerMenu {@include positionTR(fixed, 20px, 0);width:3.6rem;height:3.6rem;background:$blackColor;border:0;opacity:0.9;@include transition(.4s);z-index:500;
   &[aria-pressed="true"] {@include transform(translateX(-250px));
     +.hamMenu {@include transform(translateX(-250px));}
   }
