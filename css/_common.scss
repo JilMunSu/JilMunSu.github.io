@@ -106,7 +106,9 @@ button {@include buttonBase;
   }
   &.btnGenB {@include textHidden;@include positionBR(fixed, 50px, 20px);display:none;width:3rem;height:3rem;background:$baseColor;border:none;@include borderRadius(100%);cursor:pointer;}
 
-  &.btnToggleA {@include textHidden;width:2.4rem;height:2.4rem;background:$mainColor;@include borderRadius(100%);@include boxShadow(7px, 9px, 19px, -1px, $grayColor);}
+  &.btnToggleA {@include textHidden;width:2.4rem;height:2.4rem;background:$mainColor;@include borderRadius(100%);@include boxShadow(7px, 9px, 19px, -1px, $grayColor);
+    &[aria-pressed="true"] {background:$baseColor;}
+  }
   &.btnToggleB {position:relative;width:70px;height:2rem;@include borderRadius(50px);background:$grayColor;
     &[aria-pressed="true"] {background:$greenColor;}
     &:before {content:'';@include positionTL(absolute, 3px, 4px);width:1.5rem;height:1.5rem;background:$whiteColor;@include borderRadius(100%);@include transition(.4s);}
@@ -133,11 +135,22 @@ button {@include buttonBase;
   }
 }
 
-.hamburgerMenu {@include positionTR(fixed, 20px, 0);width:3.6rem;height:3.6rem;background:$blackColor;@include transition(.4s);z-index:500;
+.hamburgerMenu {@include positionTR(fixed, 20px, 0);width:3.6rem;height:3.6rem;background:$blackColor;border:1px solid $blackColor;opacity:0.9;@include transition(.4s);z-index:500;
   &[aria-pressed="true"] {@include transform(translateX(-250px));
     +.hamMenu {@include transform(translateX(-250px));}
   }
-  +.hamMenu {@include positionTR(fixed, 0, -250px);width:250px;height:100vh;background:$blackColor;z-index:500;@include transition(.4s);}
+  +.hamMenu {@include positionTR(fixed, 0, -250px);width:250px;height:100vh;background:$blackColor;opacity:0.9;@include transition(.4s);z-index:500;
+    .titleArea {@include centerJAText;height:10rem;color:$whiteColor;font-size:2rem;}
+    ul {
+      li {height:4.5rem;border-top:1px solid $grayColor;
+        &:last-child {border-bottom:1px solid $grayColor;}
+        #backPage {@include centerJAText;width:100%;height:100%;color:$whiteColor;font-weight:bold;}
+        #toggleTheme {width:100%;height:100%;color:$whiteColor;
+          span {padding-left:4px;}
+        }
+      }
+    }
+  }
 }
 
 
@@ -184,15 +197,15 @@ input {
 }
 
 /* tab */
-.tabs {margin:0;padding:0;list-style:none;
+.tabs {display:inline-block;margin:0;padding:0;list-style:none;@include boxShadow(14px, 0px, 9px, -5px, $grayColor);
   li {display:inline-block;
-    a {@include centerJAText;width:60px;height:30px;
+    a {@include centerJAText;width:5.7rem;height:2.5rem;
       &[aria-selected="true"] {color:$blueColor;font-weight:bold;}
       &:focus-visible {@include focusBase;color:$blackColor;}
     }
   }
 }
-.tabContent {padding:1rem;
+.tabContent {min-height:15rem;padding:1rem;@include boxShadow(7px, 9px, 19px, -1px, $grayColor);
   &:focus-visible,
   a:focus-visible {@include focusBase;}
   a {padding:10px;

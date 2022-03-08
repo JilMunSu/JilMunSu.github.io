@@ -6,11 +6,11 @@ window.onload=function(){
     if (html.classList.contains("dark")) {
       html.classList.remove("dark");
       localStorage.setItem("darkTheme", "false");
-      console.log('lightMode');
+      togglebutton.children().text('OFF');
     } else {
       html.classList.add("dark");
       localStorage.setItem("darkTheme", "true");
-      console.log('darkMode');
+      togglebutton.children().text('ON');
     }
   });
   
@@ -72,15 +72,3 @@ function moveSC(seq) {
   $('html, body').animate({scrollTop : offset}, 400);
   return true
 }
-
-// 슬라이더
-// $('.btn_state').on()
-//   const a =$('.btn_state').css("left");
-//   console.log(a)
-
-$(function() {
-  $(".btn_state").change(function() {
-    console.log('1')
-  });
-  
-});

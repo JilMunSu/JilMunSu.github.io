@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="../../js/jquery-3.6.0.min.js"></script>
   <script src="../../js/common.js"></script>
+  <script src="../../js/wai-aria.ui.js/wai-aria.ui.es5.js"></script>
+  <script src="../../js/wai-aria.ui.js/nuli.autocomplete.es5.js"></script>
+  <script src="../../js/wai-aria.ui.js/jstree.min.js"></script>
   <link rel="stylesheet" href="../../css/font.css">
   <link rel="stylesheet" href="../../css/main.min.css">
   <link rel=" shortcut icon" href=".ico">
@@ -55,67 +58,19 @@
           </table>
         </div>
         <div class="content">
-          <ul class="tabs">
-            <li class="tab-link current" data-tab="tab-1">tab1</li>
-            <li class="tab-link" data-tab="tab-2">tab2</li>
-            <li class="tab-link" data-tab="tab-3">tab3</li>
+          <ul role="tablist" class="tabs">
+            <li role="none"><a href="#" role="tab" aria-selected="true" aria-controls="tab01">아마미 하루카</a></li>
+            <li role="none"><a href="#" role="tab" aria-selected="false" aria-controls="tab02">Tab2</a></li>
+            <li role="none"><a href="#" role="tab" aria-selected="false" aria-controls="tab03">Tab3</a></li>
           </ul>
-        
-          <div id="tab-1" class="tab-content current"></div>
-          <div id="tab-2" class="tab-content">
-            <table class="contTable">
+          <div id="tab01" class="tabContent" role="tabpanel" aria-labelledby="tabContA" tabindex="0">
+            <table>
               <tr>
                 <th colspan="2">아마미 하루카</th>
               </tr>
               <tr>
                 <th>번호</th>
                 <th>선택지</th>
-              </tr>
-              <tr>
-                <td>NO.001<span>그날보다 성장한 모습을</span></td>
-                <td>자신감이 생겼네</td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-              </tr>
-            </table>
-
-            <table>
-              <tr>
-                <th colspan="2"></th>
-              </tr>
-              <tr>
-                <th></th>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
               </tr>
               <tr>
                 <td></td>
@@ -127,7 +82,8 @@
               </tr>
             </table>
           </div>
-          <div id="tab-3" class="tab-content"></div>
+          <div id="tab02" class="tabContent" role="tabpanel" aria-labelledby="tabContB" tabindex="0" style="display:none">두번째 탭</div>
+          <div id="tab03" class="tabContent" role="tabpanel" aria-labelledby="tabContC" tabindex="0" style="display:none">세번째 탭</div>
         </div>
       </div>
     </div>

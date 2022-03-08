@@ -31,8 +31,17 @@
         <!-- 햄버거 메뉴 영역 -->
         <button class="hamburgerMenu" aria-pressed="false" role="navigation"></button>
         <div class="hamMenu">
-
-          <button class="btnToggleA" id="toggleTheme">다크모드</button>
+          <div class="titleArea">환경설정</div>
+          <ul>
+            <li>
+              <a href="javascript:history.back();" id="backPage">뒤로가기</a>
+            </li>
+            <li>
+              <button id="toggleTheme">다크모드 -<span>OFF</span></button>
+            </li>
+            <li></li>
+            <li></li>
+          </ul>
         </div>
         <!-- //햄버거 메뉴 영역 -->        
         <!-- 퀵메뉴 영역 -->
@@ -58,25 +67,20 @@
           <!-- 내 정보 영역 -->
           <div id="menu1" class="content aboutMe" role="complementary">
             <h3>About Me</h3>
-            <button class="btnToggleB" aria-pressed="false"></button>
             <table class="about aboutOnline">
-              <caption></caption>
-              <colgroup><col><col><col><col></colgroup>
-              <tbody>
-                <tr>
-                  <td rowspan="3" class="myOnlineImg">이미지</td>
-                  <td class="myOnlineInfo1">내용</td>
-                  <td colspan="2" class="myOnlineInfo2">내용</td>
-                </tr>
-                <tr>
-                  <td class="myOnlineInfo3">내용</td>
-                  <td class="myOnlineInfo4">내용</td>
-                  <td class="myOnlineInfo5">내용</td>
-                </tr>
-                <tr>
-                  <td colspan="3" class="myOnlineInfo6">내용</td>
-                </tr>
-              </tbody>
+              <tr>
+                <td rowspan="3" class="myOnlineImg">이미지</td>
+                <td class="myOnlineInfo1">내용</td>
+                <td colspan="2" class="myOnlineInfo2">내용</td>
+              </tr>
+              <tr>
+                <td class="myOnlineInfo3">내용</td>
+                <td class="myOnlineInfo4">내용</td>
+                <td class="myOnlineInfo5">내용</td>
+              </tr>
+              <tr>
+                <td colspan="3" class="myOnlineInfo6">내용</td>
+              </tr>
             </table>
           </div>
           <!-- //내 정보 영역 -->
@@ -89,18 +93,18 @@
           <div id="menu3" class="content iMake" role="complementary">
             <h3>I Make</h3>
             <ul role="tablist" class="tabs">
-              <li role="none"><a href="#" role="tab" aria-selected="true" aria-controls="tab_ui">Comp</a></li>
-              <li role="none"><a href="#" role="tab" aria-selected="false" aria-controls="tab_ac">Game</a></li>
-              <li role="none"><a href="#" role="tab" aria-selected="false" aria-controls="tab_se">Tab3</a></li>
+              <li role="none"><a href="#" role="tab" aria-selected="true" aria-controls="tab01">Comp</a></li>
+              <li role="none"><a href="#" role="tab" aria-selected="false" aria-controls="tab02">Game</a></li>
+              <li role="none"><a href="#" role="tab" aria-selected="false" aria-controls="tab03">Tab3</a></li>
             </ul>
-            <div id="tab_ui" class="tabContent" role="tabpanel" aria-labelledby="ui" tabindex="0">
+            <div id="tab01" class="tabContent" role="tabpanel" aria-labelledby="tabContA" tabindex="0">
               <a href="./template/Component.html">공통 컴포넌트</a>
             </div>
-            <div id="tab_ac" class="tabContent" role="tabpanel" aria-labelledby="ac" tabindex="0" style="display:none">
+            <div id="tab02" class="tabContent" role="tabpanel" aria-labelledby="tabContB" tabindex="0" style="display:none">
               <a href="./template/game/Sakuna.html">사쿠나히메</a>
               <a href="./template/game/THEiDOLMASTER.html">아이돌마스터 스탈릿 시즌</a>
             </div>
-            <div id="tab_se" class="tabContent" role="tabpanel" aria-labelledby="se" tabindex="0" style="display:none">
+            <div id="tab03" class="tabContent" role="tabpanel" aria-labelledby="tabContC" tabindex="0" style="display:none">
               세번째 탭 내용
             </div>
           </div>

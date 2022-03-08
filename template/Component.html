@@ -123,7 +123,7 @@
           <h2>토글 버튼 디자인</h2>
           <ul>
             <li>
-              <button class="btnToggleA" id="toggleTheme">다크모드</button>
+              <button class="btnToggleA" aria-pressed="false">버튼디자인</button>
             </li>
             <li>
               <button class="btnToggleB" aria-pressed="false"></button>
@@ -146,7 +146,19 @@
             </ul>
           </div>
           <button class="hamburgerMenu" aria-pressed="false"></button>
-          <div class="hamMenu"></div>
+          <div class="hamMenu">
+            <div class="titleArea">환경설정</div>
+            <ul>
+              <li>
+                <a href="javascript:history.back();" id="backPage">뒤로가기</a>
+              </li>
+              <li>
+                <button id="toggleTheme">다크모드 -<span>OFF</span></button>
+              </li>
+              <li></li>
+              <li></li>
+            </ul>
+          </div>
         </td>
       </tr>
       <tr>
@@ -208,13 +220,13 @@
         <td class="inputStyle">
           <h2>탭메뉴 디자인</h2>
           <ul role="tablist" class="tabs">
-            <li role="none"><a href="#" role="tab" aria-selected="true" aria-controls="tab_01">Tab1</a></li>
-            <li role="none"><a href="#" role="tab" aria-selected="false" aria-controls="tab_02">Tab2</a></li>
-            <li role="none"><a href="#" role="tab" aria-selected="false" aria-controls="tab_03">Tab3</a></li>
+            <li role="none"><a href="#" role="tab" aria-selected="true" aria-controls="tab01">Tab1</a></li>
+            <li role="none"><a href="#" role="tab" aria-selected="false" aria-controls="tab02">Tab2</a></li>
+            <li role="none"><a href="#" role="tab" aria-selected="false" aria-controls="tab03">Tab3</a></li>
           </ul>
-          <div id="tab_01" class="tabContent" role="tabpanel" aria-labelledby="tabContA" tabindex="0">첫번째 탭</div>
-          <div id="tab_02" class="tabContent" role="tabpanel" aria-labelledby="tabContB" tabindex="0" style="display:none">두번째 탭</div>
-          <div id="tab_03" class="tabContent" role="tabpanel" aria-labelledby="tabContC" tabindex="0" style="display:none">세번째 탭</div>
+          <div id="tab01" class="tabContent" role="tabpanel" aria-labelledby="tabContA" tabindex="0">첫번째 탭</div>
+          <div id="tab02" class="tabContent" role="tabpanel" aria-labelledby="tabContB" tabindex="0" style="display:none">두번째 탭</div>
+          <div id="tab03" class="tabContent" role="tabpanel" aria-labelledby="tabContC" tabindex="0" style="display:none">세번째 탭</div>
         </td>
       </tr>
       <tr>
