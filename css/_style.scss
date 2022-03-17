@@ -11,15 +11,12 @@
     h3 {font-size:1.7rem;}
     &.aboutMe {position:relative;display: inline-block;
       .myOnlineImg {display:inline-block;width:21rem;height:30rem;overflow:hidden;
-        img {}
       }
       .about {border-collapse:separate;border-spacing:10px;
         td {background:#BAB09B;@include borderRadius(10px);width:100px;height:100px;}
       }
     }
-    &.iMake {
 
-    }
   }
 }
 

@@ -127,8 +127,8 @@ button {@include buttonBase;
   }
   
   /* 공통 */
-  &:hover {}
-  &:active {}
+  // &:hover {}
+  // &:active {}
   &:focus-visible {
     @include focusBase;
   }
