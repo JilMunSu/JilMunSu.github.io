@@ -9,18 +9,12 @@
   }
   .content {max-width:1920px;min-height:50vh;margin:0 auto;padding:1rem 1.7rem;background:$whiteColor;
     h3 {font-size:1.7rem;}
-    &.aboutMe {position:relative;
-      .toggleTypeA {position:absolute;top:0.7rem;left:10.5rem;}
-      .about {width:80vw;height:30rem;margin:1rem 0;
-        .myOnlineImg {width:21rem;height:30rem; background:#BAB09B;overflow:hidden;
-          img {}
-        }
-        .myOnlineInfo1 {background:#BAB09B;}
-        .myOnlineInfo2 {background:#BAB09B;}
-        .myOnlineInfo3 {background:#BAB09B;}
-        .myOnlineInfo4 {background:#BAB09B;}
-        .myOnlineInfo5 {background:#BAB09B;}
-        .myOnlineInfo6 {background:#BAB09B;}
+    &.aboutMe {position:relative;display: inline-block;
+      .myOnlineImg {display:inline-block;width:21rem;height:30rem;overflow:hidden;
+        img {}
+      }
+      .about {border-collapse:separate;border-spacing:10px;
+        td {background:#BAB09B;@include borderRadius(10px);width:100px;height:100px;}
       }
     }
     &.iMake {

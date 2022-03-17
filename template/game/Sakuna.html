@@ -4,43 +4,47 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../images/favicon/favicon-32x32.png">
+  <link rel="manifest" href="../../js/manifest.json">
   <script src="../../js/jquery-3.6.0.min.js"></script>
   <script src="../../js/common.js"></script>
-  <script src="../../js/wai-aria.ui.js/wai-aria.ui.es5.js"></script>
-  <script src="../../js/wai-aria.ui.js/nuli.autocomplete.es5.js"></script>
-  <script src="../../js/wai-aria.ui.js/jstree.min.js"></script>
   <link rel="stylesheet" href="../../css/font.css">
   <link rel="stylesheet" href="../../css/main.min.css">
-  <link rel=" shortcut icon" href=".ico">
-  <link rel="icon" href=".ico">
+  <script> 
+    $(document).ready(function(){
+      // 햄버거메뉴 불러오기
+      $("#hambergerCont").load("../layout/hamberger.html");
+    });
+  </script> 
   <title>Sakuna</title>
 </head>
 <body>
   <div class="wrap">
     <div class="contain">
       <div class="sakunaPage">
+        <div id="hambergerCont"></div>
         <h1>사쿠나히메 농사법</h1>
         <div class="content">
-          <ul role="tablist" class="tabs">
-            <li role="none"><a href="#" role="tab" aria-selected="true" aria-controls="tab01">기본정보1</a></li>
-            <li role="none"><a href="#" role="tab" aria-selected="false" aria-controls="tab02">기본정보2</a></li>
-            <li role="none"><a href="#" role="tab" aria-selected="false" aria-controls="tab03">기본정보3</a></li>
-            <li role="none"><a href="#" role="tab" aria-selected="false" aria-controls="tab04">기비</a></li>
-            <li role="none"><a href="#" role="tab" aria-selected="false" aria-controls="tab05">논갈기</a></li>
-            <li role="none"><a href="#" role="tab" aria-selected="false" aria-controls="tab06">볍씨선별</a></li>
-            <li role="none"><a href="#" role="tab" aria-selected="false" aria-controls="tab07">육모</a></li>
-            <li role="none"><a href="#" role="tab" aria-selected="false" aria-controls="tab08">모내기</a></li>
-            <li role="none"><a href="#" role="tab" aria-selected="false" aria-controls="tab09">묘대기</a></li>
-            <li role="none"><a href="#" role="tab" aria-selected="false" aria-controls="tab10">분얼기</a></li>
-            <li role="none"><a href="#" role="tab" aria-selected="false" aria-controls="tab11">출수기</a></li>
-            <li role="none"><a href="#" role="tab" aria-selected="false" aria-controls="tab12">등숙기</a></li>
-            <li role="none"><a href="#" role="tab" aria-selected="false" aria-controls="tab13">수확</a></li>
-            <li role="none"><a href="#" role="tab" aria-selected="false" aria-controls="tab14">볏단 걸기</a></li>
-            <li role="none"><a href="#" role="tab" aria-selected="false" aria-controls="tab15">탈곡</a></li>
-            <li role="none"><a href="#" role="tab" aria-selected="false" aria-controls="tab16">도정</a></li>
-            <li role="none"><a href="#" role="tab" aria-selected="false" aria-controls="tab17">TIP</a></li>
+          <ul class="tabs">
+            <li><span class="tabMenu current" data-tab="tab01" tabindex="0">기본정보1</sp></li>
+            <li><span class="tabMenu" data-tab="tab02" tabindex="0">기본정보2</sp></li>
+            <li><span class="tabMenu" data-tab="tab03" tabindex="0">기본정보3</sp></li>
+            <li><span class="tabMenu" data-tab="tab04" tabindex="0">기비</sp></li>
+            <li><span class="tabMenu" data-tab="tab05" tabindex="0">논갈기</sp></li>
+            <li><span class="tabMenu" data-tab="tab06" tabindex="0">볍씨선별</sp></li>
+            <li><span class="tabMenu" data-tab="tab07" tabindex="0">육모</sp></li>
+            <li><span class="tabMenu" data-tab="tab08" tabindex="0">모내기</sp></li>
+            <li><span class="tabMenu" data-tab="tab09" tabindex="0">묘대기</sp></li>
+            <li><span class="tabMenu" data-tab="tab10" tabindex="0">분얼기</sp></li>
+            <li><span class="tabMenu" data-tab="tab11" tabindex="0">출수기</sp></li>
+            <li><span class="tabMenu" data-tab="tab12" tabindex="0">등숙기</sp></li>
+            <li><span class="tabMenu" data-tab="tab13" tabindex="0">수확</sp></li>
+            <li><span class="tabMenu" data-tab="tab14" tabindex="0">볏단 걸기</sp></li>
+            <li><span class="tabMenu" data-tab="tab15" tabindex="0">탈곡</sp></li>
+            <li><span class="tabMenu" data-tab="tab16" tabindex="0">도정</sp></li>
+            <li><span class="tabMenu" data-tab="tab17" tabindex="0">TIP</sp></li>
           </ul>
-          <div id="tab01" class="tabContent" role="tabpanel" aria-labelledby="tabContA" tabindex="0">
+          <div id="tab01" class="tabContent current">
             <div class="content statistics">
               <table class="firstBold">
                 <tr>
@@ -138,7 +142,7 @@
               </div>
             </div>    
           </div>
-          <div id="tab02" class="tabContent" role="tabpanel" aria-labelledby="tabContB" tabindex="0" style="display:none">
+          <div id="tab02" class="tabContent">
             <div class="content pest">
               <h2>해충</h2>
               <p>해충이 늘어나면 질병이 발생한다.</p>
@@ -187,7 +191,7 @@
               </div>
             </div>
           </div>
-          <div id="tab03" class="tabContent" role="tabpanel" aria-labelledby="tabContC" tabindex="0" style="display:none">
+          <div id="tab03" class="tabContent">
             <div class="content amountFocusing">
               <h2>양 특화</h2>
               <p>수확량을 늘리는데 집중하는 방법이다.</p>
@@ -300,7 +304,7 @@
               </div>
             </div>
           </div>
-          <div id="tab04" class="tabContent" role="tabpanel" aria-labelledby="tabContD" tabindex="0" style="display:none">
+          <div id="tab04" class="tabContent">
             <div class="content foundation">
               <h2>一 · 기비</h2>
               <p>밭을 갈기 전 비료를 뿌린다.</p>
@@ -373,7 +377,7 @@
               </div>
             </div>
           </div>
-          <div id="tab05" class="tabContent" role="tabpanel" aria-labelledby="tabContE" tabindex="0" style="display:none">
+          <div id="tab05" class="tabContent">
             <div class="content cultivation">
               <h2>二 · 논갈기</h2>
               <p>논밭을 갈아 땅을 고른다.</p>
@@ -423,7 +427,7 @@
               </div>
             </div>
           </div>
-          <div id="tab06" class="tabContent" role="tabpanel" aria-labelledby="tabContF" tabindex="0" style="display:none">
+          <div id="tab06" class="tabContent">
             <div class="content riceSeed">
               <h2>三 · 볍씨 선별</h2>
               <p>품질이 좋은 볍씨를 골라낸다.</p>
@@ -503,7 +507,7 @@
               </div>
             </div>
           </div>
-          <div id="tab07" class="tabContent" role="tabpanel" aria-labelledby="tabContG" tabindex="0" style="display:none">
+          <div id="tab07" class="tabContent">
             <div class="content growSeed">
               <h2>四 · 육모</h2>
               <p>볍씨를 어떻게 뿌릴지 정한다.</p>
@@ -561,7 +565,7 @@
               </div>
             </div>
           </div>
-          <div id="tab08" class="tabContent" role="tabpanel" aria-labelledby="tabContH" tabindex="0" style="display:none">
+          <div id="tab08" class="tabContent">
             <div class="content planting">
               <h2>五 · 모내기</h2>
               <p>밭에 모를 심는다.</p>
@@ -657,7 +661,7 @@
               </div>
             </div>
           </div>
-          <div id="tab09" class="tabContent" role="tabpanel" aria-labelledby="tabContI" tabindex="0" style="display:none">
+          <div id="tab09" class="tabContent">
             <div class="content catWait">
               <h2>六 · 묘대기</h2>
               <p>모내기 이후 벼가 '모' 상태일때 진행된다.</p>
@@ -698,7 +702,7 @@
               </div>
             </div>
           </div>
-          <div id="tab10" class="tabContent" role="tabpanel" aria-labelledby="tabContJ" tabindex="0" style="display:none">
+          <div id="tab10" class="tabContent">
             <div class="content growingSeason">
               <h2>七 · 분얼기</h2>
               <p>벼의 줄기가 새로 분화하는 단계이다.</p>
@@ -985,7 +989,7 @@
               </div>
             </div>
           </div>
-          <div id="tab11" class="tabContent" role="tabpanel" aria-labelledby="tabContK" tabindex="0" style="display:none">
+          <div id="tab11" class="tabContent">
             <div class="content outWater">
               <h2>八 · 출수기</h2>
               <p>벼의 이삭이 나서 무르익는 단계이다.</p>
@@ -1116,7 +1120,7 @@
               </div>
             </div>
           </div>
-          <div id="tab12" class="tabContent" role="tabpanel" aria-labelledby="tabContL" tabindex="0" style="display:none">
+          <div id="tab12" class="tabContent">
             <div class="content ripeningStage">
               <h2>九 · 등숙기</h2>
               <p>벼가 무르익는 단계이다.</p>
@@ -1277,7 +1281,7 @@
               </div>
             </div>
           </div>
-          <div id="tab13" class="tabContent" role="tabpanel" aria-labelledby="tabContM" tabindex="0" style="display:none">
+          <div id="tab13" class="tabContent">
             <div class="content harvest">
               <h2>十 · 수확</h2>
               <p>벼를 수확하는 단계이다.</p>
@@ -1355,7 +1359,7 @@
               </div>
             </div>
           </div>
-          <div id="tab14" class="tabContent" role="tabpanel" aria-labelledby="tabContN" tabindex="0" style="display:none">
+          <div id="tab14" class="tabContent">
             <div class="content hanging">
               <h2>十一 · 볏단 걸기</h2>
               <p>볏단을 널어 말리는 단계이다.</p>
@@ -1414,13 +1418,13 @@
               </div>
             </div>
           </div>
-          <div id="tab15" class="tabContent" role="tabpanel" aria-labelledby="tabContO" tabindex="0" style="display:none">
+          <div id="tab15" class="tabContent">
             <div class="content threshing">
               <h2>十二 · 탈곡</h2>
               <p>말린 볏단을 탈곡하는 단계이다.</p>
             </div>
           </div>
-          <div id="tab16" class="tabContent" role="tabpanel" aria-labelledby="tabContP" tabindex="0" style="display:none">
+          <div id="tab16" class="tabContent">
             <div class="content milling">
               <h2>十三 · 도정</h2>
               <p>벼를 찧어 쌀로 만드는 단계이다.</p>
@@ -1488,7 +1492,7 @@
               </div>
             </div>
           </div>
-          <div id="tab17" class="tabContent" role="tabpanel" aria-labelledby="tabContQ" tabindex="0" style="display:none">
+          <div id="tab17" class="tabContent">
             <div class="content etcTip">
               <h2>그 외 미세팁</h2>
               <div class="tip">

@@ -5,16 +5,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JilMunSu - 공통 컴포넌트</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon/favicon-32x32.png">
+  <link rel="manifest" href="../js/manifest.json">
   <script src="../js/jquery-3.6.0.min.js"></script>
   <script src="../js/common.js"></script>
   <script src="../js/devTool.js"></script>
-  <script src="../js/wai-aria.ui.js/wai-aria.ui.es5.js"></script>
-  <script src="../js/wai-aria.ui.js/nuli.autocomplete.es5.js"></script>
-  <script src="../js/wai-aria.ui.js/jstree.min.js"></script>
   <link rel="stylesheet" href="../css/font.css">
   <link rel="stylesheet" href="../css/main.min.css">
   <script>
     $(document).ready(function(){
+      // 햄버거메뉴 불러오기
+      $("#hambergerCont").load("layout/hamberger.html"); 
+
+      // 퀵메뉴 번호 생성
       $('.component table th').not('.colorStyle th').each(function(index){
         $(this).attr('id', 'menu' + index);
       });
@@ -111,29 +114,31 @@
           <h2>일반적인 버튼 디자인</h2>
           <ul>
             <li>
-              <button class="btnGenA sizeL">LARGE</button>
-              <button class="btnGenA sizeM">MED</button>
-              <button class="btnGenA sizeS">SML</button>
-              <button class="btnGenA sizeXS">XS</button>
+              <button class="btnGen typeA sizeL">LARGE</button>
+              <button class="btnGen typeA sizeM">MED</button>
+              <button class="btnGen typeA sizeS">SML</button>
+              <button class="btnGen typeA sizeXS">XS</button>
             </li>
             <li>
-              <button class="btnGenB" id="btnGoTop" onclick="goTop()">맨 위로</button>
+              <button class="btnGen typeB noText" id="btnGoTop" onclick="goTop()">맨 위로</button>
             </li>
           </ul>
           <h2>토글 버튼 디자인</h2>
           <ul>
             <li>
-              <button class="btnToggleA" aria-pressed="false">버튼디자인</button>
+              <button class="btnToggle typeA">BTN</button>
+              <button class="btnToggle typeA noText">BTN</button>
             </li>
             <li>
-              <button class="btnToggleB" aria-pressed="false"></button>
+              <button class="btnToggle typeB">BTN</button>
+              <button class="btnToggle typeB noText">BTN</button>
             </li>
           </ul>
           <h2>확장형 버튼 디자인</h2>
           <ul>
             <li>
-              <button class="btnExpanA" aria-expanded="false" aria-controls="expanded-example">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, voluptate.</button>
-              <div id="expanded-example" style="display:none">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia, a.</div>
+              <button class="btnExpan typeA">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, voluptate.</button>
+              <div style="display:none">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia, a.</div>
             </li>
           </ul>
           <h2>네비게이션 버튼 디자인</h2>
@@ -145,19 +150,8 @@
               <li class="quick typeD"><button onclick="moveSC('3')">fourth Menu</button></li>
             </ul>
           </div>
-          <button class="hamburgerMenu" aria-pressed="false"></button>
-          <div class="hamMenu">
-            <div class="titleArea">환경설정</div>
-            <ul>
-              <li>
-                <a href="javascript:history.back();" id="backPage">뒤로가기</a>
-              </li>
-              <li>
-                <button id="toggleTheme">다크모드 -<span>OFF</span></button>
-              </li>
-              <li></li>
-              <li></li>
-            </ul>
+          <div id="hambergerCont">
+            
           </div>
         </td>
       </tr>
@@ -165,68 +159,116 @@
         <th>INPUT STYLE</th>
         <td class="inputStyle">
           <h2>체크박스</h2>
-          <ul role="group" aria-labelledby="checkBox01" class="checkForm">
-          	<li role="none"><span role="checkbox" aria-checked="false">chk01</span></li>
-          	<li role="none"><span role="checkbox" aria-checked="false">chk02</span></li>
-          	<li role="none"><span role="checkbox" aria-checked="false">chk03</span></li>
-          	<li role="none"><span role="checkbox" aria-checked="false">chk04</span></li>
+          <ul class="checkForm">
+            <li>
+              <input id="check01" type="checkbox" name="checkTypeA">
+              <label for="check01">chk01</label>
+            </li>
+            <li>
+              <input id="check02" type="checkbox" name="checkTypeA">
+              <label for="check02">chk02</label>
+            </li>
+            <li>
+              <input id="check03" type="checkbox" name="checkTypeA">
+              <label for="check03">chk03</label>
+            </li>
+            <li>
+              <input id="check04" type="checkbox" name="checkTypeA">
+              <label for="check04">chk04</label>
+            </li>
           </ul>
           <h2>체크박스 - 전체선택</h2>
-          <div role="group" aria-labelledby="checkBox02" class="checkForm extan">
-          	<span role="checkbox" aria-checked="false" aria-controls="chk01 chk02 chk03 chk04" tabindex="0" class="allChk">전체 선택</span>
-          	<ul role="none">
-          		<li role="none"><span id="chk01" role="checkbox" aria-checked="false" tabindex="0">chk01</span></li>
-          		<li role="none"><span id="chk02" role="checkbox" aria-checked="false" tabindex="0">chk02</span></li>
-          		<li role="none"><span id="chk03" role="checkbox" aria-checked="false" tabindex="0">chk03</span></li>
-          		<li role="none"><span id="chk04" role="checkbox" aria-checked="false" tabindex="0">chk04</span></li>
-          	</ul>
-          </div>
+          <ul class="checkForm allChk">
+            <li>
+              <input id="checkAll" class="checkAlls" type="checkbox">
+              <label for="checkAll">전체선택</label>
+            </li>
+            <li>
+              <input id="checkA01" type="checkbox" name="checkTypeB">
+              <label for="checkA01">chk01</label>
+            </li>
+            <li>
+              <input id="checkA02" type="checkbox" name="checkTypeB">
+              <label for="checkA02">chk02</label>
+            </li>
+            <li>
+              <input id="checkA03" type="checkbox" name="checkTypeB">
+              <label for="checkA03">chk03</label>
+            </li>
+            <li>
+              <input id="checkA04" type="checkbox" name="checkTypeB">
+              <label for="checkA04">chk04</label>
+            </li>
+          </ul>
+          <ul class="checkForm allChk">
+            <li>
+              <input id="checkAll1" class="checkAlls" type="checkbox">
+              <label for="checkAll1">전체선택</label>
+            </li>
+            <li>
+              <input id="checkA011" type="checkbox" name="checkTypeB">
+              <label for="checkA011">chk01</label>
+            </li>
+            <li>
+              <input id="checkA021" type="checkbox" name="checkTypeB">
+              <label for="checkA021">chk02</label>
+            </li>
+            <li>
+              <input id="checkA031" type="checkbox" name="checkTypeB">
+              <label for="checkA031">chk03</label>
+            </li>
+            <li>
+              <input id="checkA041" type="checkbox" name="checkTypeB">
+              <label for="checkA041">chk04</label>
+            </li>
+          </ul>
           <h2>라디오 버튼</h2>
-          <ul role="radiogroup" aria-labelledby="radioBox" class="radioForm">
-          	<li role="none"><span role="radio" aria-checked="false" tabindex="0">rdo01</span></li>
-          	<li role="none"><span role="radio" aria-checked="false" tabindex="0">rdo02</span></li>
-          	<li role="none"><span role="radio" aria-checked="false" tabindex="0">rdo03</span></li>
+          <ul class="radioForm">
+            <li>
+              <input id="radio01" type="radio" name="radioTypeA">
+              <label for="radio01">radio01</label>
+            </li>
+            <li>
+              <input id="radio02" type="radio" name="radioTypeA">
+              <label for="radio02">radio02</label>
+            </li>
+            <li>
+              <input id="radio03" type="radio" name="radioTypeA">
+              <label for="radio03">radio03</label>
+            </li>
           </ul>
           <h2>선택 버튼</h2>
-          <div class="selectWrap">
-            <button aria-haspopup="listbox" aria-controls="liSort" aria-expanded="false" class="selectForm">selectBox</button>
-            <ul id="liSort" role="listbox" aria-labelledby="selectBox" style="display:none">
-              <li id="liSort00" role="option" aria-selected="true" tabindex="0">selectBox</li>
-              <li id="liSort01" role="option" aria-selected="false" tabindex="0">sel01</li>
-              <li id="liSort02" role="option" aria-selected="false" tabindex="0">sel02</li>
-              <li id="liSort03" role="option" aria-selected="false" tabindex="0">sel03</li>
-              <li id="liSort04" role="option" aria-selected="false" tabindex="0">sel04</li>
-            </ul>
-          </div>
-          <h2>에러 메시지</h2>
-          <label for="input_email">이메일</label>
-          <input type="text" aria-describedby="error_msg" aria-invalid="false" />
-          <div role="alert" id="error_msg" style="display:none">이메일 형식이 아닙니다.</div> 
-          <h2>슬라이드</h2>
-          <div class="aria_ui">
-            <div id="slider-wrap" class="slider">
-              <!-- 프로그래스 바 -->
-              <div id="slider-percent" class="slider_percent" style="width:85px;"></div>
-              <!-- 슬라이드 조절 버튼 -->
-              <div id="slider-drag" class="btn_state" draggable="true" role="slider" aria-valuemin="0" aria-valuenow="20" aria-valuemax="100" aria-valuetext="0" aria-orientation="horizontal" aria-label="점수" tabindex="0" style="left:80px;">
-              </div>
-            </div>
-            <span id="slider-num" class="slider_num" aria-hidden="true">20</span>
-          </div>
+          <select class="selectForm">
+            <option value="">선택하세요</option>
+            <option value="">sel01</option>
+            <option value="">sel02</option>
+            <option value="">sel03</option>
+            <option value="">sel04</option>
+          </select>
+          <h2>그 외</h2>
+          <input type="text">
+          <input type="password">
+          <input type="file">
+          <input type="url">
+          <input type="search">
+          <input type="tel">
+          <input type="email">
+          <input type="time">
+          <input type="number">
         </td>
       </tr>
       <tr>
         <th>UI STYLE</th>
         <td class="inputStyle">
           <h2>탭메뉴 디자인</h2>
-          <ul role="tablist" class="tabs">
-            <li role="none"><a href="#" role="tab" aria-selected="true" aria-controls="tab01">Tab1</a></li>
-            <li role="none"><a href="#" role="tab" aria-selected="false" aria-controls="tab02">Tab2</a></li>
-            <li role="none"><a href="#" role="tab" aria-selected="false" aria-controls="tab03">Tab3</a></li>
+          <ul class="tabs">
+            <li><span class="tabMenu current" data-tab="tab01" tabindex="0">tab01</span></li>
+            <li><span class="tabMenu" data-tab="tab02" tabindex="0">tab02</span></li>
+            <li><span class="tabMenu" data-tab="tab03" tabindex="0">tab03</span></li>
           </ul>
-          <div id="tab01" class="tabContent" role="tabpanel" aria-labelledby="tabContA" tabindex="0">첫번째 탭</div>
-          <div id="tab02" class="tabContent" role="tabpanel" aria-labelledby="tabContB" tabindex="0" style="display:none">두번째 탭</div>
-          <div id="tab03" class="tabContent" role="tabpanel" aria-labelledby="tabContC" tabindex="0" style="display:none">세번째 탭</div>
+          <div id="tab01" class="tabContent current">첫번째 탭</div>
+          <div id="tab02" class="tabContent">두번째 탭</div>
+          <div id="tab03" class="tabContent">세번째 탭</div>
         </td>
       </tr>
       <tr>
@@ -240,7 +282,7 @@
           <div class="remCal">
             <input type="number" role="form" class="textArea usePx" placeholder="사용하려는 값"/><span>px</span>
             <input type="number" role="form" class="textArea perPx" placeholder="최상위 부모값" value="14"/><span>px</span>
-            <button id="remResult" role="search" class="btnGenA sizeXS">계산</button>
+            <button id="remResult" role="search" class="btnGen typeA sizeXS">계산</button>
             <div>결과: <div class="result"></div>rem</div>
           </div>
         </td>

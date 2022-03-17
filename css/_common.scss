@@ -96,37 +96,46 @@ $blueColor:#2363C0;
 .uppercase {text-transform:uppercase;}
 .taC {text-align:center;}
 
-/* button */
+/* ---button--- */
 button {@include buttonBase;
-  &.btnGenA {position:relative;@include borderRadius(4px);background:none;border:1px solid $blackColor;color:$blackColor;transition:0.5s ease-in-out;
-    &.sizeL {min-width:6rem;height:2.5rem;padding:0.1rem 0.5rem 0;}
-    &.sizeM {width:5rem;height:2.5rem;padding:0.1rem 0.5rem 0;}
-    &.sizeS {width:4rem;height:2rem;padding:0.2rem 0.5rem 0;}
-    &.sizeXS {width:2.5rem;height:1.5rem;padding-top:0.2rem;}
+  /* 일반형 */
+  &.btnGen {
+    &.typeA {position:relative;@include borderRadius(4px);background:none;border:1px solid $blackColor;color:$blackColor;transition:0.5s ease-in-out;
+      &.sizeL {min-width:6rem;height:2.5rem;padding:0.1rem 0.5rem 0;}
+      &.sizeM {width:5rem;height:2.5rem;padding:0.1rem 0.5rem 0;}
+      &.sizeS {width:4rem;height:2rem;padding:0.2rem 0.5rem 0;}
+      &.sizeXS {width:2.5rem;height:1.5rem;padding-top:0.2rem;}
+    }
+    &.typeB {@include positionBR(fixed, 50px, 20px);display:none;width:3rem;height:3rem;background:$baseColor url('../images/icon/upArrow.svg') no-repeat center / 45%;border:none;@include borderRadius(100%);cursor:pointer;}
   }
-  &.btnGenB {@include textHidden;@include positionBR(fixed, 50px, 20px);display:none;width:3rem;height:3rem;background:$baseColor;border:none;@include borderRadius(100%);cursor:pointer;}
-
-  &.btnToggleA {@include textHidden;width:2.4rem;height:2.4rem;background:$mainColor;@include borderRadius(100%);@include boxShadow(7px, 9px, 19px, -1px, $grayColor);
-    &[aria-pressed="true"] {background:$baseColor;}
+  /* 토글형 */
+  &.btnToggle {
+    &.typeA {width:2.4rem;height:2.4rem;background:$mainColor;@include borderRadius(100%);@include boxShadow(7px, 9px, 19px, -1px, $grayColor);
+      &.toggleOn {background:$baseColor;}
+    }
+    &.typeB {position:relative;width:70px;height:2rem;padding-left:20px;@include borderRadius(50px);background:$grayColor;
+      &.toggleOn {background:$greenColor;
+        &:before {@include transform(translateX(2.9rem));}
+      }
+      &:before {content:'';@include positionTL(absolute, 3px, 4px);width:1.5rem;height:1.5rem;background:$whiteColor;@include borderRadius(100%);@include transition(.4s);}
+    }
   }
-  &.btnToggleB {position:relative;width:70px;height:2rem;@include borderRadius(50px);background:$grayColor;
-    &[aria-pressed="true"] {background:$greenColor;}
-    &:before {content:'';@include positionTL(absolute, 3px, 4px);width:1.5rem;height:1.5rem;background:$whiteColor;@include borderRadius(100%);@include transition(.4s);}
-    &[aria-pressed="true"]:before {@include transform(translateX(2.9rem));}
-  }
-  &.btnExpanA {min-width:40vw;padding:10px;background:$grayColor;border-top-left-radius:10px;border-top-right-radius:10px;text-align:left;
-    + div {min-width:37vw;padding:0 10px 10px;background:$grayColor;}
+  /* 확장형 */
+  &.btnExpan {
+    &.typeA {min-width:40vw;padding:10px 10px 5px;background:$grayColor;border-top-left-radius:10px;border-top-right-radius:10px;text-align:left;}
+    + div {display:block;min-width:37vw;padding:5px 10px 10px;background:$grayColor;}
   }
   
-  &:hover {
-    
-  }
+  /* 공통 */
+  &:hover {}
   &:active {}
   &:focus-visible {
     @include focusBase;
   }
+  &.noText {@include textHidden;}
 }
 
+/* ---큌 메뉴---  */
 .quickMenu {@include positionTR(fixed, 100px, 2rem);min-width:5rem;z-index:2;
   ul {
     .quick {position:relative;padding:0.7rem 0;
@@ -135,8 +144,9 @@ button {@include buttonBase;
   }
 }
 
+/* ---햄버거 메뉴---  */
 .hamburgerMenu {@include positionTR(fixed, 20px, 0);width:3.6rem;height:3.6rem;background:$blackColor;border:0;opacity:0.9;@include transition(.4s);z-index:500;
-  &[aria-pressed="true"] {@include transform(translateX(-250px));
+  &.toggleOn {@include transform(translateX(-250px));
     +.hamMenu {@include transform(translateX(-250px));}
   }
   +.hamMenu {@include positionTR(fixed, 0, -250px);width:250px;height:100vh;background:$blackColor;opacity:0.9;@include transition(.4s);z-index:500;
@@ -144,72 +154,59 @@ button {@include buttonBase;
     ul {
       li {height:4.5rem;border-top:1px solid $grayColor;
         &:last-child {border-bottom:1px solid $grayColor;}
-        #backPage {@include centerJAText;width:100%;height:100%;color:$whiteColor;font-weight:bold;}
-        #toggleTheme {width:100%;height:100%;color:$whiteColor;
-          span {padding-left:4px;}
+        a {@include centerJAText;width:100%;height:100%;color:$whiteColor;font-weight:bold;font-size:1.1rem;
+          &:focus-visible {@include focusBase;color:$blackColor;} 
+        }
+        button {width:100%;height:100%;color:$whiteColor;font-size:1.1rem;
+          span {padding-left:4px;font-size:1.1rem;}
+          &:focus-visible {color:$blackColor;}
         }
       }
     }
   }
 }
 
-
-
-/* input */
-.checkForm, .radioForm {position:relative;height:1.3rem;padding-top:0.5rem;
-  &.extan {height:2.8rem;}
-  .allChk {cursor:pointer;margin-left:2rem;
-    &:before {content:'';@include positionTL(absolute, 4px, 0.5rem);width:1.3rem;height:1.3rem;background:$grayColor;}
-    &[aria-checked="true"]:before {background:$blueColor;}
-    + ul {height:1.3rem;padding-top:0.5rem;}
+/* ---input--- */
+.checkForm, .radioForm {position:relative;height:1.4rem;padding-top:0.5rem;
+  &.allChk {height:3.5rem;
+    li:first-child {display:block;padding-bottom:0.5rem;}
   }
-  li {display:inline-block;margin-left:2rem;cursor:pointer;
-    span {position:relative;
-      &:before {content:'';@include positionTL(absolute, 0, -1.5rem);width:1.3rem;height:1.3rem;background:$grayColor;}
-      &[aria-checked="true"]:before {background:$blueColor;}
-    } 
-  }
-}
-.radioForm li span:before {@include borderRadius(100%);}
-
-.selectWrap {position:relative;
-  .selectForm {width:10.6rem; padding:10px;border:1px solid $blackColor;@include borderRadiusT(3px);@include textCut;
-    + ul {@include positionTL(absolute, 2.6rem, 0);
-      li {width:9rem;padding:10px; background:$whiteColor;border:1px solid $blackColor;cursor:pointer;@include textCut;
-        &:not(:last-child) {border-bottom:0;}
-        &:hover {}
+  li {display:inline-block;margin-left:1rem;padding-top:4px;
+    input {position:relative;
+      &:focus-visible + label {font-weight:bold;
+        &:after {content:'';@include positionBL(absolute, -3px, 0);width:100%;height:3px;background:$blackColor;}
+      }
+      &:checked + label:before {background:$blueColor;}
+      & + label {position:relative;height:1.3rem;padding-top:2px;cursor:pointer;
+        &:before {content:'';@include positionTL(absolute, 0, -22px);width:1.3rem;height:1.3rem;background:$grayColor;}
       }
     }
+    input[type="radio"] + label:before {@include borderRadius(100%);}
   }
 }
-
-.aria_ui {position:relative;margin-top:15px;
-  .slider {position: relative;margin: 30px 0 20px 0;width: 500px;height: 10px;background: #f5f5f5;border:1px solid #000;border-radius:10px;
-    .slider_percent {position: absolute;top:-1px;left:-1px;height:100%;background:#2c75c7;border-radius:10px;border:1px solid #2c75c7;}
-    .btn_state {position: absolute;top:-10px;width:30px;height:30px;background:#2c75c7;border-radius:30px;}
-  }
-  .slider_num {margin: 20px 0;padding: 2px 10px;width: 30px;}
-}
-
 
 input {
   &.textArea {width:100px;height:19px;padding:0 5px;border:1px solid $blackColor;border-radius:3px;}
 }
 
+/* ---select--- */
+.selectForm {width:10.6rem;padding:10px;border:1px solid $blackColor;@include borderRadiusT(3px);@include textCut;
+  &:focus-visible {border:1px solid $accentColor;font-weight:bold;}
+}
+
 /* tab */
 .tabs {display:inline-block;margin:0;padding:0;list-style:none;@include boxShadow(14px, 0px, 9px, -5px, $grayColor);
   li {display:inline-block;
-    a {@include centerJAText;width:5.7rem;height:2.5rem;
-      &[aria-selected="true"] {color:$blueColor;font-weight:bold;}
+    span {@include centerJAText;width:5.7rem;height:2.5rem;cursor:pointer;
+      &.current {color:$blueColor;font-weight:bold;}
       &:focus-visible {@include focusBase;color:$blackColor;}
     }
   }
 }
-.tabContent {min-height:15rem;padding:1rem;@include boxShadow(7px, 9px, 19px, -1px, $grayColor);
-  &:focus-visible,
-  a:focus-visible {@include focusBase;}
+.tabContent {display:none;min-height:15rem;padding:1rem;@include boxShadow(7px, 9px, 19px, -1px, $grayColor);
+  &.current {display:block;}
   a {padding:10px;
-
+    &:focus-visible {@include focusBase;}
   }
 }
 
@@ -237,7 +234,9 @@ html {background:$whiteColor;color:$blackColor;-ms-user-select:none;-moz-user-se
   header {position:fixed;top:0;left:0;width:calc(100vw - 100px);height:70px;padding:0 50px;z-index:400;
     a {
       &:focus-visible {@include focusImg();}
-      h1 {display:inline-block;width:70px;height:70px;font-size:30px;line-height:70px;}
+      h1 {display:inline-block;
+        img {margin:4px 0;width:4.5rem;}
+      }
     }
   }
 }

@@ -4,21 +4,25 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../images/favicon/favicon-32x32.png">
+  <link rel="manifest" href="../../js/manifest.json">
   <script src="../../js/jquery-3.6.0.min.js"></script>
   <script src="../../js/common.js"></script>
-  <script src="../../js/wai-aria.ui.js/wai-aria.ui.es5.js"></script>
-  <script src="../../js/wai-aria.ui.js/nuli.autocomplete.es5.js"></script>
-  <script src="../../js/wai-aria.ui.js/jstree.min.js"></script>
   <link rel="stylesheet" href="../../css/font.css">
   <link rel="stylesheet" href="../../css/main.min.css">
-  <link rel=" shortcut icon" href=".ico">
-  <link rel="icon" href=".ico">
+  <script> 
+    $(document).ready(function(){
+      // 햄버거메뉴 불러오기
+      $("#hambergerCont").load("../layout/hamberger.html");
+    });
+  </script> 
   <title>THEiDOLMASTER</title>
 </head>
 <body>
   <div class="wrap">
     <div class="contain">
       <div class="iMASPage">
+        <div id="hambergerCont"></div>
         <h1>아이돌마스터 스탈릿 시즌 공략법</h1>
         <div class="content nav">
           <table>
@@ -58,12 +62,12 @@
           </table>
         </div>
         <div class="content">
-          <ul role="tablist" class="tabs">
-            <li role="none"><a href="#" role="tab" aria-selected="true" aria-controls="tab01">아마미 하루카</a></li>
-            <li role="none"><a href="#" role="tab" aria-selected="false" aria-controls="tab02">Tab2</a></li>
-            <li role="none"><a href="#" role="tab" aria-selected="false" aria-controls="tab03">Tab3</a></li>
+          <ul class="tabs">
+            <li><span class="tabMenu current" data-tab="tab01" tabindex="0">아마미 하루카</span></li>
+            <li><span class="tabMenu" data-tab="tab02" tabindex="0">Tab2</span></li>
+            <li><span class="tabMenu" data-tab="tab03" tabindex="0">Tab3</span></li>
           </ul>
-          <div id="tab01" class="tabContent" role="tabpanel" aria-labelledby="tabContA" tabindex="0">
+          <div id="tab01" class="tabContent current">
             <table>
               <tr>
                 <th colspan="2">아마미 하루카</th>
@@ -82,8 +86,8 @@
               </tr>
             </table>
           </div>
-          <div id="tab02" class="tabContent" role="tabpanel" aria-labelledby="tabContB" tabindex="0" style="display:none">두번째 탭</div>
-          <div id="tab03" class="tabContent" role="tabpanel" aria-labelledby="tabContC" tabindex="0" style="display:none">세번째 탭</div>
+          <div id="tab02" class="tabContent">두번째 탭</div>
+          <div id="tab03" class="tabContent">세번째 탭</div>
         </div>
       </div>
     </div>
