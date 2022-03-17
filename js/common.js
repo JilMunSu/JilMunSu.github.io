@@ -83,7 +83,7 @@ window.onload=function(){
   // 확장버튼 동작
   $('.btnExpan').click(function() {
     $(this).toggleClass('toggleOn');
-    if($(this).hasClass('toggleOn') == true) {
+    if($(this).hasClass('toggleOn')) {
       $(this).next().css("display", "block");
     } else {
       $(this).next().css("display", "none");
