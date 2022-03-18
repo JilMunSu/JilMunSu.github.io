@@ -52,49 +52,50 @@ $blueColor:#2363C0;
   header {height:100px;
     h1 {@include centerJAText;height:100%;font-size:1.5rem;}
   }
-  table {width:100vw;
-    tr {border-top:1px solid $blackColor;border-bottom:1px solid $blackColor;
-      th {@include centerJAText;height:20px;border-bottom:1px solid $blackColor;}
-      td {display:block;min-height:200px;padding:5px;
-        h2 {font-size:1.2rem;}
-        &.textStyle {
-          & > ul {
-            &:not(:last-child) {padding-bottom:7px;}
-            li {padding:3px;}
-          }
-        }
-        &.colorStyle {
-          table {width:300px;
-            tr {display:table-row;
-              th, td {display:table-cell;padding:6px;border:1px solid $grayColor;height:auto;}
-              .mainColor {background:$mainColor;}
-              .baseColor {background:$baseColor;}
-              .accentColor {background:$accentColor;}
-              .blackColor {background:$blackColor;}
-              .grayColor {background:$grayColor;}
-              .whiteColor {background:$whiteColor;}
-              .redColor {background:$redColor;}
-              .greenColor {background:$greenColor;}
-              .blueColor {background:$blueColor;}
+  > table {width:100vw;
+    > tbody {
+      > tr {border-top:1px solid $blackColor;border-bottom:1px solid $blackColor;
+        > th {@include centerJAText;height:20px;border-bottom:1px solid $blackColor;}
+        > td {display:block;min-height:200px;padding:5px;
+          h2 {font-size:1.2rem;}
+          &.textStyle {
+            & > ul {
+              &:not(:last-child) {padding-bottom:7px;}
+              li {padding:3px;}
             }
           }
-        }
-        &.buttonStyle {
-          & > ul {
-            li {display:inline-block;padding:10px;}
+          &.colorStyle {
+            table {width:300px;
+              tr {display:table-row;
+                th, td {display:table-cell;padding:6px;border:1px solid $grayColor;height:auto;}
+                .mainColor {background:$mainColor;}
+                .baseColor {background:$baseColor;}
+                .accentColor {background:$accentColor;}
+                .blackColor {background:$blackColor;}
+                .grayColor {background:$grayColor;}
+                .whiteColor {background:$whiteColor;}
+                .redColor {background:$redColor;}
+                .greenColor {background:$greenColor;}
+                .blueColor {background:$blueColor;}
+              }
+            }
+          }
+          &.buttonStyle {
+            & > ul {
+              li {display:inline-block;padding:10px;}
+            }
+          }
+          &.inputStyle {
+            h2:not(:first-child) {margin:20px 0 5px;}
           }
         }
-        &.inputStyle {
-          h2:not(:first-child) {margin:20px 0 5px;}
-        }
-
       }
     }
   }
 }
 .ffMapleB {font-family:'mapleBold';}
+.fontJP {font-family:'fontJP';}
 .uppercase {text-transform:uppercase;}
-.taC {text-align:center;}
 
 /* ---button--- */
 button {@include buttonBase;
@@ -194,6 +195,13 @@ input {
   &:focus-visible {border:1px solid $accentColor;font-weight:bold;}
 }
 
+/* ---table--- */
+.basicTable {
+  th, td {padding:6px;border:1px solid $grayColor;}
+}
+
+
+/* ---UI--- */
 /* tab */
 .tabs {display:inline-block;margin:0;padding:0;list-style:none;@include boxShadow(14px, 0px, 9px, -5px, $grayColor);
   li {display:inline-block;
@@ -210,10 +218,10 @@ input {
   }
 }
 
-/* popup */
+/* ---popup--- */
 
 
-/* devTool */
+/* ---devTool--- */
 .remCal {position:relative;
   input {padding:0 25px 0 5px;text-align:right;
     &::placeholder {text-align:left;}

@@ -12,8 +12,7 @@
   <link rel="stylesheet" href="../../css/main.min.css">
   <script> 
     $(document).ready(function(){
-      // 햄버거메뉴 불러오기
-      $("#hambergerCont").load("../layout/hamberger.html");
+      // 
     });
   </script> 
   <title>Sakuna</title>
@@ -21,8 +20,26 @@
 <body>
   <div class="wrap">
     <div class="contain">
-      <div class="sakunaPage">
-        <div id="hambergerCont"></div>
+      <div class="subPage sakunaPage">
+        <!-- 햄버거 메뉴 -->
+        <button class="btnToggle hamburgerMenu"></button>
+        <div class="hamMenu">
+          <div class="titleArea">환경설정</div>
+          <ul>
+            <li>
+              <a href="../../index.html">홈으로</a>
+            </li>
+            <li>
+              <a href="javascript:history.back();" id="backPage">뒤로가기</a>
+            </li>
+            <li>
+              <button id="toggleTheme">다크모드 -<span>OFF</span></button>
+            </li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+        <!-- //햄버거 메뉴 -->
         <h1>사쿠나히메 농사법</h1>
         <div class="content">
           <ul class="tabs">
@@ -46,53 +63,61 @@
           </ul>
           <div id="tab01" class="tabContent current">
             <div class="content statistics">
-              <table class="firstBold">
-                <tr>
-                  <th colspan="2">기본 스탯</th>
-                </tr>
-                <tr>
-                  <td>양</td>
-                  <td>생명(체력)</td>
-                </tr>
-                <tr>
-                  <td>맛</td>
-                  <td>힘(공격력)</td>
-                </tr>
-                <tr>
-                  <td>경도</td>
-                  <td>체력(방어력)</td>
-                </tr>
-                <tr>
-                  <td>향</td>
-                  <td>신기(기술 위력)</td>
-                </tr>
-                <tr>
-                  <td>윤기</td>
-                  <td>운기(운)</td>
-                </tr>
-                <tr>
-                  <td>찰기</td>
-                  <td>식력(식사 버프효과)</td>
-                </tr>
+              <table class="basicTable">
+                <thead>
+                  <tr>
+                    <th colspan="2">기본 스탯</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>양</th>
+                    <td>생명(체력)</td>
+                  </tr>
+                  <tr>
+                    <th>맛</th>
+                    <td>힘(공격력)</td>
+                  </tr>
+                  <tr>
+                    <th>경도</td>
+                    <td>체력(방어력)</td>
+                  </tr>
+                  <tr>
+                    <th>향</th>
+                    <td>신기(기술 위력)</td>
+                  </tr>
+                  <tr>
+                    <th>윤기</th>
+                    <td>운기(운)</td>
+                  </tr>
+                  <tr>
+                    <th>찰기</th>
+                    <td>식력(식사 버프효과)</td>
+                  </tr>
+                </tbody>
               </table>
             </div>
             <div class="content water">
-              <table class="firstBold">
-                <tr>
-                  <th colspan="2">물 대기</th>
-                </tr>
-                <tr>
-                  <td>천수</td>
-                  <td>발목 높이, 24%이하</td>
-                </tr>
-                <tr>
-                  <td>심수</td>
-                  <td>무릎 높이, 25%이상</td>
-                </tr>
-                <tr>
-                  <td>흐르는 물</td>
-                  <td>입수/출수용 수문 개방</td>
-                </tr>
+              <table class="basicTable">
+                <thead>
+                  <tr>
+                    <th colspan="2">물 대기</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>천수</th>
+                    <td>발목 높이, 24%이하</td>
+                  </tr>
+                  <tr>
+                    <th>심수</th>
+                    <td>무릎 높이, 25%이상</td>
+                  </tr>
+                  <tr>
+                    <th>흐르는 물</th>
+                    <td>입수/출수용 수문 개방</td>
+                  </tr>
+                </tbody>
               </table>
               <div class="tip">
                 <ul>
@@ -104,22 +129,26 @@
               </div>
             </div>
             <div class="content fertilizer">
-              <table class="firstBold">
-                <tr>
-                  <th colspan="2">비료</th>
-                </tr>
-                <tr>
-                  <td>근비(칼륨)</td>
-                  <td>낙엽</td>
-                </tr>
-                <tr>
-                  <td>엽비(질소)</td>
-                  <td>발톱</td>
-                </tr>
-                <tr>
-                  <td>수비(인)</td>
-                  <td>똥</td>
-                </tr>
+              <table class="basicTable">
+                <thead>
+                  <tr>
+                    <th colspan="2">비료</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>근비(칼륨)</th>
+                    <td>낙엽</td>
+                  </tr>
+                  <tr>
+                    <th>엽비(질소)</th>
+                    <td>발톱</td>
+                  </tr>
+                  <tr>
+                    <th>수비(인)</th>
+                    <td>똥</td>
+                  </tr>
+                </tbody>
               </table>
               <div class="tip">
                 <ul>
@@ -308,68 +337,76 @@
             <div class="content foundation">
               <h2>一 · 기비</h2>
               <p>밭을 갈기 전 비료를 뿌린다.</p>
-              <table>
-                <tr>
-                  <th>비고</th>
-                  <th>양</th>
-                  <th>맛</th>
-                  <th>경도</th>
-                  <th>찰기</th>
-                  <th>윤기</th>
-                  <th>향</th>
-                </tr>
-                <tr>
-                  <td>기비 있음</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>1</td>
-                  <td><em class="minus">-10</em></td>
-                  <td>3</td>
-                </tr>
-                <tr>
-                  <td>기비 없음</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td>10</td>
-                  <td></td>
-                </tr>
+              <table class="basicTable">
+                <thead>
+                  <tr>
+                    <th>비고</th>
+                    <th>양</th>
+                    <th>맛</th>
+                    <th>경도</th>
+                    <th>찰기</th>
+                    <th>윤기</th>
+                    <th>향</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>기비 있음</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td><em class="minus">-10</em></td>
+                    <td>3</td>
+                  </tr>
+                  <tr>
+                    <td>기비 없음</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>10</td>
+                    <td></td>
+                  </tr>
+                </tbody>
               </table>
               <div class="tip">
                 <ul>
                   <li>기비는 독성을 최대한 마이너스로 맞춰준다. (달의 협토가 유용)</li>
                   <li>전날 식사가 비료에 영향을 미친다.
-                    <table class="firstBold">
-                      <tr>
-                        <th class="taC">식사</th>
-                        <th>보너스</th>
-                      </tr>
-                      <tr>
-                        <td>국</td>
-                        <td>근비</td>
-                      </tr>
-                      <tr>
-                        <td>고기</td>
-                        <td>수비</td>
-                      </tr>
-                      <tr>
-                        <td>야채절임</td>
-                        <td>옆비</td>
-                      </tr>
-                      <tr>
-                        <td>곡물</td>
-                        <td>세가지 모두에 살짝 플러스</td>
-                      </tr>
-                      <tr>
-                        <td>음료</td>
-                        <td>비료 추가재료 상승값에 살짝 플러스</td>
-                      </tr>
-                      <tr>
-                        <td>백미</td>
-                        <td>추가재료로서 능력치 플러스에 더해 비료 전부에 플러스</td>
-                      </tr>
+                    <table class="basicTable">
+                      <thead>
+                        <tr>
+                          <th>식사</th>
+                          <th>보너스</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>국</td>
+                          <td>근비</td>
+                        </tr>
+                        <tr>
+                          <td>고기</td>
+                          <td>수비</td>
+                        </tr>
+                        <tr>
+                          <td>야채절임</td>
+                          <td>옆비</td>
+                        </tr>
+                        <tr>
+                          <td>곡물</td>
+                          <td>세가지 모두에 살짝 플러스</td>
+                        </tr>
+                        <tr>
+                          <td>음료</td>
+                          <td>비료 추가재료 상승값에 살짝 플러스</td>
+                        </tr>
+                        <tr>
+                          <td>백미</td>
+                          <td>추가재료로서 능력치 플러스에 더해 비료 전부에 플러스</td>
+                        </tr>
+                      </tbody>
                     </table>
                   </li>
                   <li>비료를 뿌리고 <strong>10시간</strong> 이내에 논갈기를 진행해야 기비로 인정된다.</li>
@@ -381,43 +418,47 @@
             <div class="content cultivation">
               <h2>二 · 논갈기</h2>
               <p>논밭을 갈아 땅을 고른다.</p>
-              <table>
-                <tr>
-                  <th>비고</th>
-                  <th>양</th>
-                  <th>맛</th>
-                  <th>경도</th>
-                  <th>찰기</th>
-                  <th>윤기</th>
-                  <th>향</th>
-                </tr>
-                <tr>
-                  <td>논갈기: 100%</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>1</td>
-                  <td>3</td>
-                  <td>3</td>
-                </tr>
-                <tr>
-                  <td>논갈기: 90% 미만</td>
-                  <td><em class="minus">-2</em></td>
-                  <td><em class="minus">-2</em></td>
-                  <td><em class="minus">-2</em></td>
-                  <td><em class="minus">-2</em></td>
-                  <td><em class="minus">-2</em></td>
-                  <td><em class="minus">-2</em></td>
-                </tr>
-                <tr>
-                  <td>돌을 모두 제거</td>
-                  <td>3</td>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>1</td>
-                </tr>
+              <table class="basicTable">
+                <thead>
+                  <tr>
+                    <th>비고</th>
+                    <th>양</th>
+                    <th>맛</th>
+                    <th>경도</th>
+                    <th>찰기</th>
+                    <th>윤기</th>
+                    <th>향</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>논갈기: 100%</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>3</td>
+                    <td>3</td>
+                  </tr>
+                  <tr>
+                    <td>논갈기: 90% 미만</td>
+                    <td><em class="minus">-2</em></td>
+                    <td><em class="minus">-2</em></td>
+                    <td><em class="minus">-2</em></td>
+                    <td><em class="minus">-2</em></td>
+                    <td><em class="minus">-2</em></td>
+                    <td><em class="minus">-2</em></td>
+                  </tr>
+                  <tr>
+                    <td>돌을 모두 제거</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                  </tr>
+                </tbody>
               </table>
               <div class="tip">
                 <ul>
@@ -431,70 +472,74 @@
             <div class="content riceSeed">
               <h2>三 · 볍씨 선별</h2>
               <p>품질이 좋은 볍씨를 골라낸다.</p>
-              <table>
-                <tr>
-                  <th>비고</th>
-                  <th>양</th>
-                  <th>맛</th>
-                  <th>경도</th>
-                  <th>찰기</th>
-                  <th>윤기</th>
-                  <th>향</th>
-                </tr>
-                <tr>
-                  <td>선별(가볍게)</td>
-                  <td>30</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>선별(최소)</td>
-                  <td><em class="minus">-10</em></td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>3</td>
-                </tr>
-                <tr>
-                  <td>선별(최대)</td>
-                  <td><em class="minus">-30</em></td>
-                  <td>6</td>
-                  <td>3</td>
-                  <td>2</td>
-                  <td>2</td>
-                  <td>6</td>
-                </tr>
-                <tr>
-                  <td>이수선</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td>4</td>
-                  <td><em class="minus">-2</em></td>
-                </tr>
-                <tr>
-                  <td>염수선</td>
-                  <td></td>
-                  <td>2</td>
-                  <td>2</td>
-                  <td>2</td>
-                  <td><em class="minus">-4</em></td>
-                  <td>3</td>
-                </tr>
-                <tr>
-                  <td>염수선(가볍게)</td>
-                  <td>4</td>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>1</td>
-                  <td><em class="minus">-2</em></td>
-                  <td>1.5</td>
-                </tr>
+              <table class="basicTable">
+                <thead>
+                  <tr>
+                    <th>비고</th>
+                    <th>양</th>
+                    <th>맛</th>
+                    <th>경도</th>
+                    <th>찰기</th>
+                    <th>윤기</th>
+                    <th>향</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>선별(가볍게)</td>
+                    <td>30</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>선별(최소)</td>
+                    <td><em class="minus">-10</em></td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>3</td>
+                  </tr>
+                  <tr>
+                    <td>선별(최대)</td>
+                    <td><em class="minus">-30</em></td>
+                    <td>6</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>6</td>
+                  </tr>
+                  <tr>
+                    <td>이수선</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>4</td>
+                    <td><em class="minus">-2</em></td>
+                  </tr>
+                  <tr>
+                    <td>염수선</td>
+                    <td></td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td><em class="minus">-4</em></td>
+                    <td>3</td>
+                  </tr>
+                  <tr>
+                    <td>염수선(가볍게)</td>
+                    <td>4</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td><em class="minus">-2</em></td>
+                    <td>1.5</td>
+                  </tr>
+                </tbody>
               </table>
               <div class="tip">
                 <ul>
@@ -511,52 +556,56 @@
             <div class="content growSeed">
               <h2>四 · 육모</h2>
               <p>볍씨를 어떻게 뿌릴지 정한다.</p>
-              <table>
-                <tr>
-                  <th>비고</th>
-                  <th>양</th>
-                  <th>맛</th>
-                  <th>경도</th>
-                  <th>찰기</th>
-                  <th>윤기</th>
-                  <th>향</th>
-                </tr>
-                <tr>
-                  <td>촘촘하게 뿌림</td>
-                  <td>30</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>성기게 뿌림</td>
-                  <td><em class="minus">-30</em></td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>1</td>
-                  <td>3</td>
-                  <td>3</td>
-                </tr>
-                <tr>
-                  <td>봄에 뿌림</td>
-                  <td><em class="minus">-3</em></td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>1</td>
-                  <td>3</td>
-                  <td>3</td>
-                </tr>
-                <tr>
-                  <td>여름에 뿌림</td>
-                  <td><em class="minus">-6</em></td>
-                  <td><em class="minus">-1</em></td>
-                  <td><em class="minus">-1</em></td>
-                  <td><em class="minus">-1</em></td>
-                  <td><em class="minus">-1</em></td>
-                  <td><em class="minus">-1</em></td>
-                </tr>
+              <table class="basicTable">
+                <thead>
+                  <tr>
+                    <th>비고</th>
+                    <th>양</th>
+                    <th>맛</th>
+                    <th>경도</th>
+                    <th>찰기</th>
+                    <th>윤기</th>
+                    <th>향</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>촘촘하게 뿌림</td>
+                    <td>30</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>성기게 뿌림</td>
+                    <td><em class="minus">-30</em></td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>3</td>
+                    <td>3</td>
+                  </tr>
+                  <tr>
+                    <td>봄에 뿌림</td>
+                    <td><em class="minus">-3</em></td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>3</td>
+                    <td>3</td>
+                  </tr>
+                  <tr>
+                    <td>여름에 뿌림</td>
+                    <td><em class="minus">-6</em></td>
+                    <td><em class="minus">-1</em></td>
+                    <td><em class="minus">-1</em></td>
+                    <td><em class="minus">-1</em></td>
+                    <td><em class="minus">-1</em></td>
+                    <td><em class="minus">-1</em></td>
+                  </tr>
+                </tbody>
               </table>
               <div class="tip">
                 <ul>
@@ -569,88 +618,92 @@
             <div class="content planting">
               <h2>五 · 모내기</h2>
               <p>밭에 모를 심는다.</p>
-              <table>
-                <tr>
-                  <th>비고</th>
-                  <th>양</th>
-                  <th>맛</th>
-                  <th>경도</th>
-                  <th>찰기</th>
-                  <th>윤기</th>
-                  <th>향</th>
-                </tr>
-                <tr>
-                  <td>적당함</td>
-                  <td>16</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>1</td>
-                  <td>1</td>
-                  <td><em class="minus">-2</em></td>
-                </tr>
-                <tr>
-                  <td>조금 소식</td>
-                  <td><em class="minus">-10</em></td>
-                  <td>10</td>
-                  <td>4</td>
-                  <td>2</td>
-                  <td>3</td>
-                  <td>2</td>
-                </tr>
-                <tr>
-                  <td>소식</td>
-                  <td><em class="minus">-15</em></td>
-                  <td><em class="minus">-1</em></td>
-                  <td><em class="minus">-1</em></td>
-                  <td><em class="minus">-1</em></td>
-                  <td><em class="minus">-1</em></td>
-                  <td>10</td>
-                </tr>
-                <tr>
-                  <td>빨리 심기(조식)</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td>15</td>
-                  <td><em class="minus">-2</em></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>물(1% 이상)</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>1</td>
-                  <td>3</td>
-                  <td>3</td>
-                </tr>
-                <tr>
-                  <td>강풍</td>
-                  <td><em class="minus">-3</em></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td><em class="minus">-2</em></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>추움</td>
-                  <td><em class="minus">-2</em></td>
-                  <td><em class="minus">-2</em></td>
-                  <td><em class="minus">-2</em></td>
-                  <td><em class="minus">-2</em></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>더움</td>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>1</td>
-                </tr>
+              <table class="basicTable">
+                <thead>
+                  <tr>
+                    <th>비고</th>
+                    <th>양</th>
+                    <th>맛</th>
+                    <th>경도</th>
+                    <th>찰기</th>
+                    <th>윤기</th>
+                    <th>향</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>적당함</td>
+                    <td>16</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td><em class="minus">-2</em></td>
+                  </tr>
+                  <tr>
+                    <td>조금 소식</td>
+                    <td><em class="minus">-10</em></td>
+                    <td>10</td>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <td>소식</td>
+                    <td><em class="minus">-15</em></td>
+                    <td><em class="minus">-1</em></td>
+                    <td><em class="minus">-1</em></td>
+                    <td><em class="minus">-1</em></td>
+                    <td><em class="minus">-1</em></td>
+                    <td>10</td>
+                  </tr>
+                  <tr>
+                    <td>빨리 심기(조식)</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>15</td>
+                    <td><em class="minus">-2</em></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>물(1% 이상)</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>3</td>
+                    <td>3</td>
+                  </tr>
+                  <tr>
+                    <td>강풍</td>
+                    <td><em class="minus">-3</em></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><em class="minus">-2</em></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>추움</td>
+                    <td><em class="minus">-2</em></td>
+                    <td><em class="minus">-2</em></td>
+                    <td><em class="minus">-2</em></td>
+                    <td><em class="minus">-2</em></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>더움</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                  </tr>
+                </tbody>
               </table>
               <div class="tip">
                 <ul>
@@ -665,34 +718,38 @@
             <div class="content catWait">
               <h2>六 · 묘대기</h2>
               <p>모내기 이후 벼가 '모' 상태일때 진행된다.</p>
-              <table>
-                <tr>
-                  <th>비고</th>
-                  <th>양</th>
-                  <th>맛</th>
-                  <th>경도</th>
-                  <th>찰기</th>
-                  <th>윤기</th>
-                  <th>향</th>
-                </tr>
-                <tr>
-                  <td>기본</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td></td>
-                  <td>1.5</td>
-                  <td>2</td>
-                </tr>
-                <tr>
-                  <td>물</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>1</td>
-                </tr>
+              <table class="basicTable">
+                <thead>
+                  <tr>
+                    <th>비고</th>
+                    <th>양</th>
+                    <th>맛</th>
+                    <th>경도</th>
+                    <th>찰기</th>
+                    <th>윤기</th>
+                    <th>향</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>기본</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td></td>
+                    <td>1.5</td>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <td>물</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                  </tr>
+                </tbody>
               </table>
               <div class="tip">
                 <ul>
@@ -706,257 +763,269 @@
             <div class="content growingSeason">
               <h2>七 · 분얼기</h2>
               <p>벼의 줄기가 새로 분화하는 단계이다.</p>
-              <table>
-                <tr>
-                  <th>1차 분얼기</th>
-                  <th>양</th>
-                  <th>맛</th>
-                  <th>경도</th>
-                  <th>찰기</th>
-                  <th>윤기</th>
-                  <th>향</th>
-                </tr>
-                <tr>
-                  <td>기본</td>
-                  <td>3</td>  
-                  <td>3.5</td>  
-                  <td>3</td>  
-                  <td>3</td>  
-                  <td>1.5</td>  
-                  <td>2</td>
-                </tr>
-                <tr>
-                  <td>물이있음</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td></td>
-                  <td>3</td>
-                </tr>
-                <tr>
-                  <td>천수+비료 있음</td>
-                  <td>1.5</td>
-                  <td>3</td>
-                  <td>2</td>
-                  <td>1</td>
-                  <td></td>
-                  <td>3</td>
-                </tr>
-                <tr>
-                  <td>심수+비료 없음</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td><em class="minus">-3</em></td>
-                  <td>3</td>
-                </tr>
-                <tr>
-                  <td>비료 적당</td>
-                  <td>3</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td><em class="minus">-2</em></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>비료 부족</td>
-                  <td><em class="minus">-4</em></td>
-                  <td><em class="minus">-3</em></td>
-                  <td><em class="minus">-3</em></td>
-                  <td><em class="minus">-1</em></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>일조량</td>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>1</td>
-                  <td></td>
-                  <td>3</td>
-                </tr>
-                <tr>
-                  <td>추움</td>
-                  <td></td>
-                  <td><em class="minus">-2</em></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td><em class="minus">-3</em></td>
-                </tr>
-                <tr>
-                  <td>오리</td>
-                  <td><em class="minus">-2</em></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td>6</td>
-                  <td></td>
-                </tr>
+              <table class="basicTable">
+                <thead>
+                  <tr>
+                    <th>1차 분얼기</th>
+                    <th>양</th>
+                    <th>맛</th>
+                    <th>경도</th>
+                    <th>찰기</th>
+                    <th>윤기</th>
+                    <th>향</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>기본</td>
+                    <td>3</td>  
+                    <td>3.5</td>  
+                    <td>3</td>  
+                    <td>3</td>  
+                    <td>1.5</td>  
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <td>물이있음</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td></td>
+                    <td>3</td>
+                  </tr>
+                  <tr>
+                    <td>천수+비료 있음</td>
+                    <td>1.5</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td></td>
+                    <td>3</td>
+                  </tr>
+                  <tr>
+                    <td>심수+비료 없음</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td><em class="minus">-3</em></td>
+                    <td>3</td>
+                  </tr>
+                  <tr>
+                    <td>비료 적당</td>
+                    <td>3</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><em class="minus">-2</em></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>비료 부족</td>
+                    <td><em class="minus">-4</em></td>
+                    <td><em class="minus">-3</em></td>
+                    <td><em class="minus">-3</em></td>
+                    <td><em class="minus">-1</em></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>일조량</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td></td>
+                    <td>3</td>
+                  </tr>
+                  <tr>
+                    <td>추움</td>
+                    <td></td>
+                    <td><em class="minus">-2</em></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><em class="minus">-3</em></td>
+                  </tr>
+                  <tr>
+                    <td>오리</td>
+                    <td><em class="minus">-2</em></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>6</td>
+                    <td></td>
+                  </tr>
+                </tbody>
               </table>
-              <table>
-                <tr>
-                  <th>2차 분얼기</th>
-                  <th>양</th>
-                  <th>맛</th>
-                  <th>경도</th>
-                  <th>찰기</th>
-                  <th>윤기</th>
-                  <th>향</th>
-                </tr>
-                <tr>
-                  <td>기본</td>
-                  <td>3</td>  
-                  <td>3.5</td>  
-                  <td>3</td>  
-                  <td></td>  
-                  <td>1.5</td>  
-                  <td>2</td>
-                </tr>
-                <tr>
-                  <td>천수</td>
-                  <td>2</td>
-                  <td>5</td>
-                  <td>4</td>
-                  <td>4</td>
-                  <td></td>
-                  <td>1</td>
-                </tr>
-                <tr>
-                  <td>심수</td>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>8</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>비료 적당</td>
-                  <td>4</td>
-                  <td>4</td>
-                  <td>3.5</td>
-                  <td>3</td>
-                  <td><em class="minus">-3</em></td>
-                  <td>1</td>
-                </tr>
-                <tr>
-                  <td>비료 과잉</td>
-                  <td><em class="minus">-2</em></td>
-                  <td><em class="minus">-2</em></td>
-                  <td><em class="minus">-2</em></td>
-                  <td><em class="minus">-2</em></td>
-                  <td><em class="minus">-10</em></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>따뜻함</td>
-                  <td>3</td>
-                  <td>2</td>
-                  <td>2</td>
-                  <td>1</td>
-                  <td></td>
-                  <td>3</td>
-                </tr>
-                <tr>
-                  <td>더움</td>
-                  <td>1</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>1</td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>추움</td>
-                  <td><em class="minus">-2</em></td>
-                  <td><em class="minus">-2</em></td>
-                  <td><em class="minus">-2</em></td>
-                  <td><em class="minus">-2</em></td>
-                  <td></td>
-                  <td><em class="minus">-3</em></td>
-                </tr>
-                <tr>
-                  <td>오리</td>
-                  <td><em class="minus">-2</em></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td>6</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td colspan="7">비료 적당: 양분 1~100% 사이, 비료 과잉: 양분 100% 초과</td>
-                </tr>
+              <table class="basicTable">
+                <thead>
+                  <tr>
+                    <th>2차 분얼기</th>
+                    <th>양</th>
+                    <th>맛</th>
+                    <th>경도</th>
+                    <th>찰기</th>
+                    <th>윤기</th>
+                    <th>향</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>기본</td>
+                    <td>3</td>  
+                    <td>3.5</td>  
+                    <td>3</td>  
+                    <td></td>  
+                    <td>1.5</td>  
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <td>천수</td>
+                    <td>2</td>
+                    <td>5</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td></td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <td>심수</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>8</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>비료 적당</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>3.5</td>
+                    <td>3</td>
+                    <td><em class="minus">-3</em></td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <td>비료 과잉</td>
+                    <td><em class="minus">-2</em></td>
+                    <td><em class="minus">-2</em></td>
+                    <td><em class="minus">-2</em></td>
+                    <td><em class="minus">-2</em></td>
+                    <td><em class="minus">-10</em></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>따뜻함</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td></td>
+                    <td>3</td>
+                  </tr>
+                  <tr>
+                    <td>더움</td>
+                    <td>1</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>추움</td>
+                    <td><em class="minus">-2</em></td>
+                    <td><em class="minus">-2</em></td>
+                    <td><em class="minus">-2</em></td>
+                    <td><em class="minus">-2</em></td>
+                    <td></td>
+                    <td><em class="minus">-3</em></td>
+                  </tr>
+                  <tr>
+                    <td>오리</td>
+                    <td><em class="minus">-2</em></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>6</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td colspan="7">비료 적당: 양분 1~100% 사이, 비료 과잉: 양분 100% 초과</td>
+                  </tr>
+                </tbody>
               </table>
-              <table>
-                <tr>
-                  <th>3차 분얼기</th>
-                  <th>양</th>
-                  <th>맛</th>
-                  <th>경도</th>
-                  <th>찰기</th>
-                  <th>윤기</th>
-                  <th>향</th>
-                </tr>
-                <tr>
-                  <td>기본</td>
-                  <td>3</td>  
-                  <td>3.5</td>  
-                  <td>3</td>  
-                  <td></td>  
-                  <td>1.5</td>  
-                  <td>2</td>
-                </tr>
-                <tr>
-                  <td>중간 낙수</td>
-                  <td>6</td>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>1</td>
-                </tr>
-                <tr>
-                  <td>심수</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td>20</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>따뜻함</td>
-                  <td>2</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td>3</td>
-                </tr>
-                <tr>
-                  <td>낮: 더움</td>
-                  <td><em class="minus">-3</em></td>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>1</td>
-                  <td></td>
-                  <td>6</td>
-                </tr>
-                <tr>
-                  <td>밤: 추움</td>
-                  <td><em class="minus">-3</em></td>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>1</td>
-                  <td></td>
-                  <td>6</td>
-                </tr>
+              <table class="basicTable">
+                <thead>
+                  <tr>
+                    <th>3차 분얼기</th>
+                    <th>양</th>
+                    <th>맛</th>
+                    <th>경도</th>
+                    <th>찰기</th>
+                    <th>윤기</th>
+                    <th>향</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>기본</td>
+                    <td>3</td>  
+                    <td>3.5</td>  
+                    <td>3</td>  
+                    <td></td>  
+                    <td>1.5</td>  
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <td>중간 낙수</td>
+                    <td>6</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <td>심수</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>20</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>따뜻함</td>
+                    <td>2</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>3</td>
+                  </tr>
+                  <tr>
+                    <td>낮: 더움</td>
+                    <td><em class="minus">-3</em></td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td></td>
+                    <td>6</td>
+                  </tr>
+                  <tr>
+                    <td>밤: 추움</td>
+                    <td><em class="minus">-3</em></td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td></td>
+                    <td>6</td>
+                  </tr>
+                </tbody>
               </table>
               <div class="tip">
                 <ul>
@@ -966,23 +1035,25 @@
                   <li><strong>2차 분얼기</strong>: 5~23시간 동안 지속된다.</li>
                   <li><strong>3차 분얼기</strong>: 18~26시간 동안 지속된다.</li>
                   <li>3차 분얼기 때 중간 <strong>낙수과정이</strong> 있어야 한다.(6시간 지속)
-                    <table>
-                      <tr>
-                        <th>기온 ▲</th>
-                        <td>양 ▲</td>
-                      </tr>
-                      <tr>
-                        <th>기온 ▼</th>
-                        <td>맛, 찰기, 경도 ▲</td>
-                      </tr>
-                      <tr>
-                        <th>낙수 ▼</th>
-                        <td>윤기 ▲</td>
-                      </tr>
-                      <tr>
-                        <th>출수기까지</th>
-                        <td>향 ▲</td>
-                      </tr>
+                    <table class="basicTable">
+                      <tbody>
+                        <tr>
+                          <th>기온 ▲</th>
+                          <td>양 ▲</td>
+                        </tr>
+                        <tr>
+                          <th>기온 ▼</th>
+                          <td>맛, 찰기, 경도 ▲</td>
+                        </tr>
+                        <tr>
+                          <th>낙수 ▼</th>
+                          <td>윤기 ▲</td>
+                        </tr>
+                        <tr>
+                          <th>출수기까지</th>
+                          <td>향 ▲</td>
+                        </tr>
+                      </tbody>
                     </table>
                   </li>
                 </ul>
@@ -993,124 +1064,128 @@
             <div class="content outWater">
               <h2>八 · 출수기</h2>
               <p>벼의 이삭이 나서 무르익는 단계이다.</p>
-              <table>
-                <tr>
-                  <th>비고</th>
-                  <th>양</th>
-                  <th>맛</th>
-                  <th>경도</th>
-                  <th>찰기</th>
-                  <th>윤기</th>
-                  <th>향</th>
-                </tr>
-                <tr>
-                  <td>기본</td>
-                  <td>3</td>
-                  <td>3.5</td>
-                  <td>3</td>
-                  <td></td>
-                  <td>2</td>
-                  <td>2.5</td>
-                </tr>
-                <tr>
-                  <td>비료 적당</td>
-                  <td>1</td>
-                  <td>6</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td><em class="minus">-3</em></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>비료 과잉</td>
-                  <td></td>
-                  <td><em class="minus">-5</em></td>
-                  <td><em class="minus">-5</em></td>
-                  <td><em class="minus">-5</em></td>
-                  <td><em class="minus">-10</em></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>천수이상</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>2</td>
-                  <td>1</td>
-                  <td></td>
-                  <td>1</td>
-                </tr>
-                <tr>
-                  <td>심수</td>
-                  <td>1</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td>20</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>물 과잉</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td>1</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>물 없음</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td>5</td>
-                </tr>
-                <tr>
-                  <td>따뜻함</td>
-                  <td></td>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>1</td>
-                  <td></td>
-                  <td>1</td>
-                </tr>
-                <tr>
-                  <td>더움</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td><em class="minus">-3</em></td>
-                </tr>
-                <tr>
-                  <td>낮: 더움</td>
-                  <td><em class="minus">-3</em></td>
-                  <td>3</td>
-                  <td>2</td>
-                  <td>2</td>
-                  <td><em class="minus">-3</em></td>
-                  <td><em class="minus">-6</em></td>
-                </tr>
-                <tr>
-                  <td>밤: 추움</td>
-                  <td><em class="minus">-3</em></td>
-                  <td>3</td>
-                  <td>2</td>
-                  <td>2</td>
-                  <td><em class="minus">-3</em></td>
-                  <td><em class="minus">-6</em></td>
-                </tr>
-                <tr>
-                  <td>오리</td>
-                  <td></td>
-                  <td><em class="minus">-1.5</em></td>
-                  <td><em class="minus">-1</em></td>
-                  <td></td>
-                  <td>6</td>
-                  <td><em class="minus">-0.5</em></td>
-                </tr>
+              <table class="basicTable">
+                <thead>
+                  <tr>
+                    <th>비고</th>
+                    <th>양</th>
+                    <th>맛</th>
+                    <th>경도</th>
+                    <th>찰기</th>
+                    <th>윤기</th>
+                    <th>향</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>기본</td>
+                    <td>3</td>
+                    <td>3.5</td>
+                    <td>3</td>
+                    <td></td>
+                    <td>2</td>
+                    <td>2.5</td>
+                  </tr>
+                  <tr>
+                    <td>비료 적당</td>
+                    <td>1</td>
+                    <td>6</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td><em class="minus">-3</em></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>비료 과잉</td>
+                    <td></td>
+                    <td><em class="minus">-5</em></td>
+                    <td><em class="minus">-5</em></td>
+                    <td><em class="minus">-5</em></td>
+                    <td><em class="minus">-10</em></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>천수이상</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td></td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <td>심수</td>
+                    <td>1</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>20</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>물 과잉</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>1</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>물 없음</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>5</td>
+                  </tr>
+                  <tr>
+                    <td>따뜻함</td>
+                    <td></td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td></td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <td>더움</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><em class="minus">-3</em></td>
+                  </tr>
+                  <tr>
+                    <td>낮: 더움</td>
+                    <td><em class="minus">-3</em></td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td><em class="minus">-3</em></td>
+                    <td><em class="minus">-6</em></td>
+                  </tr>
+                  <tr>
+                    <td>밤: 추움</td>
+                    <td><em class="minus">-3</em></td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td><em class="minus">-3</em></td>
+                    <td><em class="minus">-6</em></td>
+                  </tr>
+                  <tr>
+                    <td>오리</td>
+                    <td></td>
+                    <td><em class="minus">-1.5</em></td>
+                    <td><em class="minus">-1</em></td>
+                    <td></td>
+                    <td>6</td>
+                    <td><em class="minus">-0.5</em></td>
+                  </tr>
+                </tbody>
               </table>
               <div class="tip">
                 <ul>
@@ -1124,151 +1199,155 @@
             <div class="content ripeningStage">
               <h2>九 · 등숙기</h2>
               <p>벼가 무르익는 단계이다.</p>
-              <table>
-                <tr>
-                  <th>비고</th>
-                  <th>양</th>
-                  <th>맛</th>
-                  <th>경도</th>
-                  <th>찰기</th>
-                  <th>윤기</th>
-                  <th>향</th>
-                </tr>
-                <tr>
-                  <td>기본</td>
-                  <td>3</td>
-                  <td>3.5</td>
-                  <td>3</td>
-                  <td></td>
-                  <td>1.5</td>
-                  <td>2</td>
-                </tr>
-                <tr>
-                  <td>비료 없음</td>
-                  <td><em class="minus">-4</em></td>
-                  <td></td>
-                  <td>10</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>비료 적당</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>1</td>
-                  <td>1</td>
-                  <td><em class="minus">-3</em></td>
-                  <td>1</td>
-                </tr>
-                <tr>
-                  <td>비료 과잉</td>
-                  <td>10</td>
-                  <td><em class="minus">-6</em></td>
-                  <td><em class="minus">-6</em></td>
-                  <td><em class="minus">-6</em></td>
-                  <td><em class="minus">-10</em></td>
-                  <td><em class="minus">-6</em></td>
-                </tr>
-                <tr>
-                  <td>물 없음</td>
-                  <td><em class="minus">-6</em></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td>10</td>
-                </tr>
-                <tr>
-                  <td>천수</td>
-                  <td><em class="minus">-3</em></td>
-                  <td>3</td>
-                  <td>2</td>
-                  <td>1</td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>심수</td>
-                  <td>6</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td>5</td>
-                  <td><em class="minus">-6</em></td>
-                </tr>
-                <tr>
-                  <td>흐르는 물</td>
-                  <td></td>
-                  <td><em class="minus">-1.5</em></td>
-                  <td><em class="minus">-1</em></td>
-                  <td></td>
-                  <td>20</td>
-                  <td><em class="minus">-1</em></td>
-                </tr>
-                <tr>
-                  <td>흐르는 물+높은 수온</td>
-                  <td></td>
-                  <td>3</td>
-                  <td>2</td>
-                  <td>1</td>
-                  <td>20</td>
-                  <td><em class="minus">-4</em></td>
-                </tr>
-                <tr>
-                  <td>보통수온</td>
-                  <td>2</td>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>1</td>
-                  <td></td>
-                  <td>1</td>
-                </tr>
-                <tr>
-                  <td>높은수온</td>
-                  <td><em class="minus">-2</em></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td><em class="minus">-8</em></td>
-                </tr>
-                <tr>
-                  <td>낮은수온</td>
-                  <td>2</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td><em class="minus">-6</em></td>
-                </tr>
-                <tr>
-                  <td>낮: 더움</td>
-                  <td><em class="minus">-3</em></td>
-                  <td>3</td>
-                  <td>2</td>
-                  <td>2</td>
-                  <td><em class="minus">-3</em></td>
-                  <td>6</td>
-                </tr>
-                <tr>
-                  <td>밤: 추움</td>
-                  <td><em class="minus">-3</em></td>
-                  <td>3</td>
-                  <td>2</td>
-                  <td>2</td>
-                  <td><em class="minus">-3</em></td>
-                  <td>6</td>
-                </tr>
-                <tr>
-                  <td>노린재</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td><em class="minus">-10</em></td>
-                  <td></td>
-                </tr>
+              <table class="basicTable">
+                <thead>
+                  <tr>
+                    <th>비고</th>
+                    <th>양</th>
+                    <th>맛</th>
+                    <th>경도</th>
+                    <th>찰기</th>
+                    <th>윤기</th>
+                    <th>향</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>기본</td>
+                    <td>3</td>
+                    <td>3.5</td>
+                    <td>3</td>
+                    <td></td>
+                    <td>1.5</td>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <td>비료 없음</td>
+                    <td><em class="minus">-4</em></td>
+                    <td></td>
+                    <td>10</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>비료 적당</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td><em class="minus">-3</em></td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <td>비료 과잉</td>
+                    <td>10</td>
+                    <td><em class="minus">-6</em></td>
+                    <td><em class="minus">-6</em></td>
+                    <td><em class="minus">-6</em></td>
+                    <td><em class="minus">-10</em></td>
+                    <td><em class="minus">-6</em></td>
+                  </tr>
+                  <tr>
+                    <td>물 없음</td>
+                    <td><em class="minus">-6</em></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>10</td>
+                  </tr>
+                  <tr>
+                    <td>천수</td>
+                    <td><em class="minus">-3</em></td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>심수</td>
+                    <td>6</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>5</td>
+                    <td><em class="minus">-6</em></td>
+                  </tr>
+                  <tr>
+                    <td>흐르는 물</td>
+                    <td></td>
+                    <td><em class="minus">-1.5</em></td>
+                    <td><em class="minus">-1</em></td>
+                    <td></td>
+                    <td>20</td>
+                    <td><em class="minus">-1</em></td>
+                  </tr>
+                  <tr>
+                    <td>흐르는 물+높은 수온</td>
+                    <td></td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>20</td>
+                    <td><em class="minus">-4</em></td>
+                  </tr>
+                  <tr>
+                    <td>보통수온</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td></td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <td>높은수온</td>
+                    <td><em class="minus">-2</em></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><em class="minus">-8</em></td>
+                  </tr>
+                  <tr>
+                    <td>낮은수온</td>
+                    <td>2</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><em class="minus">-6</em></td>
+                  </tr>
+                  <tr>
+                    <td>낮: 더움</td>
+                    <td><em class="minus">-3</em></td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td><em class="minus">-3</em></td>
+                    <td>6</td>
+                  </tr>
+                  <tr>
+                    <td>밤: 추움</td>
+                    <td><em class="minus">-3</em></td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td><em class="minus">-3</em></td>
+                    <td>6</td>
+                  </tr>
+                  <tr>
+                    <td>노린재</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><em class="minus">-10</em></td>
+                    <td></td>
+                  </tr>
+                </tbody>
               </table>
               <div class="tip">
                 <ul>
@@ -1285,70 +1364,74 @@
             <div class="content harvest">
               <h2>十 · 수확</h2>
               <p>벼를 수확하는 단계이다.</p>
-              <table>
-                <tr>
-                  <th>비고</th>
-                  <th>양</th>
-                  <th>맛</th>
-                  <th>경도</th>
-                  <th>찰기</th>
-                  <th>윤기</th>
-                  <th>향</th>
-                </tr>
-                <tr>
-                  <td>건조도 높음</td>
-                  <td>6</td>
-                  <td>3</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>건조도 낮음</td>
-                  <td><em class="minus">-2</em></td>
-                  <td><em class="minus">-1</em></td>
-                  <td><em class="minus">-1</em></td>
-                  <td><em class="minus">-1</em></td>
-                  <td><em class="minus">-1</em></td>
-                  <td><em class="minus">-1</em></td>
-                </tr>
-                <tr>
-                  <td>날씨: 맑음</td>
-                  <td>1</td>
-                  <td>3</td>
-                  <td>2</td>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>1</td>
-                </tr>
-                <tr>
-                  <td>날씨: 비</td>
-                  <td><em class="minus">-1</em></td>
-                  <td><em class="minus">-6</em></td>
-                  <td><em class="minus">-1</em></td>
-                  <td><em class="minus">-1</em></td>
-                  <td><em class="minus">-1</em></td>
-                  <td><em class="minus">-1</em></td>
-                </tr>
-                <tr>
-                  <td>수확중</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td>6</td>
-                  <td>6</td>
-                </tr>
-                <tr>
-                  <td>물</td>
-                  <td><em class="minus">-3</em></td>
-                  <td><em class="minus">-3</em></td>
-                  <td><em class="minus">-3</em></td>
-                  <td><em class="minus">-3</em></td>
-                  <td><em class="minus">-3</em></td>
-                  <td><em class="minus">-3</em></td>
-                </tr>
+              <table class="basicTable">
+                <thead>
+                  <tr>
+                    <th>비고</th>
+                    <th>양</th>
+                    <th>맛</th>
+                    <th>경도</th>
+                    <th>찰기</th>
+                    <th>윤기</th>
+                    <th>향</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>건조도 높음</td>
+                    <td>6</td>
+                    <td>3</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>건조도 낮음</td>
+                    <td><em class="minus">-2</em></td>
+                    <td><em class="minus">-1</em></td>
+                    <td><em class="minus">-1</em></td>
+                    <td><em class="minus">-1</em></td>
+                    <td><em class="minus">-1</em></td>
+                    <td><em class="minus">-1</em></td>
+                  </tr>
+                  <tr>
+                    <td>날씨: 맑음</td>
+                    <td>1</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <td>날씨: 비</td>
+                    <td><em class="minus">-1</em></td>
+                    <td><em class="minus">-6</em></td>
+                    <td><em class="minus">-1</em></td>
+                    <td><em class="minus">-1</em></td>
+                    <td><em class="minus">-1</em></td>
+                    <td><em class="minus">-1</em></td>
+                  </tr>
+                  <tr>
+                    <td>수확중</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>6</td>
+                    <td>6</td>
+                  </tr>
+                  <tr>
+                    <td>물</td>
+                    <td><em class="minus">-3</em></td>
+                    <td><em class="minus">-3</em></td>
+                    <td><em class="minus">-3</em></td>
+                    <td><em class="minus">-3</em></td>
+                    <td><em class="minus">-3</em></td>
+                    <td><em class="minus">-3</em></td>
+                  </tr>
+                </tbody>
               </table>
               <div class="tip">
                 <ul>
@@ -1363,52 +1446,56 @@
             <div class="content hanging">
               <h2>十一 · 볏단 걸기</h2>
               <p>볏단을 널어 말리는 단계이다.</p>
-              <table>
-                <tr>
-                  <th>비고</th>
-                  <th>양</th>
-                  <th>맛</th>
-                  <th>경도</th>
-                  <th>찰기</th>
-                  <th>윤기</th>
-                  <th>향</th>
-                </tr>
-                <tr>
-                  <td>건조도: 충분 90% 이상</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>건조도: 적당 50% 이상</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>3</td>
-                  <td>3</td>
-                </tr>
-                <tr>
-                  <td>건조도: 부족 25% 이상</td>
-                  <td><em class="minus">-1</em></td>
-                  <td><em class="minus">-1</em></td>
-                  <td><em class="minus">-1</em></td>
-                  <td><em class="minus">-1</em></td>
-                  <td><em class="minus">-1</em></td>
-                  <td><em class="minus">-1</em></td>
-                </tr>
-                <tr>
-                  <td>건조도: 습기참 0%</td>
-                  <td><em class="minus">-3</em></td>
-                  <td><em class="minus">-3</em></td>
-                  <td><em class="minus">-3</em></td>
-                  <td><em class="minus">-3</em></td>
-                  <td><em class="minus">-3</em></td>
-                  <td><em class="minus">-3</em></td>
-                </tr>
+              <table class="basicTable">
+                <thead>
+                  <tr>
+                    <th>비고</th>
+                    <th>양</th>
+                    <th>맛</th>
+                    <th>경도</th>
+                    <th>찰기</th>
+                    <th>윤기</th>
+                    <th>향</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>건조도: 충분 90% 이상</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>건조도: 적당 50% 이상</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>3</td>
+                    <td>3</td>
+                  </tr>
+                  <tr>
+                    <td>건조도: 부족 25% 이상</td>
+                    <td><em class="minus">-1</em></td>
+                    <td><em class="minus">-1</em></td>
+                    <td><em class="minus">-1</em></td>
+                    <td><em class="minus">-1</em></td>
+                    <td><em class="minus">-1</em></td>
+                    <td><em class="minus">-1</em></td>
+                  </tr>
+                  <tr>
+                    <td>건조도: 습기참 0%</td>
+                    <td><em class="minus">-3</em></td>
+                    <td><em class="minus">-3</em></td>
+                    <td><em class="minus">-3</em></td>
+                    <td><em class="minus">-3</em></td>
+                    <td><em class="minus">-3</em></td>
+                    <td><em class="minus">-3</em></td>
+                  </tr>
+                </tbody>
               </table>
               <div class="tip">
                 <ul>
@@ -1428,61 +1515,65 @@
             <div class="content milling">
               <h2>十三 · 도정</h2>
               <p>벼를 찧어 쌀로 만드는 단계이다.</p>
-              <table>
-                <tr>
-                  <th>비고</th>
-                  <th>양</th>
-                  <th>맛</th>
-                  <th>경도</th>
-                  <th>찰기</th>
-                  <th>윤기</th>
-                  <th>향</th>
-                </tr>
-                <tr>
-                  <td>백미</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td><em class="minus">-10</em></td>
-                </tr>
-                <tr>
-                  <td>현미</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td>6</td>
-                  <td>15</td>
-                </tr>
-                <tr>
-                  <td>시원함</td>
-                  <td></td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>낮</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>밤</td>
-                  <td></td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td></td>
-                  <td></td>
-                </tr>
+              <table class="basicTable">
+                <thead>
+                  <tr>
+                    <th>비고</th>
+                    <th>양</th>
+                    <th>맛</th>
+                    <th>경도</th>
+                    <th>찰기</th>
+                    <th>윤기</th>
+                    <th>향</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>백미</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td><em class="minus">-10</em></td>
+                  </tr>
+                  <tr>
+                    <td>현미</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>6</td>
+                    <td>15</td>
+                  </tr>
+                  <tr>
+                    <td>시원함</td>
+                    <td></td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>낮</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>밤</td>
+                    <td></td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
               </table>
               <div class="tip">
                 <ul>

@@ -20,23 +20,20 @@
   }
 }
 
-
-/* 사쿠나히메 */
-.sakunaPage {padding:40px;
+/* 서브페이지 공통 */
+.subPage {padding:40px;
   h1 {font-size:2.4rem;padding-bottom:10px;}
   .content {
     h2 {font-size:1.4rem;padding-top:10px;
       + p {font-size:1.1rem;}
     }
-    
-    table {margin-top:10px;
-      th, td {padding:6px;border:1px solid $grayColor;
-        .minus {color:#ff0000;}
-      }
-      &.firstBold {
-        tr td:first-child {font-weight:bold;text-align:center;}
-      }
-    }
+  }
+}
+
+/* 사쿠나히메 */
+.sakunaPage {
+  table {margin-top:10px;
+    .minus {color:$redColor;}
   }
   .tip {margin-top:10px;
     > ul > li {padding:3px 0;
@@ -45,21 +42,45 @@
   }
 }
 
-.iMASPage {padding:40px;
-  h1 {font-size:2.4rem;padding-bottom:10px;}
-  .content {
-    h2 {font-size:1.4rem;padding-top:10px;
-      + p {font-size:1.1rem;}
+
+.iMASPage {
+  .basicTable {
+    &.quick {
+      span {
+        &:not(:last-child):after {content:'|';padding-left:4px;}
+      }
     }
-    
-    table {margin-top:10px;
-      th, td {padding:6px;border:1px solid #bbb;
-        span {
-          &:not(:last-child):after {content:'|';padding-left:4px;}
+    &.community {display:inline-block;padding-left:10px;
+      tr td:last-child {width:15rem;}
+    }
+    &.contTable {
+      tr:first-child th {font-size:1.2rem;}
+    }
+  }
+
+  .tabContent {
+    .idolProfile {display:inline-block;vertical-align:top;width:calc(100% - 23rem);height:420px;padding:0.7rem;background:$mainColor;
+      .img {display:inline-block;vertical-align:top;width:14%;
+        div {border:1px solid $grayColor;
+          &:last-child {border-top:0;}
+          p {padding:3.5px 0;border-top:1px solid $grayColor;text-align:center;}
+          img {display:block;width:10rem;margin:0 auto;}
         }
       }
-      &.contTable {
-        tr:first-child th {font-size:1.2rem;}
+      .info {display:inline-block;width:70%;
+        th, td {padding:1.1rem;
+          &.name {vertical-align:bottom;height:50px;
+            span {position:relative;padding:0 5px;
+              &:after {@include positionTL(absolute, -10px, 0);width:40px;font-size:0.7rem;}
+              &.lastName:after {content:'あまみ';}
+              &.firstName:after {content:'はるか';}
+            }
+            div {padding-top:0.6rem;}
+          }
+        }
+      }
+      .parameter {display:inline-block;vertical-align:top;width:15%;
+        th, td {padding:1.1rem;}
       }
     }
   }

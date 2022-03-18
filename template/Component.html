@@ -14,9 +14,6 @@
   <link rel="stylesheet" href="../css/main.min.css">
   <script>
     $(document).ready(function(){
-      // 햄버거메뉴 불러오기
-      $("#hambergerCont").load("layout/hamberger.html"); 
-
       // 퀵메뉴 번호 생성
       $('.component table th').not('.colorStyle th').each(function(index){
         $(this).attr('id', 'menu' + index);
@@ -104,7 +101,6 @@
               <td>#2363C0</td>
               <td class="blueColor"></td>
             </tr>
-
           </table>
         </td>
       </tr>
@@ -150,8 +146,22 @@
               <li class="quick typeD"><button onclick="moveSC('3')">fourth Menu</button></li>
             </ul>
           </div>
-          <div id="hambergerCont">
-            
+          <button class="btnToggle hamburgerMenu"></button>
+          <div class="hamMenu">
+            <div class="titleArea">환경설정</div>
+            <ul>
+              <li>
+                <a href="../index.html">홈으로</a>
+              </li>
+              <li>
+                <a href="javascript:history.back();" id="backPage">뒤로가기</a>
+              </li>
+              <li>
+                <button id="toggleTheme">다크모드 -<span>OFF</span></button>
+              </li>
+              <li></li>
+              <li></li>
+            </ul>
           </div>
         </td>
       </tr>
@@ -255,6 +265,34 @@
           <input type="email">
           <input type="time">
           <input type="number">
+        </td>
+      </tr>
+      <tr>
+        <th>TABLE STYLE</th>
+        <td class="tableStyle">
+          <h2>테이블 디자인</h2>
+          <table class="basicTable">
+            <thead>
+              <tr>
+                <th></th>
+                <td></td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>머리행</th>
+                <td>데이터</td>
+              </tr>
+              <tr>
+                <th>머리행</th>
+                <td>데이터</td>
+              </tr>
+              <tr>
+                <th>머리행</th>
+                <td>데이터</td>
+              </tr>
+            </tbody>
+          </table>
         </td>
       </tr>
       <tr>
