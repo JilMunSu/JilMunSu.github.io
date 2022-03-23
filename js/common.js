@@ -92,13 +92,11 @@ window.onload=function(){
 
   // 탭 메뉴
   $('.tabs li .tabMenu').click(function(){
-    var tabCont = $(this).attr('data-tab');
+    tabMenu.call($(this));
+  });
 
-    $('.tabs li .tabMenu').removeClass('current');
-    $('.tabContent').removeClass('current');
-
-    $(this).addClass('current');
-    $("#" + tabCont).addClass('current');
+  $('.idolTabs li .idolTabMenu').click(function(){
+    tabMenu.call($(this));
   });
 
   // 햄버거 메뉴
@@ -180,4 +178,12 @@ function chkAllSense() {
   } else {
     $(this).parent().parent().children(':first-child').find('input').prop("checked", true);
   }
+}
+
+function tabMenu() {
+  var tabCont = $(this).attr('data-tab');
+  $(this).parent().siblings().children().removeClass('current');
+  $(this).parent().parent().nextAll().removeClass('current');
+  $(this).addClass('current');
+  $("#" + tabCont).addClass('current');
 }
