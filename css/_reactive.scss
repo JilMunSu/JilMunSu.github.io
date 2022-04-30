@@ -22,9 +22,7 @@
 
 /* 모바일 버전 */
 @include mobile {
-  h1 {
-
-  }
+  .quickMenu {display:none;}
 }
 
 /* 타블렛 버전 */
@@ -51,9 +49,7 @@
 
 /* 기본 장치가 터치스크린이나 키넥트처럼 정확도는 높지 않지만 포인팅 가능 */
 @include pointerC {
-  html {
-
-  }
+  .quickMenu {display:none;}
 }
 
 /* 기본 장치가 마우스나 터치 패드처럼 정확한 포인팅 가능 */

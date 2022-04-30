@@ -310,7 +310,10 @@
       </tr>
       <tr>
         <th>POPUP STYLE</th>
-        <td class="popupStyle"></td>
+        <td class="popupStyle">
+          <button class="btnGen typeA sizeM popupOpen" name="popA">일반형</button>
+          <button class="btnGen typeA sizeM popupOpen" name="popB">전체화면</button>
+        </td>
       </tr>
       <tr>
         <th>개발자 도구</th>
@@ -322,6 +325,19 @@
             <button id="remResult" role="search" class="btnGen typeA sizeXS">계산</button>
             <div>결과: <div class="result"></div>rem</div>
           </div>
+          <div class="manga">
+            <input type="file" class="inputImgs" multiple webkitdirectory/>
+            <input type="file" class="inputImgs" multiple/>
+            <div class="preview">
+              <h2>이미지 미리보기</h2>
+              <div class="imgsWrap">
+
+              </div>
+            </div>
+            <div class="fullScreen">
+
+            </div>
+          </div>
         </td>
       </tr>
     </table>
@@ -332,5 +348,16 @@
       </div>
     </footer>
   </div>
+
+  <!-- Popup -->
+  <div class="popWrap">
+    <div class="popup typeA popA" name="popA">
+      <button class="btnGen typeA sizeM popCloseBtn">close</button>
+    </div>
+    <div class="popup typeB popB" name="popB">
+      <button class="btnGen typeA sizeM popCloseBtn">close</button>
+    </div>
+  </div>
+  <!-- //Popup -->
 </body>
 </html>

@@ -136,6 +136,19 @@ window.onload=function(){
     }
   });
 
+  // 팝업   
+  $(".popupOpen").click(function(e){
+    var btnName = $(this).attr("name");
+    
+    $(".popWrap").css("display", "block");
+    $(".popWrap").children('.' + btnName).css("display", "block")
+    $("body").css("overflow", "hidden");
+  });
+
+  $(".popCloseBtn").click(function(e){
+     $(".popWrap, .popup").css("display", "none");
+     $("body").css("overflow", "auto");
+  });
 }
 
 // 스크롤

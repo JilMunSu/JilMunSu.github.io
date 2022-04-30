@@ -223,6 +223,11 @@ input {
 }
 
 /* ---popup--- */
+.popWrap {@include positionTL(fixed, 0, 0);display:none;width:100vw;height:100vh;background:rgba(0, 0, 0, 0.7);z-index:900;}
+.popup {display:none;@include positionTL(absolute, 50%, 50%);z-index:1000;
+  &.typeA {width:300px;height:300px;@include translate(-150px, -190px);background:#000;}
+  &.typeB {width:100vw;height:100vh;top:0;left:0;background:#000;}
+}
 
 
 /* ---devTool--- */
@@ -233,6 +238,18 @@ input {
     &:nth-child(3) + span {@include positionTL(absolute, 3px, 245px);}
   }
   .result {display:inline-block;min-width:30px;padding-right:2px;}
+}
+.manga {
+  .preview {
+    a {display:block;
+      img {width:95vw;
+        
+      }
+    } 
+  }
+  .fullScreen {
+
+  }
 }
 
 /* ---공통--- */
