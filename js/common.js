@@ -29,7 +29,7 @@ window.onload=function(){
   }
 
   // 스크롤
-  const head = $('.contain header');
+  const head = $('.contain .mainPage header');
   $(window).scroll(function() {
     if ($(this).scrollTop() > 100) {
       head.css("background", "#C8BA7B");

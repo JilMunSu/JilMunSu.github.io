@@ -259,7 +259,7 @@ html {background:$whiteColor;color:$blackColor;-ms-user-select:none;-moz-user-se
   }
 }
 .contain {height:100vh;
-  header {position:fixed;top:0;left:0;width:calc(100vw - 100px);height:70px;padding:0 50px;z-index:400;
+  header {width:calc(100vw - 100px);height:70px;padding:0 50px;z-index:400;
     a {
       &:focus-visible {@include focusImg();}
       h1 {display:inline-block;
