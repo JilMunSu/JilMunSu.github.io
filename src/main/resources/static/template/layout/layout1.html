@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JilMunSu</title>
+  <script src="../../js/jquery-3.6.0.min.js"></script>
+  <script src="../../js/common.js"></script>
+  <script src="../../js/wai-aria.ui.js/wai-aria.ui.es5.js"></script>
+  <link rel="stylesheet" href="../../css/font.css">
+  <link rel="stylesheet" href="../../css/main.min.css">
+  <script> 
+    $(document).ready(function(){
+
+    });
+  </script> 
+</head>
+<body>
+  <!-- wrap -->
+  <div class="wrap">
+    <!-- 컨테이너 -->
+    <div class="contain">
+      <!-- 메인 페이지 -->
+      <div class="mainPage">
+        <header>
+          <a href="">
+            <h1>logo</h1>
+          </a>
+          <div class="mainMenu">
+            <button class="btnToggleA" id="toggleTheme">다크모드</button>
+          </div>
+        </header>
+        <!-- 퀵메뉴 영역 -->
+        <div class="quickMenu">
+          <ul>
+            <li class="quick typeA"><button onclick="moveSCF('1')">first Menu</button></li>
+            <li class="quick typeB"><button onclick="moveSCF('2')">second Menu</button></li>
+            <li class="quick typeC"><button onclick="moveSCF('3')">third Menu</button></li>
+            <li class="quick typeD"><button onclick="moveSCF('4')">fourth Menu</button></li>
+          </ul>
+        </div>
+        <!-- //퀵메뉴 영역 -->
+        <footer>
+          <div class="copyright">
+            <p>본 사이트는 상업적 목적이 아닌 개인 포트폴리오 사이트로 제작되었습니다.</p>
+            <span>Copyright 2022. SangHyeuk Lee. All rights reserved.</span>
+          </div>
+        </footer>
+      </div>
+
+      <button class="btnGenB" id="btnGoTop" onclick="goTop()">맨 위로</button>
+      <!-- //메인 페이지 -->      
+    </div>
+    <!-- //컨테이너 -->
+  </div>
+  <!-- //wrap -->
+</body>
+</html>

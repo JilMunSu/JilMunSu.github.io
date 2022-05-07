@@ -1,0 +1,273 @@
+// mix(색1, 색2) : 색1과 색2를 섞은 색으로 나타납니다. 
+// lighten(색, %) : 색1을 %만큼 밝게 만들어줍니다. 
+// darken(색, %) : 색을 %만큼 어둡게 만들어줍니다.
+// saturate(색, %) : 색상의 채도를 % 만큼 올립니다.
+// desaturate(색, %) :  색상의 채도를 % 만큼 올립니다.
+// grayscale(색) :  색상의 회색으로 변환합니다
+// invert(색) : 색을 반전시킵니다.
+// rgba(색, 알파값) : 알파값(0-1) 투명도 지정
+// opacify(색,%) , fade-in(색,%) : 색상을 더 불투명하게 만듭니다.
+// transparentize(색,%), fade-out(색,%) : 색상을 더 투명하게 만든다.
+
+/* ---Color--- */
+$mainColor:#ECE6CC;
+$baseColor:#C8BA7B;
+$accentColor:#A5923C;
+$blackColor:#121212;
+$grayColor:#BBBBBB;
+$whiteColor:#FAF9F7;
+$redColor:#C02325;
+$greenColor:#23C05F;
+$blueColor:#2363C0;
+
+/* --- Mixin --- */
+@mixin position($pos, $top, $bottom, $left, $right) {position:$pos;top:$top;bottom:$bottom;left:$left;right:$right;}
+@mixin positionTL($pos, $top, $left) {position:$pos;top:$top;left:$left;}
+@mixin positionTR($pos, $top, $right) {position:$pos;top:$top;right:$right;}
+@mixin positionBL($pos, $bottom, $left) {position:$pos;bottom:$bottom;left:$left;}
+@mixin positionBR($pos, $bottom, $right) {position:$pos;bottom:$bottom;right:$right;}
+@mixin centerJAText {display:flex;justify-content:center;align-items:center;}
+@mixin centerAText {display:flex;align-items:center;}
+@mixin textHidden {text-indent:100%;white-space:nowrap;overflow:hidden;}
+@mixin borderRadius($radius) {-webkit-border-radius:$radius;-moz-border-radius:$radius;-ms-border-radius:$radius;border-radius:$radius;}
+@mixin borderRadiusT($radius) {-webkit-border-top-left-radius:$radius;-moz-border-top-left-radius:$radius;-ms-border-top-left-radius:$radius;border-top-left-radius:$radius;-webkit-border-top-right-radius:$radius;-moz-border-top-right-radius:$radius;-ms-border-top-right-radius:$radius;border-top-right-radius:$radius;}
+@mixin boxShadow($xPos, $yPos, $blur, $spread, $color) {-webkit-box-shadow:$xPos $yPos $blur $spread $color;-moz-border-radius:$xPos $yPos $blur $spread $color;-ms-border-radius:$xPos $yPos $blur $spread $color;box-shadow:$xPos $yPos $blur $spread $color;}
+@mixin boxShadowIn ($xPos, $yPos, $blur, $spread, $color) {-webkit-box-shadow:$xPos $yPos $blur $spread $color inset;-moz-border-radius:$xPos $yPos $blur $spread $color inset;-ms-border-radius:$xPos $yPos $blur $spread $color inset;box-shadow:$xPos $yPos $blur $spread $color inset;}
+@mixin transform($type) {-webkit-transform:$type;-moz-transform:$type;-ms-transform:$type;transform:$type;}
+@mixin rotate ($deg) {@include transform(rotate(#{$deg}deg));}
+@mixin scale($scale) {@include transform(scale($scale));}
+@mixin translate ($x, $y) {@include transform(translate($x, $y));}
+@mixin skew ($x, $y) {@include transform(skew(#{$x}deg, #{$y}deg));}
+@mixin transformOrigin ($origin) {-webkit-transform-origin: $origin;-moz-transform-origin: $origin;-ms-transform-origin: $origin;transform-origin: $origin;}
+@mixin transition($time) {-webkit-transition:$time;-moz-transition:$time;-ms-transition:$time;transition:$time;}
+@mixin textCut {white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+@mixin textCutTwo($number) {overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:$number;-webkit-box-orient:vertical;}
+@mixin buttonBase {font-family:'mapleLight';font-weight:bold;}
+@mixin focusBase {outline:none;background:$accentColor !important;}
+@mixin focusImg {outline-style:solid;outline-color:black;}
+
+
+/* Component */
+.component {
+  header {height:100px;
+    h1 {@include centerJAText;height:100%;font-size:1.5rem;}
+  }
+  > table {width:100vw;
+    > tbody {
+      > tr {border-top:1px solid $blackColor;border-bottom:1px solid $blackColor;
+        > th {@include centerJAText;height:20px;border-bottom:1px solid $blackColor;}
+        > td {display:block;min-height:200px;padding:5px;
+          h2 {font-size:1.2rem;}
+          &.textStyle {
+            & > ul {
+              &:not(:last-child) {padding-bottom:7px;}
+              li {padding:3px;}
+            }
+          }
+          &.colorStyle {
+            table {width:300px;
+              tr {display:table-row;
+                th, td {display:table-cell;padding:6px;border:1px solid $grayColor;height:auto;}
+                .mainColor {background:$mainColor;}
+                .baseColor {background:$baseColor;}
+                .accentColor {background:$accentColor;}
+                .blackColor {background:$blackColor;}
+                .grayColor {background:$grayColor;}
+                .whiteColor {background:$whiteColor;}
+                .redColor {background:$redColor;}
+                .greenColor {background:$greenColor;}
+                .blueColor {background:$blueColor;}
+              }
+            }
+          }
+          &.buttonStyle {
+            & > ul {
+              li {display:inline-block;padding:10px;}
+            }
+          }
+          &.inputStyle {
+            h2:not(:first-child) {margin:20px 0 5px;}
+          }
+          &.tableStyle {
+           table {margin-top:10px;}
+          }
+        }
+      }
+    }
+  }
+}
+.ffMapleB {font-family:'mapleBold';}
+.fontJP {font-family:'fontJP';}
+.uppercase {text-transform:uppercase;}
+
+/* ---button--- */
+button {@include buttonBase;
+  /* 일반형 */
+  &.btnGen {
+    &.typeA {position:relative;@include borderRadius(4px);background:none;border:1px solid $blackColor;color:$blackColor;transition:0.5s ease-in-out;
+      &.sizeL {min-width:6rem;height:2.5rem;padding:0.1rem 0.5rem 0;}
+      &.sizeM {width:5rem;height:2.5rem;padding:0.1rem 0.5rem 0;}
+      &.sizeS {width:4rem;height:2rem;padding:0.2rem 0.5rem 0;}
+      &.sizeXS {width:2.5rem;height:1.5rem;padding-top:0.2rem;}
+    }
+    &.typeB {@include positionBR(fixed, 50px, 20px);display:none;width:3rem;height:3rem;background:$baseColor url('../images/icon/upArrow.svg') no-repeat center / 45%;border:none;@include borderRadius(100%);cursor:pointer;}
+  }
+  /* 토글형 */
+  &.btnToggle {
+    &.typeA {width:2.4rem;height:2.4rem;background:$mainColor;@include borderRadius(100%);@include boxShadow(7px, 9px, 19px, -1px, $grayColor);
+      &.toggleOn {background:$baseColor;}
+    }
+    &.typeB {position:relative;width:70px;height:2rem;padding-left:20px;@include borderRadius(50px);background:$grayColor;
+      &.toggleOn {background:$greenColor;
+        &:before {@include transform(translateX(2.9rem));}
+      }
+      &:before {content:'';@include positionTL(absolute, 3px, 4px);width:1.5rem;height:1.5rem;background:$whiteColor;@include borderRadius(100%);@include transition(.4s);}
+    }
+  }
+  /* 확장형 */
+  &.btnExpan {
+    &.typeA {min-width:40vw;padding:10px 10px 5px;background:$grayColor;border-top-left-radius:10px;border-top-right-radius:10px;text-align:left;}
+    + div {display:block;min-width:37vw;padding:5px 10px 10px;background:$grayColor;}
+  }
+  
+  /* 공통 */
+  // &:hover {}
+  // &:active {}
+  &:focus-visible {
+    @include focusBase;
+  }
+  &.noText {@include textHidden;}
+}
+
+/* ---큌 메뉴---  */
+.quickMenu {@include positionTR(fixed, 100px, 2rem);min-width:5rem;z-index:2;
+  ul {
+    .quick {position:relative;padding:0.7rem 0;
+      button {@include centerAText;position:relative;width:8rem;height:5rem;padding:0 10px 0 10px;background:$baseColor;}
+    }
+  }
+}
+
+/* ---햄버거 메뉴---  */
+.hamburgerMenu {@include positionTR(fixed, 20px, 0);width:3.6rem;height:3.6rem;background:$blackColor;border:0;opacity:0.9;@include transition(.4s);z-index:500;
+  &.toggleOn {@include transform(translateX(-250px));
+    +.hamMenu {@include transform(translateX(-250px));}
+  }
+  +.hamMenu {@include positionTR(fixed, 0, -250px);width:250px;height:100vh;background:$blackColor;opacity:0.9;@include transition(.4s);z-index:500;
+    .titleArea {@include centerJAText;height:10rem;color:$whiteColor;font-size:2rem;}
+    ul {
+      li {height:4.5rem;border-top:1px solid $grayColor;
+        &:last-child {border-bottom:1px solid $grayColor;}
+        a {@include centerJAText;width:100%;height:100%;color:$whiteColor;font-weight:bold;font-size:1.1rem;
+          &:focus-visible {@include focusBase;color:$blackColor;} 
+        }
+        button {width:100%;height:100%;color:$whiteColor;font-size:1.1rem;
+          span {padding-left:4px;font-size:1.1rem;}
+          &:focus-visible {color:$blackColor;}
+        }
+      }
+    }
+  }
+}
+
+/* ---input--- */
+.checkForm, .radioForm {position:relative;height:1.4rem;padding-top:0.5rem;
+  &.allChk {height:3.5rem;
+    li:first-child {display:block;padding-bottom:0.5rem;}
+  }
+  li {display:inline-block;margin-left:1rem;padding-top:4px;
+    input {position:relative;
+      &:focus-visible + label {font-weight:bold;
+        &:after {content:'';@include positionBL(absolute, -3px, 0);width:100%;height:3px;background:$blackColor;}
+      }
+      &:checked + label:before {background:$blueColor;}
+      & + label {position:relative;height:1.3rem;padding-top:2px;cursor:pointer;
+        &:before {content:'';@include positionTL(absolute, 0, -22px);width:1.3rem;height:1.3rem;background:$grayColor;}
+      }
+    }
+    input[type="radio"] + label:before {@include borderRadius(100%);}
+  }
+}
+
+input {
+  &.textArea {width:100px;height:19px;padding:0 5px;border:1px solid $blackColor;border-radius:3px;}
+}
+
+/* ---select--- */
+.selectForm {width:10.6rem;padding:10px;border:1px solid $blackColor;@include borderRadiusT(3px);@include textCut;
+  &:focus-visible {border:1px solid $accentColor;font-weight:bold;}
+}
+
+/* ---table--- */
+.basicTable {
+  th, td {padding:6px;border:1px solid $grayColor;}
+}
+
+
+/* ---UI--- */
+/* tab */
+.tabs {display:inline-block;margin:0;padding:0;list-style:none;@include boxShadow(14px, 1px, 7px, -4px, $grayColor);
+  li {display:inline-block;
+    span {@include centerJAText;width:5.7rem;height:2.5rem;padding:4px 10px;cursor:pointer;
+      &.current {color:$blueColor;font-weight:bold;}
+      &:focus-visible {@include focusBase;color:$blackColor;}
+    }
+  }
+  ~.tabContent {@include boxShadow(7px, 9px, 19px, -1px, $grayColor);}
+}
+.tabContent {display:none;padding:1rem;min-height:20rem;
+  &.current {display:block;}
+  a {padding:10px;
+    &:focus-visible {@include focusBase;}
+  }
+}
+
+/* ---popup--- */
+.popWrap {@include positionTL(fixed, 0, 0);display:none;width:100vw;height:100vh;background:rgba(0, 0, 0, 0.7);z-index:900;}
+.popup {display:none;@include positionTL(absolute, 50%, 50%);z-index:1000;
+  &.typeA {width:300px;height:300px;@include translate(-150px, -190px);background:#000;}
+  &.typeB {width:100vw;height:100vh;top:0;left:0;background:#000;}
+}
+
+
+/* ---devTool--- */
+.remCal {position:relative;
+  input {padding:0 25px 0 5px;text-align:right;
+    &::placeholder {text-align:left;}
+    &:nth-child(1) + span {@include positionTL(absolute, 3px, 110px);}
+    &:nth-child(3) + span {@include positionTL(absolute, 3px, 245px);}
+  }
+  .result {display:inline-block;min-width:30px;padding-right:2px;}
+}
+.manga {
+  .preview {
+    a {display:block;
+      img {width:95vw;
+        
+      }
+    } 
+  }
+  .fullScreen {
+
+  }
+}
+
+/* ---공통--- */
+html {background:$whiteColor;color:$blackColor;-ms-user-select:none;-moz-user-select:-moz-none;-webkit-user-select:none;-khtml-user-select:none;-webkit-tap-highlight-color:transparent;user-select:none;
+  &.dark {-webkit-filter:invert(100%);filter:invert(100%);
+    img {-webkit-filter:invert(1);filter:invert(1);}
+  }
+}
+.contain {height:100vh;
+  header {width:calc(100vw - 100px);height:70px;padding:0 50px;z-index:400;
+    a {
+      &:focus-visible {@include focusImg();}
+      h1 {display:inline-block;
+        img {margin:4px 0;width:4.5rem;}
+      }
+    }
+  }
+}
+footer {width:100vw;height:7rem;background:$blackColor;color:$grayColor;
+  .copyright {padding:10px;}
+}

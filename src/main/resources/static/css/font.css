@@ -1,0 +1,13 @@
+@charset "UTF-8";
+@font-face {
+  font-family:'mapleBold';
+  src: url(../font/mapleStroy/Maplestory\ Bold.ttf);
+}
+@font-face {
+  font-family:'mapleLight';
+  src: url(../font/mapleStroy/Maplestory\ Light.ttf);
+}
+@font-face {
+  font-family:'fontJP';
+  src: url(../font/fontJP/GenJyuuGothicL-P-Medium.ttf);
+}
